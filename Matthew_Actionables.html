@@ -17,18 +17,26 @@ a{color:#1155CC;text-decoration:none}a:hover{text-decoration:underline}
 .filters{margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .filters input,.filters select{padding:5px 8px;border:1px solid #ccc;border-radius:4px;font-size:12px}
 #rowCount{color:#666;font-size:12px;margin-left:auto}
-/* Due/Assigned column widths */
 th:nth-child(4), td:nth-child(4),
 th:nth-child(5), td:nth-child(5) { width:90px; min-width:90px; }
-/* Hidden time — shown on hover */
 .due-time{display:none;font-size:10px;color:#888;margin-left:4px}
 td:hover .due-time{display:inline}
+.late-penalty{background:#C00000;color:white;font-size:10px;padding:1px 4px;border-radius:3px;margin-left:4px;font-weight:bold}
+.toggle-bar{display:flex;gap:8px;margin-bottom:10px;align-items:center}
+.toggle-btn{padding:6px 14px;border:2px solid #1F4E79;border-radius:20px;font-size:12px;font-weight:bold;cursor:pointer;background:white;color:#1F4E79}
+.toggle-btn.active{background:#1F4E79;color:white}
+.view-label{font-size:12px;color:#666;margin-left:4px}
 </style></head><body>
 <h1>MATTHEW &nbsp; DAILY ACTIONABLES</h1>
-<div class="meta">Generated: 04/13/2026 12:42 AM ET &nbsp;|&nbsp; PS: 04/10/2026 &nbsp;|&nbsp; Back: 4/7/2026 &nbsp;|&nbsp; SAT: 4/21/2026 &nbsp;|&nbsp; YTD: 31 abs / 9 tardies</div>
+<div class="meta">Generated: 04/13/2026 12:16 PM ET &nbsp;|&nbsp; PS: 04/13/2026 &nbsp;|&nbsp; Back: 4/7/2026 &nbsp;|&nbsp; SAT: 4/21/2026 &nbsp;|&nbsp; YTD: 31 abs / 10 tardies</div>
 <div class="alerts"><span style="margin-right:12px">⚠ April 15 - Late Start</span><span style="margin-right:12px">⚠ April 24th @ 7pm Bye Bye Birdie</span><span style="margin-right:12px">⚠ April 25th @ 7pm Bye Bye Birdie</span><span style="margin-right:12px">⚠ April 26th @ 2:30pm Bye Bye Birdie</span><span style="margin-right:12px">⚠ For current information regarding your student, visit https://westbloomfield.powerschool.com/public/ at any time. You can manage your email notification settings on the Email Notifications page in the Student and Parent portal.</span></div>
-<div class="grades"><b>Q3 Grades:</b> <span style="margin-right:14px"><b>ENGRACAD3:</b> B (3abs/0late)</span><span style="margin-right:14px"><b>FRENCH 1:</b> D (3abs/3late)</span><span style="margin-right:14px"><b>EARTH SCI:</b> B (3abs/0late)</span><span style="margin-right:14px"><b>MULTCULT LIT 11:</b> D (3abs/1late)</span><span style="margin-right:14px"><b>ARCHTEC3:</b> D (3abs/0late)</span><span style="margin-right:14px"><b>ECON/PERS FIN (ECONOMICS):</b> C (3abs/0late)</span><span style="margin-right:14px"><b>ALGEBRA 2:</b> D (3abs/0late)</span><span style="margin-right:14px"><b>ADVISORY_11_HS_S1:</b> G (4abs/0late)</span></div>
-<div class="filters">
+<div class="grades"><b>Q4 Grades:</b> <span style="margin-right:14px"><b>ENGRACAD3:</b> B (3abs/0late)</span><span style="margin-right:14px"><b>FRENCH 1:</b> D (3abs/3late)</span><span style="margin-right:14px"><b>EARTH SCI:</b> B (3abs/0late)</span><span style="margin-right:14px"><b>MULTCULT LIT 11:</b> D (3abs/1late)</span><span style="margin-right:14px"><b>ARCHTEC3:</b> D (3abs/0late)</span><span style="margin-right:14px"><b>ECON/PERS FIN (ECONOMICS):</b> C (3abs/0late)</span><span style="margin-right:14px"><b>ALGEBRA 2:</b> D (3abs/0late)</span><span style="margin-right:14px"><b>ADVISORY_11_HS_S1:</b> G (4abs/0late)</span></div>
+<div class="toggle-bar">
+  <button class="toggle-btn active" id="btnDaily" onclick="setView('daily')">📋 Daily View</button>
+  <button class="toggle-btn" id="btnFull" onclick="setView('full')">🗂 Full View</button>
+  <span class="view-label" id="viewLabel">Showing: Missing + Due This Week (Q4 only)</span>
+</div>
+<div class="filters" id="filterBar" style="display:none">
   <input id="search" placeholder="🔍 Search..." oninput="filter()" style="width:200px">
   <select id="sec" onchange="filter()"><option value="">All sections</option><option>⚠ MISSING</option><option>⏳ PENDING GRADE</option><option>✅ GRADED</option></select>
   <select id="cls" onchange="filter()"><option value="">All classes</option><option>5th Hour Interior Design (2nd Semester)</option><option>ALGEBRA 2</option><option>CIVICS</option><option>EARTH SCI</option><option>ENGRACAD3</option><option>MULTCULT LIT 11</option></select>
@@ -39,7 +47,7 @@ td:hover .due-time{display:inline}
   <th onclick="sort(0)">Section</th><th onclick="sort(1)">Class</th><th onclick="sort(2)">Assignment</th>
   <th onclick="sort(3)">Assigned</th><th onclick="sort(4)">Due</th><th onclick="sort(5)">Via</th>
   <th onclick="sort(6)">Pts</th><th onclick="sort(7)">Grade</th><th onclick="sort(8)">Status</th><th onclick="sort(9)">Note</th>
-</tr></thead><tbody id="tb"><tr style="background:#FFE0E0">
+</tr></thead><tbody id="tb"><tr style="background:#FFE0E0" data-daily="true" data-q4="false">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573711" target="_blank">White Board Syllabus Review Activity</a></td>
@@ -51,7 +59,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · Group/partner work · Requires: At least 4 bullet points or sentences for each. · Print/physical copy required · 🔒 LOCKED: This assignment was locked Feb 4 at 11:59pm.</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="background:#F4F8FC" data-daily="true" data-q4="false">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/575620" target="_blank">Intro to Interior Design Careers and Education Google Form Assignment</a></td>
@@ -63,7 +71,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT · While reviewing the Introduction to Interior Design Careers and Education presentation , complete the following Google Form . This is a graded assignm · In-class activity</td>
   </tr>
-<tr style="">
+<tr style="" data-daily="true" data-q4="false">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/586957" target="_blank">➗ Long Division Worksheet</a></td>
@@ -75,7 +83,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · ➗ Long Division Worksheet 🔑 Long Division Worksheet Key · In-class activity</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="background:#F4F8FC" data-daily="true" data-q4="false">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/586958" target="_blank">🧮 Long Division Word Problems Worksheet</a></td>
@@ -87,7 +95,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · In-class activity</td>
   </tr>
-<tr style="">
+<tr style="" data-daily="true" data-q4="false">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/576525" target="_blank">Course Syllabus</a></td>
@@ -99,7 +107,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E · Document: https://docs.google.com/document/d/1xVUjdDVHycOS_PScd8CGcwx6WPPTSY4mJTH8GQvFTfM/edit?usp=sharing · In-class activity</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="background:#F4F8FC" data-daily="true" data-q4="false">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/575617" target="_blank">Google Form for Floor Plan for Interior Designers Presentation</a></td>
@@ -111,7 +119,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT · Complete this Google Form while reviewing the Introduction to Architectural Floor Plans for Interior Designers . This is a graded assignment. Your gra · In-class activity</td>
   </tr>
-<tr style="">
+<tr style="" data-daily="true" data-q4="false">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/586475" target="_blank">🅰️ ️ALEKS Practice 4.3: Operations with Polynomials</a></td>
@@ -123,7 +131,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · In-class activity</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="background:#F4F8FC" data-daily="true" data-q4="false">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/587277" target="_blank">🅰️ ️ ALEKS Practice 4.4: Dividing Polynomials</a></td>
@@ -135,7 +143,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · In-class activity</td>
   </tr>
-<tr style="">
+<tr style="" data-daily="true" data-q4="false">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/575653" target="_blank">The Role of Color in Interior Design Google Form</a></td>
@@ -147,7 +155,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT · Answer this Google Form using the Roles of Color in Interior Design Presentation . This is a graded assignment. Your grade will be recorded in PowerSc · In-class activity</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="background:#F4F8FC" data-daily="true" data-q4="false">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/588632" target="_blank">®️ Module 4 Test Review</a></td>
@@ -159,7 +167,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="">
+<tr style="" data-daily="true" data-q4="false">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/575593" target="_blank">7 Elements of Interior Design Google Form</a></td>
@@ -171,7 +179,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT · Using your knowledge after reviewing the Canvas presentation, answer these Google Form questions . YOU MAY USE THE PRESENTATION TO COMPLETE THE QUESTI</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="background:#F4F8FC" data-daily="true" data-q4="false">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/589431" target="_blank">🅰️ ALEKS Practice 5.2 Part 2: Quadratic Form</a></td>
@@ -183,7 +191,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · In-class activity</td>
   </tr>
-<tr style="">
+<tr style="" data-daily="true" data-q4="false">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/589952" target="_blank">🅰️ ALEKS Practice 5.5: Roots & Zeros</a></td>
@@ -195,7 +203,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · In-class activity</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="background:#F4F8FC" data-daily="true" data-q4="false">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/593730" target="_blank">🅰️ ALEKS Practice 6.1: Operations on Functions</a></td>
@@ -207,7 +215,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · In-class activity</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="true" data-q4="false">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573709" target="_blank">PART 1:  The Core Post-Movie Brainstorming Session Photos</a></td>
@@ -219,7 +227,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · Group/partner work · Submit: s · 🔒 LOCKED: This assignment was locked Mar 27 at 11:59pm.</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="true" data-q4="false">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573755" target="_blank">Chapter 10 Vocabulary/Key Terms</a></td>
@@ -231,7 +239,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · Greetings, Lakers ! Earth Science: Chapter 10 Vocabulary/Key Terms Directions : Please take a moment to match the definitions for the following terms · 🔒 LOCKED: This assignment was locked Apr 8 at 11:59pm. · In-class activity</td>
   </tr>
-<tr style="">
+<tr style="" data-daily="true" data-q4="false">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/594502" target="_blank">🅰️ ALEKS Practice 6.3</a></td>
@@ -243,7 +251,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · In-class activity</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="true" data-q4="false">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573809" target="_blank">Sea Floor Spreading Activity</a></td>
@@ -255,7 +263,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · Print/physical copy required · 🔒 LOCKED: This assignment was locked Apr 10 at 11:59pm. · In-class activity</td>
   </tr>
-<tr style="">
+<tr style="" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/594792" target="_blank">®️ Reveal Practice 6.4: Graphing Radical Functions</a></td>
@@ -267,7 +275,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="background:#F4F8FC" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/595454" target="_blank">Shoe Box Design Project: Design Plan</a></td>
@@ -279,7 +287,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT · Shoe Box Design Project: Design Plan Project Overview Students will act as interior designers to create a scaled shoebox model of a room based on a cl</td>
   </tr>
-<tr style="">
+<tr style="" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/595355" target="_blank">SAT Prep 4/6/26</a></td>
@@ -291,7 +299,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · Requires: 3 sentences how you will prep for the SAT Math section.</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="background:#F4F8FC" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580455" target="_blank">®️ Reveal Practice 2.1.1-4 Solving Linear Equations & Inequa</a></td>
@@ -303,7 +311,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="">
+<tr style="" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580456" target="_blank">®️ Reveal Practice 2.1.1-4 Solving Linear Equations & Inequa</a></td>
@@ -315,7 +323,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="background:#F4F8FC" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580437" target="_blank">🅰️ ️ALEKS Practice 2.1.6-7: Solving Linear Equations & Inequalities (Click the McGraw Hill SSO link and open ALEKS 5th Hour A2 S1 or ALEKS 7th Hour A2 S1)</a></td>
@@ -327,7 +335,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · In-class activity</td>
   </tr>
-<tr style="">
+<tr style="" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580457" target="_blank">®️ Reveal Practice 2.2: Solving Absolute Value Equations</a></td>
@@ -339,7 +347,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="background:#F4F8FC" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580458" target="_blank">®️ Reveal Practice 2.2: Solving Absolute Value Equations</a></td>
@@ -351,7 +359,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="">
+<tr style="" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580451" target="_blank">®️ Reveal Practice 1.1: Functions & Continuity</a></td>
@@ -363,7 +371,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="background:#F4F8FC" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580452" target="_blank">®️ Reveal Practice 1.1: Functions & Continuity</a></td>
@@ -375,7 +383,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="">
+<tr style="" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580459" target="_blank">®️ Reveal Practice 2.4: Solving Systems of Equations Graphic</a></td>
@@ -387,7 +395,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="background:#F4F8FC" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580460" target="_blank">®️ Reveal Practice 2.4: Solving Systems of Equations Graphic</a></td>
@@ -399,7 +407,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="">
+<tr style="" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580453" target="_blank">®️ Reveal Practice 1.5.2: Graphing Linear Inequalities</a></td>
@@ -411,7 +419,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="background:#F4F8FC" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580454" target="_blank">®️ Reveal Practice 1.5.2: Graphing Linear Inequalities</a></td>
@@ -423,7 +431,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="">
+<tr style="" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580439" target="_blank">🅰️ ️ALEKS Practice 2.6: Solving Systems of Inequalities (Click the McGraw Hill SSO link and open ALEKS)</a></td>
@@ -435,7 +443,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · In-class activity</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="background:#F4F8FC" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580445" target="_blank">📋 Quiz #2: 1.5 - 2.8 (Systems of Equations & Inequalities)</a></td>
@@ -447,7 +455,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · In-class activity</td>
   </tr>
-<tr style="">
+<tr style="" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580461" target="_blank">®️ Reveal Practice 3.2: Solving Quadratics by Graphing</a></td>
@@ -459,7 +467,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="background:#F4F8FC" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580462" target="_blank">®️ Reveal Practice 3.2: Solving Quadratics by Graphing</a></td>
@@ -471,7 +479,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="">
+<tr style="" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580463" target="_blank">®️ Reveal Practice 3.5: Completing the Square</a></td>
@@ -483,7 +491,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="background:#F4F8FC" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580464" target="_blank">®️ Reveal Practice 3.5: Completing the Square</a></td>
@@ -495,7 +503,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="">
+<tr style="" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580449" target="_blank">®️ Module 3 Dynamic Review</a></td>
@@ -507,7 +515,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="background:#F4F8FC" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580450" target="_blank">®️ Module 3 Dynamic Review</a></td>
@@ -519,7 +527,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="">
+<tr style="" data-daily="true" data-q4="true">
     <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/576561" target="_blank">Extra Credit - Bill of Rights Booklet</a></td>
@@ -531,7 +539,19 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000">Not submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E · Bill of Rights Booklet - Extra Credit</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="background:#F4F8FC" data-daily="true" data-q4="true">
+    <td style="text-align:center"><span style="background:#C00000;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⚠ MISSING</span></td>
+    <td style="text-align:center">ENGRACAD3</td>
+    <td><a href="https://westbloomfieldsd.instructure.com/courses/29422/assignments/578582" target="_blank">Two Chess Pieces</a></td>
+    <td style="text-align:center">1/20</td>
+    <td style="text-align:center">No due date</td>
+    <td style="text-align:center">Canvas</td>
+    <td style="text-align:center">100</td>
+    <td style="text-align:center;">—</td>
+    <td style="text-align:center;color:#C00000">Not submitted</td>
+    <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · Please reproduce the two following chess pieces. (50 pts each)</td>
+  </tr>
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#4B0082;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⏳ PENDING GRADE</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/585267" target="_blank">Enlightenment Thinker Guided Notes</a></td>
@@ -543,7 +563,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#375623;font-weight:bold">✓ Submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#4B0082;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⏳ PENDING GRADE</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/587784" target="_blank">Types of Government Guided Notes</a></td>
@@ -555,7 +575,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#375623;font-weight:bold">✓ Submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#4B0082;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⏳ PENDING GRADE</span></td>
     <td style="text-align:center">ENGRACAD3</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29422/assignments/578579" target="_blank">Simple Assembly</a></td>
@@ -567,7 +587,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#375623;font-weight:bold">✓ Submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · Please use Onshape to create the Simple Clamp Assembly. Once you have finished please create all of the needed drawings with dimensions.</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#4B0082;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⏳ PENDING GRADE</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/588747" target="_blank">Unit 1 Skill Check</a></td>
@@ -579,7 +599,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E · Compare how Authoritarian and Democratic governments would respond to a crisis. Focus on how each type of government balances power, freedom, and resp · 🔒 LOCKED: This assignment was locked Feb 20 at 2:23pm.</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#4B0082;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⏳ PENDING GRADE</span></td>
     <td style="text-align:center">ENGRACAD3</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29422/assignments/589508" target="_blank">2026 Everybot Electronics Plate</a></td>
@@ -591,7 +611,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#375623;font-weight:bold">✓ Submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · Please recreate the following electronics plate. It should be a 1/2 inch thick.</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#4B0082;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⏳ PENDING GRADE</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/590797" target="_blank">Branches of Government Test Corrections</a></td>
@@ -603,7 +623,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#375623;font-weight:bold">✓ Submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E · You can earn up to 5 points back on your Unit 2 test, if you scored below a 70%, by completing the attached assignment. The assignment must be finishe</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#4B0082;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⏳ PENDING GRADE</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/575596" target="_blank">Backyard Escape Project</a></td>
@@ -615,7 +635,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#375623;font-weight:bold">✓ Submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT · Backyard Escape Project : Objective : Design the ultimate backyard escape place. Everyone has a different need to “escape”. Maybe you need a place to</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#4B0082;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⏳ PENDING GRADE</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573708" target="_blank">Animated Life: Pangaea</a></td>
@@ -627,7 +647,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · Let's watch the following clip together! 📺 Following the video, please reflect on the questions below and give complete and thoughtful answers. Remind · 🔒 LOCKED: This assignment was locked Apr 10 at 11:59pm.</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="true">
     <td style="text-align:center"><span style="background:#4B0082;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⏳ PENDING GRADE</span></td>
     <td style="text-align:center">MULTCULT LIT 11</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29304/assignments/585491" target="_blank">Hamtramck Video Response</a></td>
@@ -639,7 +659,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#375623;font-weight:bold">✓ Submitted</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs, 3 late · S2 attendance: 02/10/2026 E, 02/20/2026 A · Requires: 10 sentences: What is the importance of community to Muslim people? How is the structure of a close-knit community illustrated in Hamtramck and in the novel, Saints and Misfits ? Think of the city as well as the community aspect of the mosque.</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="true">
     <td style="text-align:center"><span style="background:#4B0082;color:white;padding:1px 5px;border-radius:3px;font-size:11px">⏳ PENDING GRADE</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/588721" target="_blank">Unit 1 Review EC</a></td>
@@ -651,7 +671,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E · Submit: s · 🔒 LOCKED: This assignment was locked Feb 18 at 2:30pm.</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/576800" target="_blank">Your Relationship with Government</a></td>
@@ -663,7 +683,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">ENGRACAD3</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29422/assignments/578576" target="_blank">Part of Your Choice</a></td>
@@ -675,7 +695,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · Please use this space to upload a picture, your matching CAD model and a description of the part you worked on. Thank you</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573714" target="_blank">Crash Course Astronomy #9 - The Solar System</a></td>
@@ -687,7 +707,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · NGSS Learning Target: HS-ESS1-6 Apply scientific reasoning and evidence from ancient Earth materials, meteorites, and other planetary surfaces to cons · 🔒 LOCKED: This assignment was locked Feb 5 at 11:59pm.</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/580856" target="_blank">®️ Reveal Practice 4.1: Polynomial Functions</a></td>
@@ -699,7 +719,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/583178" target="_blank">®️ Reveal Practice 4.2: Analyzing Graphs of Polynomial Function</a></td>
@@ -711,7 +731,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/575605" target="_blank">Digital Collage: All About You</a></td>
@@ -723,7 +743,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT · Requires: at least 3 images that represent your hobbies or favorite activities (e.</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/575652" target="_blank">Syllabus Quiz</a></td>
@@ -735,7 +755,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">ENGRACAD3</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29422/assignments/578567" target="_blank">Multi Angle Bracket</a></td>
@@ -747,7 +767,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · Please recreate the following part in Onshape. Once you have finished create a drawing file with all the necessary views and dimensions.</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573703" target="_blank">Formation of Solar System Wrap-Up Questions</a></td>
@@ -759,7 +779,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · NGSS Learning Target: HS-ESS1-6 Apply scientific reasoning and evidence from ancient Earth materials, meteorites, and other planetary surfaces to cons · 🔒 LOCKED: This assignment was locked Feb 12 at 11:59pm.</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">MULTCULT LIT 11</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29304/assignments/586985" target="_blank">Song Paragraph</a></td>
@@ -771,7 +791,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs, 3 late · S2 attendance: 02/10/2026 E, 02/20/2026 A · Requires: 10 sentences long.</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573748" target="_blank">CH 27 Vocabulary/Key Terms</a></td>
@@ -783,7 +803,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · 🔒 LOCKED: This assignment is part of an unpublished module and is not available yet.</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/586256" target="_blank">Design Project #1 Part 1: Think Like an Interior Designer: Design Decision Board</a></td>
@@ -795,7 +815,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT · Design Project #1: Think Like an Interior Designer: Design Design Board Project Goal: This project helps you understand what interior designers actual</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573713" target="_blank">PBS Nova: Finding Life Beyond Earth - How the Inner Solar System Formed</a></td>
@@ -807,7 +827,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · NGSS Learning Target: HS-ESS1-6 Apply scientific reasoning and evidence from ancient Earth materials, meteorites, and other planetary surfaces to cons · 🔒 LOCKED: This assignment was locked Feb 16 at 11:59pm.</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/587357" target="_blank">Power & Authority</a></td>
@@ -819,7 +839,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573745" target="_blank">Bozeman Video- History of the Earth</a></td>
@@ -831,7 +851,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · 🔒 LOCKED: This assignment is part of an unpublished module and is not available yet.</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">MULTCULT LIT 11</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29304/assignments/587385" target="_blank">Mexican Culture & Pre-Reading</a></td>
@@ -843,7 +863,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs, 3 late · S2 attendance: 02/10/2026 E, 02/20/2026 A</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573693" target="_blank">Video Clip: An introduction to Kepler's Laws of Planetary Motion</a></td>
@@ -855,7 +875,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · Greetings, Lakers ! ESS1.B: Earth and the Solar System Kepler’s laws describe common features of the motions of orbiting objects, including their elli · 🔒 LOCKED: This assignment was locked Feb 19 at 11:59pm.</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/587804" target="_blank">Types of Government Questions</a></td>
@@ -867,7 +887,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/586269" target="_blank">Design Project #1 Part 2: Sketch Floor Plans Like an Interior Designer: From Ideas to Sketch</a></td>
@@ -879,7 +899,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT · In Project #1 Part 1, you learned how designers think . In Project #1 Part 2, you will learn how designers communicate ideas visually . This project i</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573759" target="_blank">Drag & Drop Kepler's Three Laws of Planetary Motion</a></td>
@@ -889,9 +909,9 @@ td:hover .due-time{display:inline}
     <td style="text-align:center">10</td>
     <td style="text-align:center;">10</td>
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
-    <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · Greetings, Lakers ! ESS1.B: Earth and the Solar System: Kepler’s laws describe common features of the motions of orbiting objects, including their ell · 🔒 LOCKED: This assignment was locked Feb 23 at 11:59pm.</td>
+    <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · 🔒 LOCKED: This assignment is part of an unpublished module and is not available yet.</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">MULTCULT LIT 11</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29304/assignments/587800" target="_blank">IANYPMD Vocabulary</a></td>
@@ -903,7 +923,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs, 3 late · S2 attendance: 02/10/2026 E, 02/20/2026 A</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/586955" target="_blank">Design Project #1 Part 3: Sketch Like an Interior Designer: From Ideas to Sketch Elevations</a></td>
@@ -915,7 +935,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT · Part 3: Concept / Elevation Sketch (Day 3) Plan vs Elevation: use the floor plan to draw the elevation; place the floor plan above the elevation and "</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573696" target="_blank">NoteCheck - Kepler's Laws of Motion</a></td>
@@ -927,7 +947,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · ESS1.B: Earth and the Solar System: Kepler’s laws describe common features of the motions of orbiting objects, including their elliptical paths around · 🔒 LOCKED: This assignment was locked Feb 25 at 11:59pm.</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/575600" target="_blank">Custom Color Wheel</a></td>
@@ -939,7 +959,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT · Submit: s · Print/physical copy required</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/575598" target="_blank">Color Scheme Design Assignment</a></td>
@@ -951,7 +971,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT · Submit: S</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573767" target="_blank">LAB:  Modeling a Planet's Orbit</a></td>
@@ -961,9 +981,9 @@ td:hover .due-time{display:inline}
     <td style="text-align:center">10</td>
     <td style="text-align:center;color:#C00000;font-weight:bold">5</td>
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
-    <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · Submit: s · 🔒 LOCKED: This assignment was locked Mar 26 at 11:59pm.</td>
+    <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · 🔒 LOCKED: This assignment is part of an unpublished module and is not available yet.</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573682" target="_blank">Label the Parts of an Orbital Ellipse</a></td>
@@ -975,7 +995,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · ESS1.B: Earth and the Solar System Kepler’s laws describe common features of the motions of orbiting objects, including their elliptical paths around · 🔒 LOCKED: This assignment was locked Feb 26 at 11:59pm.</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">ENGRACAD3</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29422/assignments/588554" target="_blank">Coaster Original Set Up</a></td>
@@ -987,7 +1007,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · Please post your track drawing and recorded times here.</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573670" target="_blank">Questions about Kepler's Laws</a></td>
@@ -999,7 +1019,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · ESS1.B: Earth and the Solar System: Kepler’s laws describe common features of the motions of orbiting objects, including their elliptical paths around · 🔒 LOCKED: This assignment was locked Mar 26 at 11:59pm.</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/588722" target="_blank">Unit 1 Skill Check</a></td>
@@ -1011,7 +1031,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E · Compare how Authoritarian and Democratic governments would respond to a crisis. Focus on how each type of government balances power, freedom, and resp · 🔒 LOCKED: This assignment was locked Feb 18 at 2:23pm.</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/575647" target="_blank">Assignment: Psychology of Color Presentation</a></td>
@@ -1023,7 +1043,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT · Color psychology is the study of how colors affect people's emotions and behaviors . Different colors can evoke different feelings, such as happiness,</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/588353" target="_blank">Psychology of Color Room Design Project</a></td>
@@ -1035,7 +1055,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT · Requires: at least 3 additional surfaces with color decisions: Flooring Furniture Accent element Part 3 — Psychology Justification Sheet (5 points) On the same Google Slide (or a new one, if additional space is needed), complete a written explanation answering: What mood were you assigned? What psychological effects does each color create? Use actual color psychology vocabulary in explanations: stimulating suppresses appetite lowers heart rate increases alertness expands space perception Etc.</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/589139" target="_blank">Legislative Branch Notes/Exit Ticket</a></td>
@@ -1047,7 +1067,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/588629" target="_blank">®️ Reveal Practice 5.1: Solving Polynomials by Graphing</a></td>
@@ -1059,7 +1079,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/589052" target="_blank">®️ Reveal Practice 5.2 Part 1: Solving Polynomials Algebraicall</a></td>
@@ -1071,7 +1091,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573702" target="_blank">The Earth: Crash Course Astronomy #11</a></td>
@@ -1083,7 +1103,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · ESS2.A Earth Materials and Systems: (HS-ESS2-3) Evidence from deep probes and seismic waves, reconstructions of historical changes in Earth’s surface · 🔒 LOCKED: This assignment was locked Mar 9 at 11:59pm.</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/576582" target="_blank">How a Bill Becomes a Law</a></td>
@@ -1095,7 +1115,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E · Directions: https://docs.google.com/document/d/19OjQXRbk-RfPlFmIEi6yMyylIud-pCzToklRdhYSVSU/edit?usp=sharing</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/576507" target="_blank">Cabinet Scenarios</a></td>
@@ -1107,7 +1127,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E · Scenarios: https://docs.google.com/document/d/1bHd8uwg-ZvqdvJo_Qs4bykc_HmccsYgVjCQXz-jpeBM/edit?usp=sharing</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">MULTCULT LIT 11</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29304/assignments/585493" target="_blank">IANYPMD Movie Casting</a></td>
@@ -1119,7 +1139,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs, 3 late · S2 attendance: 02/10/2026 E, 02/20/2026 A</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573801" target="_blank">National Geographic: Earth 101</a></td>
@@ -1131,7 +1151,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · 🔒 LOCKED: This assignment is part of an unpublished module and is not available yet.</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/589184" target="_blank">Homestyler Lesson / Tutorial: Mini Condo Unit</a></td>
@@ -1143,7 +1163,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT · Homestyler Lesson / Tutorial: Mini Condo Unit What is a Mini Condominium? A mini condominium is a self-contained living space typically around 600 sq</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/589735" target="_blank">7 Elements Station Response</a></td>
@@ -1155,7 +1175,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT · Write 5 or more senences or bullet points that reflect on the 7 Stations. Your responses should be detailed, using as much interior design terminology</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/589665" target="_blank">®️ Reveal Practice 5.4: The Remainder & Factor Theorems</a></td>
@@ -1167,7 +1187,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/576672" target="_blank">Supreme Court Cases</a></td>
@@ -1179,7 +1199,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/576514" target="_blank">Checks and Balances Cartoon</a></td>
@@ -1191,7 +1211,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E · Directions: https://docs.google.com/document/d/1_7CukzPAuDYGP2WSIJI79V0UykHqqUj8XP58MeOpo_w/edit?usp=sharing</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573684" target="_blank">Interpret Graph for Earth's Interior</a></td>
@@ -1203,7 +1223,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · ESS2.A Earth Materials and Systems: (HS-ESS2-3) Evidence from deep probes and seismic waves, reconstructions of historical changes in Earth’s surface · 🔒 LOCKED: This assignment was locked Mar 20 at 11:59pm.</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573692" target="_blank">Learning About Earth's Core</a></td>
@@ -1215,7 +1235,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · ESS2.A Earth Materials and Systems: (HS-ESS2-3) Evidence from deep probes and seismic waves, reconstructions of historical changes in Earth’s surface · 🔒 LOCKED: This assignment was locked Mar 20 at 11:59pm.</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/575594" target="_blank">7 Elements AND Principles of Interior Design Worksheet</a></td>
@@ -1227,7 +1247,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT · Print/physical copy required</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573688" target="_blank">Earth as a Magnet</a></td>
@@ -1239,7 +1259,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · ESS2.A Earth Materials and Systems: (HS-ESS2-3) Evidence from deep probes and seismic waves, reconstructions of historical changes in Earth’s surface · 🔒 LOCKED: This assignment was locked Mar 27 at 11:59pm.</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573769" target="_blank">NASA ScienceCast: Earth's Magnetopshere</a></td>
@@ -1251,7 +1271,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · 🔒 LOCKED: This assignment is part of an unpublished module and is not available yet.</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/576639" target="_blank">Political Parties</a></td>
@@ -1263,7 +1283,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573658" target="_blank">The Core: Movie Questions</a></td>
@@ -1275,7 +1295,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · ESS2.A Earth Materials and Systems: (HS-ESS2-3) Evidence from deep probes and seismic waves, reconstructions of historical changes in Earth’s surface · 🔒 LOCKED: This assignment was locked Mar 27 at 11:59pm.</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/576652" target="_blank">Propaganda Techniques</a></td>
@@ -1287,7 +1307,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">MULTCULT LIT 11</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29304/assignments/593611" target="_blank">Ethos, Pathos, Logos Source Assignment</a></td>
@@ -1299,7 +1319,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs, 3 late · S2 attendance: 02/10/2026 E, 02/20/2026 A</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573662" target="_blank">Section Wrap-Up- 2.1 Earth: A Unique Planet</a></td>
@@ -1311,7 +1331,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · Submit: s · 🔒 LOCKED: This assignment was locked Mar 27 at 3pm.</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">MULTCULT LIT 11</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29304/assignments/585496" target="_blank">Reflection Questions for Saints and Misfits</a></td>
@@ -1323,7 +1343,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs, 3 late · S2 attendance: 02/10/2026 E, 02/20/2026 A</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/576586" target="_blank">Pac Notes & Classwork</a></td>
@@ -1335,7 +1355,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/594496" target="_blank">Interest Group Project</a></td>
@@ -1347,7 +1367,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E · Group/partner work</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">ALGEBRA 2</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28876/assignments/593902" target="_blank">®️ Reveal Practice 6.2: Inverse Relations and Functions</a></td>
@@ -1359,7 +1379,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/576443" target="_blank">Interest Group Polling</a></td>
@@ -1371,7 +1391,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E · Group/partner work · Submit: s</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">MULTCULT LIT 11</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29304/assignments/585502" target="_blank">Saints and Misfits Vocabulary</a></td>
@@ -1383,7 +1403,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs, 3 late · S2 attendance: 02/10/2026 E, 02/20/2026 A · Make sure you follow the directions. You need to include the definition and YOUR OWN, ORIGINAL SENTENCE.</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">MULTCULT LIT 11</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29304/assignments/585506" target="_blank">You Can't Ask That - Muslims Exit Ticket</a></td>
@@ -1395,7 +1415,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs, 3 late · S2 attendance: 02/10/2026 E, 02/20/2026 A · What is one new concept that you learned from the Netflix episode we watched in class today? YOU CANNOT ANSWER "NOTHING". What is one question that yo</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573707" target="_blank">Wegener's Puzzling Continents WRAP UP Questions</a></td>
@@ -1407,7 +1427,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · Now that you have completed Wegener's Puzzling Continents , see if you can answer these wrap up questions from the activity. · 🔒 LOCKED: This assignment was locked Apr 8 at 11:59pm.</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573815" target="_blank">Video Alfred Wegener: Great Minds</a></td>
@@ -1419,7 +1439,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · This week we are beginning Chapter 10 Plate Tectonics . ⛰️🌋🌎 We will first focus on Chapter 10, section 1 - Continental Drift . In the attached video, · 🔒 LOCKED: This assignment was locked Apr 8 at 11:59pm.</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">ENGRACAD3</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29422/assignments/578565" target="_blank">Mechanical Part</a></td>
@@ -1431,7 +1451,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · Please recreate the following part. Once you have finished create a drawing with all the needed views and dimensions. Thank you.</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">ENGRACAD3</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29422/assignments/588555" target="_blank">Coaster Original Student Design</a></td>
@@ -1443,7 +1463,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · Please us this space to upload your coaster design with at least three loops and a corkscrew or two hills This should be created in Onshape with all t</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/594832" target="_blank">Lighting for Interior Design Reflection Questions</a></td>
@@ -1455,7 +1475,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT · Review the Lighting for Interior Designers Google Presentation shared in Canvas. After reading through the questions, answer the questions below in a</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573689" target="_blank">Sea Floor Spreading WRAP UP questions</a></td>
@@ -1467,7 +1487,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · For this activity you were asked to create a PAPER MODEL to demonstrate SEA FLOOR SPREADING. Please complete the questions to show your understanding · 🔒 LOCKED: This assignment was locked Apr 10 at 11:59pm.</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">MULTCULT LIT 11</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29304/assignments/594929" target="_blank">Resume Outline</a></td>
@@ -1479,7 +1499,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs, 3 late · S2 attendance: 02/10/2026 E, 02/20/2026 A · Please fill out the resume information for Friday.</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">MULTCULT LIT 11</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29304/assignments/585489" target="_blank">Double Standard Article Response</a></td>
@@ -1491,7 +1511,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs, 3 late · S2 attendance: 02/10/2026 E, 02/20/2026 A · Requires: 7 sentences.</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">5th Hour Interior Design (2nd Semester)</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29168/assignments/594834" target="_blank">Reflected Ceiling Plan for Interior Designers</a></td>
@@ -1503,7 +1523,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 02/10/2026 E, 03/12/2026 FT · Requires: at least 2 of the following. · Requires: 1 paragraph (5–7 sentences) in a text entry box or the Canvas comments explaining: What type of space you designed How your lighting supports the function of the room The mood you wanted to create Why you chose specific lighting types and placements Grading Rubric (20 points) Category Points Correct use of 3 lighting types 5 Layout & placement of fixtures 5 Symbols, labels, and legend 5 Neatness & effort 5 Written explanation 5 Create and submit a PDF to this assignment for credit. · Submit: s</td>
   </tr>
-<tr style="background:#FFE0E0">
+<tr style="background:#FFE0E0" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573803" target="_blank">OPTIONAL ASSIGNMENT:  PART 2:  The Core Movie: Meaningful Learning and Misconceptions</a></td>
@@ -1515,7 +1535,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#C00000;font-weight:bold">🔒 CLOSED</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · 🔒 LOCKED: This assignment is part of an unpublished module and is not available yet.</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">CIVICS</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/30361/assignments/576596" target="_blank">Media Bias One Pager</a></td>
@@ -1527,7 +1547,7 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">S2 attendance: 02/10/2026 E · Directions: https://docs.google.com/document/d/1mZFULHPfPNkEi4exfoGdBR_psOgTt-215PJaFGSA5ko/edit?usp=sharing</td>
   </tr>
-<tr style="">
+<tr style="background:#F4F8FC" data-daily="false" data-q4="false">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">EARTH SCI</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573818" target="_blank">Video Bill Nye Greatest Discovery Plate Tectonics</a></td>
@@ -1539,7 +1559,19 @@ td:hover .due-time{display:inline}
     <td style="text-align:center;color:#4B0082">Graded</td>
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · Chapter 10 is titled Plate Tectonics. Please watch the Bill Nye Greatest Discoveries- Plate Tectonics clip and answer the questions as they appear in</td>
   </tr>
-<tr style="background:#F4F8FC">
+<tr style="" data-daily="false" data-q4="true">
+    <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
+    <td style="text-align:center">EARTH SCI</td>
+    <td><a href="https://westbloomfieldsd.instructure.com/courses/28927/assignments/573704" target="_blank">Continental Drift 10.1 Review/Wrap Up Questions</a></td>
+    <td style="text-align:center">1/15</td>
+    <td style="text-align:center">4/13<span class="due-time" title="11:59 PM">11:59 PM</span></td>
+    <td style="text-align:center">Canvas</td>
+    <td style="text-align:center">24</td>
+    <td style="text-align:center;">24</td>
+    <td style="text-align:center;color:#4B0082">Graded</td>
+    <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs · S2 attendance: 03/12/2026 FT · Before moving on to the next section of Chapter 10, let's lock in what you've learned about Continental Drift and Sea Floor Spreading ! CLICK HERE TO</td>
+  </tr>
+<tr style="background:#F4F8FC" data-daily="false" data-q4="true">
     <td style="text-align:center"><span style="background:#404040;color:white;padding:1px 5px;border-radius:3px;font-size:11px">✅ GRADED</span></td>
     <td style="text-align:center">MULTCULT LIT 11</td>
     <td><a href="https://westbloomfieldsd.instructure.com/courses/29304/assignments/585505" target="_blank">Vocabulary</a></td>
@@ -1552,7 +1584,31 @@ td:hover .due-time{display:inline}
     <td style="font-size:11px;color:#444;font-style:italic;text-align:center">⚠ Attendance: 3 abs, 3 late · S2 attendance: 02/10/2026 E, 02/20/2026 A</td>
   </tr></tbody></table>
 <script>
-let sc=-1,sa=true;
+let sc=-1,sa=true,currentView='daily';
+
+function setView(v){
+  currentView=v;
+  document.getElementById('btnDaily').className='toggle-btn'+(v==='daily'?' active':'');
+  document.getElementById('btnFull').className='toggle-btn'+(v==='full'?' active':'');
+  document.getElementById('filterBar').style.display=v==='full'?'flex':'none';
+  document.getElementById('viewLabel').textContent=v==='daily'?'Showing: Missing + Due This Week (Q4 only)':'Showing all assignments';
+  applyView();
+}
+
+function applyView(){
+  const rows=document.getElementById('tb').querySelectorAll('tr');
+  if(currentView==='daily'){
+    rows.forEach(r=>{
+      const isDaily=r.dataset.daily==='true';
+      const isQ4=r.dataset.q4==='true';
+      r.style.display=(isDaily&&isQ4)?'':'none';
+    });
+  } else {
+    filter();
+  }
+  count();
+}
+
 function sort(c){
   const tb=document.getElementById('tb');
   const rows=[...tb.querySelectorAll('tr')];
@@ -1566,6 +1622,7 @@ function sort(c){
   document.querySelectorAll('th').forEach((t,i)=>{t.className=i===c?(sa?'asc':'desc'):''});
   count();
 }
+
 function filter(){
   const s=document.getElementById('search').value.toLowerCase();
   const sec=document.getElementById('sec').value;
@@ -1578,10 +1635,13 @@ function filter(){
   });
   count();
 }
+
 function count(){
   const rows=document.getElementById('tb').querySelectorAll('tr');
   const v=[...rows].filter(r=>r.style.display!=='none').length;
-  document.getElementById('rowCount').textContent=v+' of '+rows.length+' assignments';
+  const el=document.getElementById('rowCount');
+  if(el) el.textContent=v+' of '+rows.length+' assignments';
 }
-count();
+
+setView('daily');
 </script></body></html>
