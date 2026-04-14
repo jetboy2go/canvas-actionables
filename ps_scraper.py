@@ -242,14 +242,66 @@ def scrape_ps(canvas_map, emails):
         # Login
         print("Logging in to PowerSchool...")
         page.goto(f"{PS_BASE}/public/home.html", wait_until="networkidle")
-        page.fill("#fieldAccount", PS_USER)
-        page.fill("#fieldPassword", PS_PASS)
-        page.click("#btn_enter")
+        time.sleep(2)
+
+        # Dump login form details for debugging
+        print("  Page title:", page.title())
+        inputs = page.query_selector_all("input")
+        for inp in inputs:
+            print(f"  Input: id={inp.get_attribute('id')} name={inp.get_attribute('name')} type={inp.get_attribute('type')}")
+        buttons = page.query_selector_all("button, input[type=submit], input[type=button]")
+        for b in buttons:
+            print(f"  Button: id={b.get_attribute('id')} name={b.get_attribute('name')} value={b.get_attribute('value')} text={b.inner_text()[:40] if b.inner_text() else ''}")
+
+        # Fill username
+        for sel in ["#fieldAccount", "input[name='account']", "input[name='username']", "input[type='text']"]:
+            try:
+                page.fill(sel, PS_USER, timeout=3000)
+                print(f"  Filled username with: {sel}")
+                break
+            except Exception:
+                continue
+
+        # Fill password
+        for sel in ["#fieldPassword", "input[name='pw']", "input[name='password']", "input[type='password']"]:
+            try:
+                page.fill(sel, PS_PASS, timeout=3000)
+                print(f"  Filled password with: {sel}")
+                break
+            except Exception:
+                continue
+
+        # Click login button
+        clicked = False
+        for sel in ["#btn_enter", "input[type=submit]", "button[type=submit]",
+                    "button:has-text('Sign In')", "button:has-text('Log In')",
+                    "button:has-text('Submit')", "input[value='Sign In']",
+                    "input[value='Log In']", "input[value='Submit']",
+                    ".btn-primary", "#loginButton"]:
+            try:
+                page.click(sel, timeout=3000)
+                print(f"  Clicked login with: {sel}")
+                clicked = True
+                break
+            except Exception:
+                continue
+
+        if not clicked:
+            # Last resort: press Enter on password field
+            for sel in ["#fieldPassword", "input[type='password']"]:
+                try:
+                    page.press(sel, "Enter")
+                    print("  Submitted via Enter key")
+                    clicked = True
+                    break
+                except Exception:
+                    continue
+
         try:
             page.wait_for_url("**/guardian/home.html", timeout=20000)
         except Exception:
             page.wait_for_load_state("networkidle", timeout=20000)
-        print("  Logged in.")
+        print("  Logged in. Current URL:", page.url)
 
         # Teacher emails from PS
         ps_emails = scrape_ps_emails(page)
