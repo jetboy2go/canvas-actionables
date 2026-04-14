@@ -303,6 +303,27 @@ def scrape_ps(canvas_map, emails):
             page.wait_for_load_state("networkidle", timeout=20000)
         print("  Logged in. Current URL:", page.url)
 
+        # Select Matthew (PS shows both students)
+        time.sleep(1)
+        print("  Selecting student: Matthew...")
+        selected = False
+        for sel in ["a:has-text('Matthew')", "text=Matthew", "li:has-text('Matthew') a", "td:has-text('Matthew') a"]:
+            try:
+                page.click(sel, timeout=4000)
+                page.wait_for_load_state("networkidle", timeout=10000)
+                print(f"  Selected Matthew via: {sel}")
+                selected = True
+                break
+            except Exception:
+                continue
+        if not selected:
+            print("  Could not auto-select Matthew. Dumping links:")
+            for a in page.query_selector_all("a"):
+                txt = a.inner_text().strip()
+                if txt and len(txt) < 50:
+                    print(f"    [{txt}] -> {a.get_attribute('href') or ''}")
+        print("  URL after student select:", page.url)
+
         # Teacher emails from PS
         ps_emails = scrape_ps_emails(page)
         # Merge PS emails into Canvas emails (Canvas takes priority)
