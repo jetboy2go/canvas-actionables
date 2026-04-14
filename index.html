@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Matthew – Q4 Open</title>
+<style>
+
+  :root {
+    --bg: #0d0f18;
+    --surface: #151825;
+    --border: #252838;
+    --text: #dde1f0;
+    --muted: #636680;
+    --accent: #5b8af5;
+    --green: #3ecf8e;
+    --red: #f55b5b;
+    --font: 'JetBrains Mono', 'Fira Mono', 'Cascadia Code', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 13px;
+    padding: 28px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .meta { color: var(--muted); font-size: 11px; margin-bottom: 22px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  th {
+    background: #1c2030;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #1a1e2e; }
+  .asgn-link { color: var(--accent); text-decoration: none; font-weight: 500; }
+  .asgn-link:hover { text-decoration: underline; }
+  .email-icon {
+    color: var(--muted);
+    font-size: 12px;
+    text-decoration: none;
+    margin-left: 0;
+  }
+  .email-icon:hover { color: var(--accent); }
+  .day {
+    display: inline-block;
+    font-size: 9px;
+    background: #252838;
+    color: var(--muted);
+    border-radius: 3px;
+    padding: 1px 5px;
+    margin-left: 3px;
+    letter-spacing: 0.03em;
+  }
+  .penalty {
+    display: inline-block;
+    animation: siren 0.6s infinite alternate;
+    margin-right: 3px;
+  }
+  @keyframes siren { from { opacity: 1; } to { opacity: 0.15; } }
+  .due { white-space: nowrap; }
+  .course-tag {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .empty-row td {
+    text-align: center;
+    padding: 28px;
+    color: var(--muted);
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 20px;
+    padding: 1px 10px;
+    font-size: 11px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .footer {
+    margin-top: 14px;
+    text-align: right;
+    font-size: 10px;
+  }
+  .footer a { color: var(--border); text-decoration: none; }
+  .footer a:hover { color: var(--muted); }
+</style>
+</head>
+<body>
+<h1>Matthew &mdash; Q4 Open Assignments <span class="badge">4</span></h1>
+<div class="meta">Updated Tue Apr 14 2026  05:19 PM</div>
+<table>
+  <thead><tr>
+    <th>Course</th>
+    <th>Assignment</th>
+    <th>Due</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td class="course-tag">Course Due Date Assignment Category Teacher</td>
+      <td><span>MATH 8 S2</span></td>
+      <td class="due">04/09/2026</td>
+    </tr>
+    <tr>
+      <td class="course-tag">Applications Description</td>
+      <td><span>Forms</span></td>
+      <td class="due"></td>
+    </tr>
+    <tr>
+      <td class="course-tag">Applications Description</td>
+      <td><span>Special Education Home</span></td>
+      <td class="due"></td>
+    </tr>
+    <tr>
+      <td class="course-tag">Applications Description</td>
+      <td><span>State Assessments</span></td>
+      <td class="due"></td>
+    </tr></tbody>
+</table>
+<div class="footer"><a href="completed.html">completed &rarr;</a></div>
+</body>
+</html>
