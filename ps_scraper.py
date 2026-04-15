@@ -66,9 +66,18 @@ def save_json(p, data):
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(json.dumps(data, indent=2))
 
+def clean_course(name):
+    """Strip PS junk from course names (room numbers, times, teacher names)."""
+    import unicodedata
+    name = unicodedata.normalize("NFKD", name)
+    # Take only the first line (before newline or \xa0)
+    name = name.split("\n")[0].split("\xa0")[0].strip()
+    return name
+
 def course_match(name_a, name_b):
     """Fuzzy course name match."""
-    a, b = name_a.lower().strip(), name_b.lower().strip()
+    a = clean_course(name_a).lower()
+    b = clean_course(name_b).lower()
     return a in b or b in a or a[:6] == b[:6]
 
 # ── Canvas API ─────────────────────────────────────────────────────────────
@@ -160,12 +169,18 @@ def scrape_schedule(page):
 
         print(f"  Schedule day columns: {day_cols}")
 
+        PS_NAV_JUNK = {"forms", "special education home", "state assessments",
+                        "applications description", "course due date assignment",
+                        "applications", "description"}
+
         for row in rows[1:]:
             cells = row.query_selector_all("td")
             if not cells:
                 continue
             first = cells[0].inner_text().strip()
             if not first or "advisory" in first.lower():
+                continue
+            if any(j in first.lower() for j in PS_NAV_JUNK):
                 continue
 
             days = []
@@ -303,14 +318,33 @@ def scrape_ps(canvas_map, emails):
             page.wait_for_load_state("networkidle", timeout=20000)
         print("  Logged in. Current URL:", page.url)
 
-        # Switch to Matthew via his direct frn (student record number)
-        MATTHEW_FRN = "0042291559"
-        print("  Switching to Matthew via frn...")
-        page.goto(f"{PS_BASE}/guardian/home.html?frn={MATTHEW_FRN}", wait_until="networkidle")
-        time.sleep(1)
-        print("  URL after switch:", page.url)
-        page_text = page.inner_text("body")
-        print("  Page preview:", page_text[:400])
+        # Switch to Matthew — dump all links first to find the right selector
+        time.sleep(1.5)
+        print("  Dumping all links on guardian home page...")
+        for a in page.query_selector_all("a"):
+            txt = a.inner_text().strip()
+            href = a.get_attribute("href") or ""
+            if txt:
+                print(f"    LINK: [{txt[:60]}] -> {href[:80]}")
+
+        # Try clicking Matthew
+        switched = False
+        for sel in ["a:has-text('Matthew')", "button:has-text('Matthew')",
+                    "span:has-text('Matthew')", "td:has-text('Matthew') a"]:
+            try:
+                el = page.query_selector(sel)
+                if el:
+                    print(f"  Clicking Matthew via: {sel}")
+                    el.click()
+                    time.sleep(2)
+                    page.wait_for_load_state("networkidle", timeout=10000)
+                    print(f"  URL after click: {page.url}")
+                    switched = True
+                    break
+            except Exception as e:
+                print(f"  {sel} error: {e}")
+        if not switched:
+            print("  WARNING: Could not switch to Matthew")
 
         # Teacher emails from PS
         ps_emails = scrape_ps_emails(page)
@@ -365,15 +399,28 @@ def scrape_ps(canvas_map, emails):
         page.goto(f"{PS_BASE}/guardian/home.html", wait_until="networkidle")
         time.sleep(1)
 
+        PS_NAV_JUNK2 = {"forms", "special education home", "state assessments",
+                         "applications", "course due date"}
         course_links = []
+        seen_frns = set()
         for link in page.query_selector_all("a[href*='scores.html']"):
             href = link.get_attribute("href") or ""
-            cname = link.inner_text().strip()
+            cname = clean_course(link.inner_text().strip())
+            if not cname or len(cname) < 3:
+                continue
             if "advisory" in cname.lower():
+                continue
+            if any(j in cname.lower() for j in PS_NAV_JUNK2):
+                continue
+            # Must look like a real course (has letters, not just a grade/number)
+            if re.match(r'^[\d\s\.\+\-\[\]iFDABCG]+$', cname):
                 continue
             frn_m = re.search(r'frn=([\w]+)', href)
             if frn_m:
                 frn = frn_m.group(1)
+                if frn in seen_frns:
+                    continue
+                seen_frns.add(frn)
                 url = (f"{PS_BASE}/guardian/scores.html?frn={frn}"
                        f"&begdate=04/06/2026&enddate=06/02/2026&fg=Q4&schoolid=6171")
                 course_links.append((cname, url))
