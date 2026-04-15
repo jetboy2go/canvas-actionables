@@ -1,6 +1,16 @@
 [
   {
     "course": "Course Due Date Assignment Category Teacher",
+    "assignment_name": "ALGEBRA 2 S2",
+    "due_date": "04/13/2026",
+    "canvas_url": "",
+    "teacher_email": "",
+    "late_penalty": false,
+    "schedule_days": [],
+    "source": "missing_page"
+  },
+  {
+    "course": "Course Due Date Assignment Category Teacher",
     "assignment_name": "EARTH SCI S2",
     "due_date": "04/06/2026",
     "canvas_url": "",
