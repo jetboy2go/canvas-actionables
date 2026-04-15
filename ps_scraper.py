@@ -303,26 +303,14 @@ def scrape_ps(canvas_map, emails):
             page.wait_for_load_state("networkidle", timeout=20000)
         print("  Logged in. Current URL:", page.url)
 
-        # Select Matthew (PS shows both students)
+        # Switch to Matthew via his direct frn (student record number)
+        MATTHEW_FRN = "0042291559"
+        print("  Switching to Matthew via frn...")
+        page.goto(f"{PS_BASE}/guardian/home.html?frn={MATTHEW_FRN}", wait_until="networkidle")
         time.sleep(1)
-        print("  Selecting student: Matthew...")
-        selected = False
-        for sel in ["a:has-text('Matthew')", "text=Matthew", "li:has-text('Matthew') a", "td:has-text('Matthew') a"]:
-            try:
-                page.click(sel, timeout=4000)
-                page.wait_for_load_state("networkidle", timeout=10000)
-                print(f"  Selected Matthew via: {sel}")
-                selected = True
-                break
-            except Exception:
-                continue
-        if not selected:
-            print("  Could not auto-select Matthew. Dumping links:")
-            for a in page.query_selector_all("a"):
-                txt = a.inner_text().strip()
-                if txt and len(txt) < 50:
-                    print(f"    [{txt}] -> {a.get_attribute('href') or ''}")
-        print("  URL after student select:", page.url)
+        print("  URL after switch:", page.url)
+        page_text = page.inner_text("body")
+        print("  Page preview:", page_text[:400])
 
         # Teacher emails from PS
         ps_emails = scrape_ps_emails(page)
