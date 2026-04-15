@@ -318,33 +318,17 @@ def scrape_ps(canvas_map, emails):
             page.wait_for_load_state("networkidle", timeout=20000)
         print("  Logged in. Current URL:", page.url)
 
-        # Switch to Matthew — dump all links first to find the right selector
+        # Switch to Matthew via PS JavaScript switchStudent() call
+        # Matthew's student ID is 13842 (from link: javascript:switchStudent(13842))
         time.sleep(1.5)
-        print("  Dumping all links on guardian home page...")
-        for a in page.query_selector_all("a"):
-            txt = a.inner_text().strip()
-            href = a.get_attribute("href") or ""
-            if txt:
-                print(f"    LINK: [{txt[:60]}] -> {href[:80]}")
-
-        # Try clicking Matthew
-        switched = False
-        for sel in ["a:has-text('Matthew')", "button:has-text('Matthew')",
-                    "span:has-text('Matthew')", "td:has-text('Matthew') a"]:
-            try:
-                el = page.query_selector(sel)
-                if el:
-                    print(f"  Clicking Matthew via: {sel}")
-                    el.click()
-                    time.sleep(2)
-                    page.wait_for_load_state("networkidle", timeout=10000)
-                    print(f"  URL after click: {page.url}")
-                    switched = True
-                    break
-            except Exception as e:
-                print(f"  {sel} error: {e}")
-        if not switched:
-            print("  WARNING: Could not switch to Matthew")
+        print("  Switching to Matthew via switchStudent(13842)...")
+        page.evaluate("switchStudent(13842)")
+        time.sleep(2)
+        page.wait_for_load_state("networkidle", timeout=15000)
+        print(f"  URL after switch: {page.url}")
+        # Confirm we see Matthew's name on the page
+        body = page.inner_text("body")[:600]
+        print("  Page preview:", body[:400])
 
         # Teacher emails from PS
         ps_emails = scrape_ps_emails(page)
