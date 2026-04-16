@@ -30,22 +30,5 @@
     "schedule_days": [
       "Mon"
     ]
-  },
-  {
-    "course": "Multicultural Lit",
-    "assignment_name": "Hamtramck Video Response",
-    "due_date": "04/08/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29304/assignments/585491",
-    "teacher_email": "jsharpe@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ps_missing",
-      "canvas"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
   }
 ]
