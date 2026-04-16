@@ -1,187 +1,143 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Matthew – Completed</title>
-<style>
-
-  :root {
-    --bg: #0d0f18;
-    --surface: #151825;
-    --border: #252838;
-    --text: #dde1f0;
-    --muted: #636680;
-    --accent: #5b8af5;
-    --green: #3ecf8e;
-    --red: #f55b5b;
-    --font: 'JetBrains Mono', 'Fira Mono', 'Cascadia Code', monospace;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font);
-    font-size: 13px;
-    padding: 28px 24px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  h1 {
-    font-size: 17px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    color: var(--accent);
-    margin-bottom: 4px;
-  }
-  .meta { color: var(--muted); font-size: 11px; margin-bottom: 22px; }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--surface);
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-  }
-  th {
-    background: #1c2030;
-    padding: 10px 14px;
-    text-align: left;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    border-bottom: 1px solid var(--border);
-  }
-  td {
-    padding: 10px 14px;
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
-    line-height: 1.6;
-  }
-  tr:last-child td { border-bottom: none; }
-  tr:hover td { background: #1a1e2e; }
-  .asgn-link { color: var(--accent); text-decoration: none; font-weight: 500; }
-  .asgn-link:hover { text-decoration: underline; }
-  .email-icon {
-    color: var(--muted);
-    font-size: 12px;
-    text-decoration: none;
-    margin-left: 0;
-  }
-  .email-icon:hover { color: var(--accent); }
-  .day {
-    display: inline-block;
-    font-size: 9px;
-    background: #252838;
-    color: var(--muted);
-    border-radius: 3px;
-    padding: 1px 5px;
-    margin-left: 3px;
-    letter-spacing: 0.03em;
-  }
-  .penalty {
-    display: inline-block;
-    animation: siren 0.6s infinite alternate;
-    margin-right: 3px;
-  }
-  @keyframes siren { from { opacity: 1; } to { opacity: 0.15; } }
-  .due { white-space: nowrap; }
-  .course-tag {
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 0.04em;
-  }
-  .empty-row td {
-    text-align: center;
-    padding: 28px;
-    color: var(--muted);
-  }
-
-  th { cursor: pointer; user-select: none; }
-  th:hover { color: var(--green); }
-  th.sort-asc::after { content: " ↑"; color: var(--green); }
-  th.sort-desc::after { content: " ↓"; color: var(--green); }
-  .grade { font-weight: 600; color: var(--green); white-space: nowrap; }
-  .back { margin-top: 14px; font-size: 10px; }
-  .back a { color: var(--muted); text-decoration: none; }
-  .back a:hover { color: var(--accent); }
-</style>
-</head>
-<body>
-<h1>Matthew &mdash; Completed Q4</h1>
-<div class="meta">Updated Wed Apr 15 2026  09:40 PM</div>
-<table id="ctbl">
-  <thead><tr>
-    <th onclick="sort(0)">Course</th>
-    <th onclick="sort(1)">Assignment</th>
-    <th onclick="sort(2)">Due</th>
-    <th onclick="sort(3)">Grade</th>
-    <th onclick="sort(4)">Graded</th>
-  </tr></thead>
-  <tbody>
-    <tr>
-      <td class="course-tag">Course Due Date Assignment Category Teacher</td>
-      <td><span>EARTH SCI S2</span></td>
-      <td class="due">04/06/2026</td>
-      <td class="grade">—</td>
-      <td class="due">04/15/2026</td>
-    </tr>
-    <tr>
-      <td class="course-tag">Course Due Date Assignment Category Teacher</td>
-      <td><span>MULTCULT LIT 11 S2</span></td>
-      <td class="due">04/08/2026</td>
-      <td class="grade">—</td>
-      <td class="due">04/15/2026</td>
-    </tr>
-    <tr>
-      <td class="course-tag">Applications Description</td>
-      <td><span>Forms</span></td>
-      <td class="due"></td>
-      <td class="grade">—</td>
-      <td class="due">04/15/2026</td>
-    </tr>
-    <tr>
-      <td class="course-tag">Applications Description</td>
-      <td><span>Special Education Home</span></td>
-      <td class="due"></td>
-      <td class="grade">—</td>
-      <td class="due">04/15/2026</td>
-    </tr>
-    <tr>
-      <td class="course-tag">Applications Description</td>
-      <td><span>State Assessments</span></td>
-      <td class="due"></td>
-      <td class="grade">—</td>
-      <td class="due">04/15/2026</td>
-    </tr>
-    <tr>
-      <td class="course-tag">Course Due Date Assignment Category Teacher</td>
-      <td><span>MATH 8 S2</span></td>
-      <td class="due">04/09/2026</td>
-      <td class="grade">—</td>
-      <td class="due">04/14/2026</td>
-    </tr></tbody>
-</table>
-<div class="back"><a href="index.html">&larr; back</a></div>
-<script>
-let dirs = {};
-function sort(col) {
-  const tbl = document.getElementById('ctbl');
-  const tb = tbl.tBodies[0];
-  const rows = [...tb.rows];
-  const asc = dirs[col] !== true;
-  dirs = {};
-  dirs[col] = asc;
-  tbl.tHead.rows[0].querySelectorAll('th').forEach((h,i) => h.className = i===col ? (asc?'sort-asc':'sort-desc') : '');
-  rows.sort((a,b) => {
-    let av = a.cells[col]?.innerText.trim() || '';
-    let bv = b.cells[col]?.innerText.trim() || '';
-    if (col===2||col===4) { av = new Date(av)||''; bv = new Date(bv)||''; }
-    return asc ? (av<bv?-1:av>bv?1:0) : (av>bv?-1:av<bv?1:0);
-  });
-  rows.forEach(r => tb.appendChild(r));
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Matthew – Completed</title><style>
+:root{--bg:#0d1117;--nav:#0f172a;--surface:#111827;--surface2:#1c2540;--border:#1e293b;
+--text:#e2e8f0;--muted:#64748b;--accent:#3b82f6;--accent2:#60a5fa;--green:#10b981;
+--red:#ef4444;--yellow:#f59e0b;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:14px;}
+.header{background:var(--nav);border-bottom:1px solid var(--border);padding:14px 16px;
+position:sticky;top:0;z-index:10;}
+.header h1{font-size:16px;font-weight:700;color:var(--accent2);}
+.header .meta{font-size:11px;color:var(--muted);margin-top:2px;}
+.badge{background:var(--accent);color:#fff;border-radius:20px;padding:2px 9px;font-size:12px;font-weight:600;margin-left:6px;}
+.badge.green{background:var(--green);}
+.content{padding:12px 14px;max-width:1000px;margin:0 auto;}
+.course-group{margin-bottom:18px;}
+.course-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+color:var(--muted);padding:8px 0 5px;border-bottom:1px solid var(--border);margin-bottom:7px;display:flex;align-items:center;gap:8px;}
+.penalty-tag{font-size:9px;background:rgba(239,68,68,.15);color:var(--red);border:1px solid rgba(239,68,68,.3);border-radius:4px;padding:1px 6px;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:8px;display:grid;grid-template-columns:1fr auto;gap:8px;align-items:start;}
+.asgn-name{font-size:14px;font-weight:600;line-height:1.4;}
+.asgn-name a{color:var(--accent2);text-decoration:none;}
+.asgn-name a:hover{text-decoration:underline;}
+.card-sub{font-size:11px;color:var(--muted);margin-top:4px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.email-btn{color:var(--muted);text-decoration:none;font-size:13px;}
+.email-btn:hover{color:var(--accent2);}
+.day-pill{background:var(--surface2);color:var(--muted);border-radius:4px;padding:1px 5px;font-size:10px;}
+.src-tag{font-size:9px;border-radius:3px;padding:1px 5px;font-weight:700;}
+.src-ps{background:rgba(59,130,246,.15);color:#93c5fd;}
+.src-canvas{background:rgba(16,185,129,.15);color:#6ee7b7;}
+.src-gmail{background:rgba(245,158,11,.15);color:#fcd34d;}
+.due-block{text-align:right;white-space:nowrap;}
+.due-date{font-size:13px;font-weight:600;}
+.due-date.overdue{color:var(--red);}
+.due-date.soon{color:var(--yellow);}
+.penalty-flash{font-size:16px;display:block;animation:flash .7s infinite alternate;}
+@keyframes flash{from{opacity:1}to{opacity:.1}}
+.status-row{display:flex;gap:4px;margin-top:5px;justify-content:flex-end;}
+.status-pill{font-size:9px;border-radius:4px;padding:2px 6px;font-weight:700;}
+.status-sub{background:rgba(16,185,129,.2);color:var(--green);}
+.status-unsub{background:rgba(239,68,68,.15);color:var(--red);}
+.sources{display:flex;gap:3px;flex-wrap:wrap;}
+.empty{text-align:center;padding:40px 20px;color:var(--muted);}
+.empty .icon{font-size:36px;margin-bottom:8px;}
+.footer{text-align:center;padding:20px;font-size:11px;}
+.footer a{color:var(--muted);text-decoration:none;}
+.footer a:hover{color:var(--accent2);}
+.grade{font-weight:700;color:var(--green);white-space:nowrap;}
+@media(min-width:640px){
+  .content{padding:20px 24px;}
+  .card{display:none;}
+  .course-group{display:none;}
+  .tbl-wrap{display:block;}
+  .header h1{font-size:18px;}
+  table{width:100%;border-collapse:collapse;background:var(--surface);border-radius:10px;overflow:hidden;border:1px solid var(--border);}
+  th{background:#0f172a;padding:10px 14px;text-align:left;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);cursor:pointer;user-select:none;white-space:nowrap;}
+  th:hover{color:var(--accent2);}
+  th.sort-asc::after{content:" ↑";color:var(--green);}
+  th.sort-desc::after{content:" ↓";color:var(--green);}
+  td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+  tr:last-child td{border-bottom:none;}
+  tr:hover td{background:var(--surface2);}
 }
-</script>
-</body>
-</html>
+@media(max-width:639px){.tbl-wrap{display:none;}}
+</style></head><body>
+<div class="header"><div>
+<h1>Matthew <span style="color:var(--muted);font-weight:400">Completed</span><span class="badge green">6</span></h1>
+<div class="meta">Updated Apr 16 2026  03:40 AM</div></div></div>
+<div class="content">
+<div class="card">
+<div><div style="font-size:11px;color:var(--muted);margin-bottom:2px">Course Due Date Assignment Category Teacher</div>
+<div class="asgn-name">EARTH SCI S2</div>
+<div class="card-sub">due 04/06/2026 · 04/15/2026</div></div>
+<div class="due-block"><div class="grade">—</div></div></div><div class="card">
+<div><div style="font-size:11px;color:var(--muted);margin-bottom:2px">Course Due Date Assignment Category Teacher</div>
+<div class="asgn-name">MULTCULT LIT 11 S2</div>
+<div class="card-sub">due 04/08/2026 · 04/15/2026</div></div>
+<div class="due-block"><div class="grade">—</div></div></div><div class="card">
+<div><div style="font-size:11px;color:var(--muted);margin-bottom:2px">Applications Description</div>
+<div class="asgn-name">Forms</div>
+<div class="card-sub">due  · 04/15/2026</div></div>
+<div class="due-block"><div class="grade">—</div></div></div><div class="card">
+<div><div style="font-size:11px;color:var(--muted);margin-bottom:2px">Applications Description</div>
+<div class="asgn-name">Special Education Home</div>
+<div class="card-sub">due  · 04/15/2026</div></div>
+<div class="due-block"><div class="grade">—</div></div></div><div class="card">
+<div><div style="font-size:11px;color:var(--muted);margin-bottom:2px">Applications Description</div>
+<div class="asgn-name">State Assessments</div>
+<div class="card-sub">due  · 04/15/2026</div></div>
+<div class="due-block"><div class="grade">—</div></div></div><div class="card">
+<div><div style="font-size:11px;color:var(--muted);margin-bottom:2px">Course Due Date Assignment Category Teacher</div>
+<div class="asgn-name">MATH 8 S2</div>
+<div class="card-sub">due 04/09/2026 · 04/14/2026</div></div>
+<div class="due-block"><div class="grade">—</div></div></div>
+<div class="tbl-wrap"><table id="ct">
+<thead><tr>
+<th onclick="sortTbl(0,'ct')">Course</th>
+<th onclick="sortTbl(1,'ct')">Assignment</th>
+<th onclick="sortTbl(2,'ct')">Due</th>
+<th onclick="sortTbl(3,'ct')">Grade</th>
+<th onclick="sortTbl(4,'ct')">Graded</th>
+</tr></thead><tbody><tr>
+<td style="color:var(--muted);font-size:12px">Course Due Date Assignment Category Teacher</td>
+<td>EARTH SCI S2</td><td>04/06/2026</td>
+<td class="grade">—</td>
+<td>04/15/2026</td></tr><tr>
+<td style="color:var(--muted);font-size:12px">Course Due Date Assignment Category Teacher</td>
+<td>MULTCULT LIT 11 S2</td><td>04/08/2026</td>
+<td class="grade">—</td>
+<td>04/15/2026</td></tr><tr>
+<td style="color:var(--muted);font-size:12px">Applications Description</td>
+<td>Forms</td><td></td>
+<td class="grade">—</td>
+<td>04/15/2026</td></tr><tr>
+<td style="color:var(--muted);font-size:12px">Applications Description</td>
+<td>Special Education Home</td><td></td>
+<td class="grade">—</td>
+<td>04/15/2026</td></tr><tr>
+<td style="color:var(--muted);font-size:12px">Applications Description</td>
+<td>State Assessments</td><td></td>
+<td class="grade">—</td>
+<td>04/15/2026</td></tr><tr>
+<td style="color:var(--muted);font-size:12px">Course Due Date Assignment Category Teacher</td>
+<td>MATH 8 S2</td><td>04/09/2026</td>
+<td class="grade">—</td>
+<td>04/14/2026</td></tr></tbody></table></div>
+</div>
+<div class="footer"><a href="index.html">← open assignments</a></div>
+<script>
+let sd={};
+function sortTbl(col,id){
+  const t=document.getElementById(id);if(!t)return;
+  const tb=t.tBodies[0],rows=[...tb.rows];
+  const asc=sd[col]!==true;sd={};sd[col]=asc;
+  t.tHead.rows[0].querySelectorAll('th').forEach((h,i)=>h.className=i===col?(asc?'sort-asc':'sort-desc'):'');
+  rows.sort((a,b)=>{
+    let av=a.cells[col]?.innerText.trim()||'',bv=b.cells[col]?.innerText.trim()||'';
+    if([2,4].includes(col)){av=new Date(av)||'';bv=new Date(bv)||'';}
+    return asc?(av<bv?-1:av>bv?1:0):(av>bv?-1:av<bv?1:0);
+  });
+  rows.forEach(r=>tb.appendChild(r));
+}
+</script></body></html>
