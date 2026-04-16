@@ -70,5 +70,53 @@
     "source": "missing_page",
     "grade": "\u2014",
     "completed_date": "04/15/2026"
+  },
+  {
+    "course": "Course",
+    "assignment_name": "ALGEBRA 2 S2",
+    "due_date": "04/13/2026",
+    "canvas_url": "",
+    "teacher_email": "",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/16/2026"
+  },
+  {
+    "course": "Course",
+    "assignment_name": "EARTH SCI S2",
+    "due_date": "04/06/2026",
+    "canvas_url": "",
+    "teacher_email": "",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/16/2026"
+  },
+  {
+    "course": "Course",
+    "assignment_name": "MULTCULT LIT 11 S2",
+    "due_date": "04/08/2026",
+    "canvas_url": "",
+    "teacher_email": "",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/16/2026"
   }
 ]
