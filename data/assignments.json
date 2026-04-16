@@ -16,6 +16,23 @@
     ]
   },
   {
+    "course": "Civics",
+    "assignment_name": "Podcast Project",
+    "due_date": "04/21/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/576635",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing",
+      "canvas"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
     "course": "Earth Science",
     "assignment_name": "10.1 CUT UP VOCAB CARDS IN ZIPLOC BAG",
     "due_date": "04/06/2026",
