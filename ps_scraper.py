@@ -334,50 +334,61 @@ def scrape_ps(canvas_map):
         page.goto(f"{PS_BASE}/guardian/missingasmts.html?frn=&trm=Q4", wait_until="networkidle")
         time.sleep(1.5)
 
-        # Debug dump
-        for ti, tbl in enumerate(page.query_selector_all("table")[:2]):
+        # PS missing page is a flat table:
+        # Columns: Course | Due Date | Assignment | Category | Teacher
+        # Row 0 is the header row, skip it
+        tables = page.query_selector_all("table")
+        for ti, tbl in enumerate(tables[:2]):
             rows = tbl.query_selector_all("tr")
             print(f"  Table {ti}: {len(rows)} rows")
-            for ri, row in enumerate(rows[:15]):
+            for ri, row in enumerate(rows[:5]):
                 cells = row.query_selector_all("td,th")
                 texts = [c.inner_text().strip()[:45] for c in cells]
                 if any(t for t in texts): print(f"    R{ri}: {texts}")
 
-        current_course = ""
-        for row in page.query_selector_all("table tr"):
-            cells = row.query_selector_all("td,th")
-            if not cells: continue
-            texts = [c.inner_text().strip() for c in cells]
-            first = texts[0] if texts else ""
-            if not first: continue
-            if any(j in first.lower() for j in PS_NAV_JUNK): continue
-
-            tag = cells[0].evaluate("el => el.tagName")
-            is_header = (tag == "TH" or
-                         (len(cells) == 1 and not first[0].isdigit()) or
-                         (len(texts) > 1 and not texts[1] and first))
-
-            if is_header and "advisory" not in first.lower():
-                cand = match_course_name(first)
-                if cand.lower() not in PS_NAV_JUNK:
-                    current_course = cand
-                    print(f"  Course: {current_course}")
+        for tbl in page.query_selector_all("table"):
+            rows = tbl.query_selector_all("tr")
+            # Detect if this is the assignments table by checking header
+            if not rows: continue
+            header_cells = rows[0].query_selector_all("td,th")
+            header_texts = [c.inner_text().strip().lower() for c in header_cells]
+            # Skip nav tables
+            if not any("assignment" in h or "due" in h for h in header_texts):
                 continue
+            # Find column indices
+            col_course = col_due = col_asgn = -1
+            for i, h in enumerate(header_texts):
+                if "course" in h: col_course = i
+                elif "due" in h: col_due = i
+                elif "assignment" in h: col_asgn = i
 
-            if not current_course or "advisory" in current_course.lower(): continue
-            name = first
-            due_raw = texts[1] if len(texts) > 1 else ""
-            if not name or name.lower() in ["assignment","name","due date",""]: continue
-            due_d = parse_date(due_raw)
-            if due_d and (due_d < Q4_START or due_d > Q4_END): continue
+            print(f"  Cols: course={col_course} due={col_due} asgn={col_asgn}")
+            if col_asgn == -1: continue
 
-            key = (current_course.lower(), normalize(name))
-            if key not in ungraded:
-                ci = canvas_map.get(normalize(name), {})
-                a = make_assignment(current_course, name, due_raw, ci.get("canvas_url",""), "ps_missing")
-                a["schedule_days"] = schedule.get(current_course, [])
-                ungraded[key] = a
-                print(f"  + [{current_course}] {name[:50]}")
+            for row in rows[1:]:
+                cells = row.query_selector_all("td,th")
+                if not cells: continue
+                texts = [c.inner_text().strip() for c in cells]
+
+                course_raw = texts[col_course] if col_course >= 0 and col_course < len(texts) else ""
+                due_raw    = texts[col_due]    if col_due    >= 0 and col_due    < len(texts) else ""
+                name       = texts[col_asgn]   if col_asgn   >= 0 and col_asgn   < len(texts) else ""
+
+                if not name or not course_raw: continue
+                if any(j in course_raw.lower() for j in PS_NAV_JUNK): continue
+                if "advisory" in course_raw.lower(): continue
+
+                course = match_course_name(course_raw)
+                due_d = parse_date(due_raw)
+                if due_d and (due_d < Q4_START or due_d > Q4_END): continue
+
+                key = (course.lower(), normalize(name))
+                if key not in ungraded:
+                    ci = canvas_map.get(normalize(name), {})
+                    a = make_assignment(course, name, due_raw, ci.get("canvas_url",""), "ps_missing")
+                    a["schedule_days"] = schedule.get(course, [])
+                    ungraded[key] = a
+                    print(f"  + [{course}] {name[:50]}")
 
         # Pass 2: per-course scores
         print(f"  Pass 2: {len(MATTHEW_COURSE_FRNS)} courses...")
