@@ -144,8 +144,6 @@ def is_ungraded_score(score_raw):
     if m: return float(m.group(1)) == 0.0
     return False
 
-# ── Canvas (ICS calendar feed) ───────────────────────────────────────────────────────────
-def scrape_canvas_playwright(page):
     """
     Fetches Matthew's Canvas ICS calendar feed — no login, no token, no IP block.
     Parses all assignment events in the Q4 window.
