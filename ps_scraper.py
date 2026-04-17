@@ -12,8 +12,8 @@ from playwright.sync_api import sync_playwright
 
 # ── Config ─────────────────────────────────────────────────────────────────
 PS_BASE      = "https://westbloomfield.powerschool.com"
-PS_USER      = os.environ.get("PS_USERNAME", "Jetboy")
-PS_PASS      = os.environ.get("PS_PASSWORD", "BCVdD7r8")
+PS_USER      = os.environ.get("PS_USERNAME", "")
+PS_PASS      = os.environ.get("PS_PASSWORD", "")
 CANVAS_BASE  = "https://westbloomfieldsd.instructure.com"
 CANVAS_TOKEN = os.environ.get("CANVAS_TOKEN",
     "16592~UHBmMt4U3Qhn7P8kvufhcatxQCnEHEEFWz69AWr9U4PzFLYMKCmFMTva9VzNcycw")
