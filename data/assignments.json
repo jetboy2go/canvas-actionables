@@ -1,6 +1,22 @@
 [
   {
     "course": "Algebra 2",
+    "assignment_name": "ALEKS Practice 6.5 Part 1: Operations with Radical",
+    "due_date": "04/06/2026",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Algebra 2",
     "assignment_name": "Practice 6.5 Part 2: Adding, Subtracting, Multiply",
     "due_date": "04/13/2026",
     "canvas_url": "",
@@ -19,14 +35,13 @@
     "course": "Civics",
     "assignment_name": "Podcast Project",
     "due_date": "04/21/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/calendar?include_con",
+    "canvas_url": "",
     "teacher_email": "lwatson@wbsd.org",
     "late_penalty": true,
     "submitted": false,
     "graded": false,
     "sources": [
-      "ps_missing",
-      "canvas_ics"
+      "ps_missing"
     ],
     "schedule_days": [
       "Mon"
@@ -59,98 +74,6 @@
     "graded": false,
     "sources": [
       "ps_missing"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
-    "course": "Civics",
-    "assignment_name": "Media Bias One Pager",
-    "due_date": "04/06/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/calendar?include_con",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
-    "course": "Multicultural Lit",
-    "assignment_name": "Hamtramck Video Response",
-    "due_date": "04/08/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/calendar?include_con",
-    "teacher_email": "jsharpe@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
-    "course": "ADVISORY_11_HS_S2 - SEPETYS - 8(A)",
-    "assignment_name": "WBSD Student Survey",
-    "due_date": "04/14/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/calendar?include_con",
-    "teacher_email": "",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_ics"
-    ],
-    "schedule_days": []
-  },
-  {
-    "course": "Civics",
-    "assignment_name": "Social Media Influencers",
-    "due_date": "04/17/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/calendar?include_con",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
-    "course": "CAD Engineering",
-    "assignment_name": "Chess Pieces",
-    "due_date": "04/23/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/calendar?include_con",
-    "teacher_email": "cmuylaert@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_ics"
-    ],
-    "schedule_days": []
-  },
-  {
-    "course": "Interior Design",
-    "assignment_name": "Shoe Box Design Project",
-    "due_date": "04/23/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/calendar?include_con",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_ics"
     ],
     "schedule_days": [
       "Mon"
