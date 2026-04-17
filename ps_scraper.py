@@ -17,6 +17,8 @@ PS_PASS      = os.environ.get("PS_PASSWORD", "")
 CANVAS_BASE  = "https://westbloomfieldsd.instructure.com"
 CANVAS_TOKEN = os.environ.get("CANVAS_TOKEN",
     "16592~UHBmMt4U3Qhn7P8kvufhcatxQCnEHEEFWz69AWr9U4PzFLYMKCmFMTva9VzNcycw")
+CANVAS_OBSERVER_TOKEN = os.environ.get("CANVAS_OBSERVER_TOKEN",
+    "16592~uZhHB8HBu6WcMU6KDxfeMmfZvPRaDur7zVxYxCQTPuDJ8AK4mWHVVh6ycz6z93cF")
 CANVAS_EMAIL    = "wbfnicholsm07@student.wbsd.org"
 CANVAS_PASSWORD = os.environ.get("CANVAS_STUDENT_PASSWORD", "")
 GMAIL_TOKEN_FILE = Path(os.environ.get("GMAIL_TOKEN", "gmail_token.json"))
@@ -140,91 +142,57 @@ def is_ungraded_score(score_raw):
     if m: return float(m.group(1)) == 0.0
     return False
 
-# ── Canvas (Playwright browser login) ──────────────────────────────────────
+# ── Canvas (Observer API) ──────────────────────────────────────────────────
 def scrape_canvas_playwright(page):
     """
-    Logs into Canvas as Matthew via browser and scrapes missing assignments
-    per course. Returns a dict keyed by (course_lower, norm_name) like ps_asgn.
-    Reuses the already-open Playwright page to avoid launching a second browser.
+    Uses parent observer API token to pull missing assignments per course.
+    Falls back gracefully if API is blocked.
+    The 'page' param is kept for signature compatibility but not used.
     """
     result = {}
+    hdr = {"Authorization": f"Bearer {CANVAS_OBSERVER_TOKEN}"}
 
-    # Login
-    print("  Logging into Canvas...")
-    page.goto(f"{CANVAS_BASE}/login/canvas", wait_until="networkidle")
-    time.sleep(1)
-
+    # First verify the token works at all
     try:
-        page.fill('#pseudonym_session_unique_id', CANVAS_EMAIL, timeout=5000)
-        page.fill('#pseudonym_session_password', CANVAS_PASSWORD, timeout=5000)
-        time.sleep(1)
-        page.keyboard.press("Enter")
-        page.wait_for_load_state("networkidle", timeout=20000)
-        print(f"  Canvas logged in: {page.url}")
+        test = requests.get(f"{CANVAS_BASE}/api/v1/users/self/profile",
+                            headers=hdr, timeout=10)
+        if not test.ok:
+            print(f"  Canvas observer token rejected (status {test.status_code})")
+            return result
+        print(f"  Canvas observer token OK")
     except Exception as e:
-        print(f"  Canvas login failed: {e}")
+        print(f"  Canvas API unreachable: {e}")
         return result
 
-    if "login" in page.url.lower():
-        print("  Canvas login redirect failed — check CANVAS_STUDENT_PASSWORD secret")
-        return result
-
-    # Scrape missing assignments per course
+    # Pull missing assignments per course via API
     for cid, cname in CANVAS_COURSES.items():
         try:
-            url = f"{CANVAS_BASE}/courses/{cid}/assignments?bucket=missing"
-            page.goto(url, wait_until="networkidle", timeout=20000)
-            time.sleep(1)
-
-            items = page.query_selector_all("li.assignment")
-            print(f"  {cname}: {len(items)} missing")
-
-            for item in items:
-                try:
-                    title_el = item.query_selector(".ig-title")
-                    due_el   = item.query_selector(".assignment-date-due")
-
-                    title = title_el.inner_text().strip() if title_el else ""
-                    if not title:
-                        continue
-
-                    # Try to get the due date text — Canvas shows "No Due Date" or a date string
-                    due_raw = ""
-                    if due_el:
-                        due_text = due_el.inner_text().strip()
-                        # Strip label prefix like "Due: Apr 6, 2026 at 11:59pm"
-                        due_text = re.sub(r'^Due:\s*', '', due_text, flags=re.IGNORECASE).strip()
-                        # Strip time portion
-                        due_text = re.sub(r'\s+at\s+\d+:\d+\w+.*$', '', due_text, flags=re.IGNORECASE).strip()
-                        due_raw = due_text
-
-                    due_d = parse_date(due_raw)
-                    # Skip if outside Q4 window (allow None due dates through)
-                    if due_d and (due_d < Q4_START or due_d > Q4_END):
-                        continue
-
-                    # Get the assignment URL
-                    link_el = item.query_selector(".ig-title a")
-                    canvas_url = ""
-                    if link_el:
-                        href = link_el.get_attribute("href") or ""
-                        canvas_url = href if href.startswith("http") else f"{CANVAS_BASE}{href}"
-
-                    key = (cname.lower(), normalize(title))
-                    if key not in result:
-                        a = make_assignment(cname, title, due_raw, canvas_url, "canvas_pw")
-                        result[key] = a
-                        print(f"    + {title[:60]}")
-
-                except Exception as e:
-                    print(f"    Item error in {cname}: {e}")
+            r = requests.get(
+                f"{CANVAS_BASE}/api/v1/courses/{cid}/assignments?bucket=missing&per_page=100",
+                headers=hdr, timeout=15)
+            if not r.ok:
+                print(f"  {cname}: API error {r.status_code}")
+                continue
+            assignments = r.json()
+            print(f"  {cname}: {len(assignments)} missing")
+            for a in assignments:
+                title = a.get("name", "").strip()
+                if not title:
                     continue
-
+                due_raw = a.get("due_at", "")
+                due_d = parse_date(due_raw)
+                if due_d and (due_d < Q4_START or due_d > Q4_END):
+                    continue
+                canvas_url = a.get("html_url", "")
+                key = (cname.lower(), normalize(title))
+                if key not in result:
+                    result[key] = make_assignment(cname, title, due_raw, canvas_url, "canvas_pw")
+                    print(f"    + {title[:60]}")
         except Exception as e:
-            print(f"  Canvas scrape error {cname}: {e}")
+            print(f"  Canvas API error {cname}: {e}")
             continue
 
-    print(f"  Canvas Playwright: {len(result)} missing assignments")
+    print(f"  Canvas observer API: {len(result)} missing assignments")
     return result
 
 # ── Gmail ──────────────────────────────────────────────────────────────────
