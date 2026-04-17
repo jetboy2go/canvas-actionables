@@ -19,14 +19,13 @@
     "course": "Civics",
     "assignment_name": "Podcast Project",
     "due_date": "04/21/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/576635",
+    "canvas_url": "",
     "teacher_email": "lwatson@wbsd.org",
     "late_penalty": true,
     "submitted": false,
     "graded": false,
     "sources": [
-      "ps_missing",
-      "canvas"
+      "ps_missing"
     ],
     "schedule_days": [
       "Mon"
