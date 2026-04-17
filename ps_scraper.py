@@ -148,64 +148,45 @@ def is_ungraded_score(score_raw):
 # ── Canvas (Playwright browser) ────────────────────────────────────────────
 def scrape_canvas_playwright(page):
     """
-    Logs into Canvas as Matthew via browser, scrapes missing submissions API.
+    Fetches Matthew's missing submissions via Canvas observer token.
     """
     result = {}
-
-    if not CANVAS_PASSWORD:
-        print("  CANVAS_STUDENT_PASSWORD not set, skipping Canvas browser scrape")
-        return result
-
     try:
-        print("  Canvas: logging in...")
-        page.goto(f"{CANVAS_BASE}/login/canvas", wait_until="networkidle", timeout=30000)
-        time.sleep(1)
-        page.fill("input[name='pseudonym_session[unique_id]']", CANVAS_EMAIL, timeout=10000)
-        page.fill("input[name='pseudonym_session[password]']", CANVAS_PASSWORD, timeout=5000)
-        page.click("button[type='submit']", timeout=5000)
-        try:
-            page.wait_for_url(f"{CANVAS_BASE}/**", timeout=20000)
-        except:
-            pass
-        page.wait_for_load_state("networkidle", timeout=20000)
-        print(f"  Canvas logged in: {page.url}")
-
-        page.goto(
-            f"{CANVAS_BASE}/api/v1/users/self/missing_submissions"
-            f"?per_page=50&include[]=planner_overrides&filter[]=submittable",
-            wait_until="networkidle", timeout=20000)
-        time.sleep(1)
-
-        body = page.inner_text("pre") or page.inner_text("body")
-        try:
-            items = json.loads(body)
-        except:
-            print("  Canvas: could not parse missing submissions JSON")
-            items = []
-
-        print(f"  Canvas missing submissions: {len(items)}")
+        headers = {"Authorization": f"Bearer {CANVAS_OBSERVER_TOKEN}"}
+        r = requests.get(f"{CANVAS_BASE}/api/v1/users/self/observees",
+                         headers=headers, timeout=15)
+        observees = r.json() if r.ok else []
+        print(f"  Canvas observees: {observees}")
+        matthew_id = None
+        for u in observees:
+            if "nichols" in u.get("name","").lower() or "matthew" in u.get("name","").lower():
+                matthew_id = u["id"]
+                break
+        if not matthew_id:
+            print("  Canvas: could not find Matthew in observees")
+            return result
+        r2 = requests.get(
+            f"{CANVAS_BASE}/api/v1/users/{matthew_id}/missing_submissions"
+            f"?per_page=50&filter[]=submittable",
+            headers=headers, timeout=15)
+        items = r2.json() if r2.ok else []
+        print(f"  Canvas missing: {len(items)}")
         for item in items:
-            name = item.get("name", "").strip()
-            if not name:
-                continue
-            course_id = str(item.get("course_id", ""))
+            name = item.get("name","").strip()
+            course_id = str(item.get("course_id",""))
             course = CANVAS_COURSES.get(course_id)
-            if not course:
-                continue
-            due_raw = item.get("due_at", "")
+            if not name or not course: continue
+            due_raw = item.get("due_at","")
             due_d = parse_date(due_raw)
-            if due_d and (due_d < Q4_START or due_d > Q4_END):
-                continue
-            html_url = item.get("html_url", "")
+            if due_d and (due_d < Q4_START or due_d > Q4_END): continue
             key = (course.lower(), normalize(name))
             if key not in result:
-                result[key] = make_assignment(course, name, due_raw, html_url, "canvas_pw")
+                result[key] = make_assignment(course, name, due_raw,
+                                              item.get("html_url",""), "canvas_pw")
                 print(f"    + [{course}] {name[:55]}")
-
     except Exception as e:
-        print(f"  Canvas Playwright error: {e}")
-
-    print(f"  Canvas browser: {len(result)} missing assignments")
+        print(f"  Canvas observer error: {e}")
+    print(f"  Canvas: {len(result)} missing")
     return result
 
 # ── Gmail ──────────────────────────────────────────────────────────────────
