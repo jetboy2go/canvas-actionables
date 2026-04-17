@@ -38,6 +38,13 @@ CANVAS_COURSES = {
     "29422": "CAD Engineering",
     "29366": "French 1",
     "29304": "Multicultural Lit",
+    "29169": "Interior Design",
+    "28877": "Algebra 2",
+    "30362": "Civics",
+    "28928": "Earth Science",
+    "29423": "CAD Engineering",
+    "29367": "French 1",
+    "29305": "Multicultural Lit",
 }
 
 MATTHEW_COURSE_FRNS = [
