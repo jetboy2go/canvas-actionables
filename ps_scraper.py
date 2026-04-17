@@ -155,8 +155,8 @@ def scrape_canvas_playwright(page):
     time.sleep(1)
 
     try:
-        page.fill('input[name="pseudonym_session[unique_id]"]', CANVAS_EMAIL, timeout=5000)
-        page.fill('input[name="pseudonym_session[password]"]', CANVAS_PASSWORD, timeout=5000)
+        page.fill('#pseudonym_session_unique_id', CANVAS_EMAIL, timeout=5000)
+        page.fill('#pseudonym_session_password', CANVAS_PASSWORD, timeout=5000)
         time.sleep(1)
         page.keyboard.press("Enter")
         page.wait_for_load_state("networkidle", timeout=20000)
