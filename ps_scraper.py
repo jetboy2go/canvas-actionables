@@ -21,6 +21,8 @@ CANVAS_OBSERVER_TOKEN = os.environ.get("CANVAS_OBSERVER_TOKEN",
     "16592~uZhHB8HBu6WcMU6KDxfeMmfZvPRaDur7zVxYxCQTPuDJ8AK4mWHVVh6ycz6z93cF")
 CANVAS_EMAIL    = "wbfnicholsm07@student.wbsd.org"
 CANVAS_PASSWORD = os.environ.get("CANVAS_STUDENT_PASSWORD", "")
+CANVAS_ICS_URL  = os.environ.get("CANVAS_ICS_URL",
+    "https://westbloomfieldsd.instructure.com/feeds/calendars/user_5XHGBH8VDOu5UOThZf27BHP5Lztiaj2CAhNtJbrs.ics")
 GMAIL_TOKEN_FILE = Path(os.environ.get("GMAIL_TOKEN", "gmail_token.json"))
 DATA_DIR = Path("data")
 MAX_COMPLETED_PER_COURSE = 8
@@ -142,57 +144,72 @@ def is_ungraded_score(score_raw):
     if m: return float(m.group(1)) == 0.0
     return False
 
-# ── Canvas (Observer API) ──────────────────────────────────────────────────
+# ── Canvas (ICS calendar feed) ───────────────────────────────────────────────────────────
 def scrape_canvas_playwright(page):
     """
-    Uses parent observer API token to pull missing assignments per course.
-    Falls back gracefully if API is blocked.
+    Fetches Matthew's Canvas ICS calendar feed — no login, no token, no IP block.
+    Parses all assignment events in the Q4 window.
     The 'page' param is kept for signature compatibility but not used.
     """
     result = {}
-    hdr = {"Authorization": f"Bearer {CANVAS_OBSERVER_TOKEN}"}
-
-    # First verify the token works at all
     try:
-        test = requests.get(f"{CANVAS_BASE}/api/v1/users/self/profile",
-                            headers=hdr, timeout=10)
-        if not test.ok:
-            print(f"  Canvas observer token rejected (status {test.status_code})")
+        r = requests.get(CANVAS_ICS_URL, timeout=20)
+        if not r.ok:
+            print(f"  ICS feed error: {r.status_code}")
             return result
-        print(f"  Canvas observer token OK")
+        print(f"  ICS feed OK: {len(r.content)} bytes")
     except Exception as e:
-        print(f"  Canvas API unreachable: {e}")
+        print(f"  ICS fetch failed: {e}")
         return result
 
-    # Pull missing assignments per course via API
-    for cid, cname in CANVAS_COURSES.items():
-        try:
-            r = requests.get(
-                f"{CANVAS_BASE}/api/v1/courses/{cid}/assignments?bucket=missing&per_page=100",
-                headers=hdr, timeout=15)
-            if not r.ok:
-                print(f"  {cname}: API error {r.status_code}")
-                continue
-            assignments = r.json()
-            print(f"  {cname}: {len(assignments)} missing")
-            for a in assignments:
-                title = a.get("name", "").strip()
-                if not title:
-                    continue
-                due_raw = a.get("due_at", "")
-                due_d = parse_date(due_raw)
-                if due_d and (due_d < Q4_START or due_d > Q4_END):
-                    continue
-                canvas_url = a.get("html_url", "")
-                key = (cname.lower(), normalize(title))
-                if key not in result:
-                    result[key] = make_assignment(cname, title, due_raw, canvas_url, "canvas_pw")
-                    print(f"    + {title[:60]}")
-        except Exception as e:
-            print(f"  Canvas API error {cname}: {e}")
+    events = r.text.split('BEGIN:VEVENT')[1:]
+    print(f"  ICS events total: {len(events)}")
+
+    for ev in events:
+        # Only assignment events
+        if 'event-assignment-' not in ev:
             continue
 
-    print(f"  Canvas observer API: {len(result)} missing assignments")
+        # Extract and unfold SUMMARY
+        sm = re.search(r'SUMMARY:(.+)', ev)
+        if not sm:
+            continue
+        summary = sm.group(1).strip()
+        # Strip course bracket suffix e.g. ' [EARTH SCI S2 - MCGUIRE - 3(A)]'
+        course_bracket = re.search(r'\[([^\]]+)\]\s*$', summary)
+        course_raw = course_bracket.group(1) if course_bracket else ''
+        summary = re.sub(r'\s*\[[^\]]+\]\s*$', '', summary).strip()
+        if not summary or not course_raw:
+            continue
+
+        course = match_course_name(course_raw)
+        if not course:
+            continue
+
+        # Due date from DTSTART
+        ds_match = re.search(r'DTSTART[^:]*:(\d{8}(?:T\d{6}Z?)?)', ev)
+        due_raw = ''
+        if ds_match:
+            ds = ds_match.group(1)
+            if 'T' in ds:
+                due_raw = ds[:4] + '-' + ds[4:6] + '-' + ds[6:8] + 'T' + ds[9:11] + ':' + ds[11:13] + ':' + ds[13:15] + 'Z'
+            else:
+                due_raw = ds[:4] + '-' + ds[4:6] + '-' + ds[6:8]
+
+        due_d = parse_date(due_raw)
+        if due_d and (due_d < Q4_START or due_d > Q4_END):
+            continue
+
+        # Canvas URL
+        url_match = re.search(r'URL;VALUE=URI:(.+)', ev)
+        canvas_url = url_match.group(1).strip() if url_match else ''
+
+        key = (course.lower(), normalize(summary))
+        if key not in result:
+            result[key] = make_assignment(course, summary, due_raw, canvas_url, 'canvas_ics')
+            print(f"    + [{course}] {summary[:55]}")
+
+    print(f"  Canvas ICS: {len(result)} Q4 assignments")
     return result
 
 # ── Gmail ──────────────────────────────────────────────────────────────────
@@ -465,8 +482,9 @@ def merge_sources(ps_asgn, canvas_map, canvas_pw_asgn, gmail_asgn, graded_sigs, 
             # Already in PS — enrich with Canvas URL if missing
             if not merged[key].get("canvas_url") and a.get("canvas_url"):
                 merged[key]["canvas_url"] = a["canvas_url"]
-            if "canvas_pw" not in merged[key].get("sources",[]):
-                merged[key].setdefault("sources",[]).append("canvas_pw")
+            src = a.get("sources", ["canvas_ics"])[0]
+            if src not in merged[key].get("sources",[]):
+                merged[key].setdefault("sources",[]).append(src)
 
     # Add Gmail assignments not in PS or Canvas
     for key, a in gmail_asgn.items():
