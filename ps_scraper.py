@@ -21,8 +21,6 @@ CANVAS_OBSERVER_TOKEN = os.environ.get("CANVAS_OBSERVER_TOKEN",
     "16592~uZhHB8HBu6WcMU6KDxfeMmfZvPRaDur7zVxYxCQTPuDJ8AK4mWHVVh6ycz6z93cF")
 CANVAS_EMAIL    = "wbfnicholsm07@student.wbsd.org"
 CANVAS_PASSWORD = os.environ.get("CANVAS_STUDENT_PASSWORD", "")
-CANVAS_ICS_URL  = os.environ.get("CANVAS_ICS_URL",
-    "https://westbloomfieldsd.instructure.com/feeds/calendars/user_5XHGBH8VDOu5UOThZf27BHP5Lztiaj2CAhNtJbrs.ics")
 GMAIL_TOKEN_FILE = Path(os.environ.get("GMAIL_TOKEN", "gmail_token.json"))
 DATA_DIR = Path("data")
 MAX_COMPLETED_PER_COURSE = 8
@@ -144,70 +142,67 @@ def is_ungraded_score(score_raw):
     if m: return float(m.group(1)) == 0.0
     return False
 
+# ── Canvas (Playwright browser) ────────────────────────────────────────────
+def scrape_canvas_playwright(page):
     """
-    Fetches Matthew's Canvas ICS calendar feed — no login, no token, no IP block.
-    Parses all assignment events in the Q4 window.
-    The 'page' param is kept for signature compatibility but not used.
+    Logs into Canvas as Matthew via browser, scrapes missing submissions API.
     """
     result = {}
-    try:
-        r = requests.get(CANVAS_ICS_URL, timeout=20)
-        if not r.ok:
-            print(f"  ICS feed error: {r.status_code}")
-            return result
-        print(f"  ICS feed OK: {len(r.content)} bytes")
-    except Exception as e:
-        print(f"  ICS fetch failed: {e}")
+
+    if not CANVAS_PASSWORD:
+        print("  CANVAS_STUDENT_PASSWORD not set, skipping Canvas browser scrape")
         return result
 
-    events = r.text.split('BEGIN:VEVENT')[1:]
-    print(f"  ICS events total: {len(events)}")
+    try:
+        print("  Canvas: logging in...")
+        page.goto(f"{CANVAS_BASE}/login/saml", wait_until="networkidle", timeout=30000)
+        time.sleep(1)
+        page.fill("input[name='pseudonym_session[unique_id]']", CANVAS_EMAIL, timeout=5000)
+        page.fill("input[name='pseudonym_session[password]']", CANVAS_PASSWORD, timeout=5000)
+        page.click("button[type='submit']", timeout=5000)
+        try:
+            page.wait_for_url(f"{CANVAS_BASE}/**", timeout=20000)
+        except:
+            pass
+        page.wait_for_load_state("networkidle", timeout=20000)
+        print(f"  Canvas logged in: {page.url}")
 
-    for ev in events:
-        # Only assignment events
-        if 'event-assignment-' not in ev:
-            continue
+        page.goto(
+            f"{CANVAS_BASE}/api/v1/users/self/missing_submissions"
+            f"?per_page=50&include[]=planner_overrides&filter[]=submittable",
+            wait_until="networkidle", timeout=20000)
+        time.sleep(1)
 
-        # Extract and unfold SUMMARY
-        sm = re.search(r'SUMMARY:(.+)', ev)
-        if not sm:
-            continue
-        summary = sm.group(1).strip()
-        # Strip course bracket suffix e.g. ' [EARTH SCI S2 - MCGUIRE - 3(A)]'
-        course_bracket = re.search(r'\[([^\]]+)\]\s*$', summary)
-        course_raw = course_bracket.group(1) if course_bracket else ''
-        summary = re.sub(r'\s*\[[^\]]+\]\s*$', '', summary).strip()
-        if not summary or not course_raw:
-            continue
+        body = page.inner_text("pre") or page.inner_text("body")
+        try:
+            items = json.loads(body)
+        except:
+            print("  Canvas: could not parse missing submissions JSON")
+            items = []
 
-        course = match_course_name(course_raw)
-        if not course:
-            continue
+        print(f"  Canvas missing submissions: {len(items)}")
+        for item in items:
+            name = item.get("name", "").strip()
+            if not name:
+                continue
+            course_id = str(item.get("course_id", ""))
+            course = CANVAS_COURSES.get(course_id)
+            if not course:
+                continue
+            due_raw = item.get("due_at", "")
+            due_d = parse_date(due_raw)
+            if due_d and (due_d < Q4_START or due_d > Q4_END):
+                continue
+            html_url = item.get("html_url", "")
+            key = (course.lower(), normalize(name))
+            if key not in result:
+                result[key] = make_assignment(course, name, due_raw, html_url, "canvas_pw")
+                print(f"    + [{course}] {name[:55]}")
 
-        # Due date from DTSTART
-        ds_match = re.search(r'DTSTART[^:]*:(\d{8}(?:T\d{6}Z?)?)', ev)
-        due_raw = ''
-        if ds_match:
-            ds = ds_match.group(1)
-            if 'T' in ds:
-                due_raw = ds[:4] + '-' + ds[4:6] + '-' + ds[6:8] + 'T' + ds[9:11] + ':' + ds[11:13] + ':' + ds[13:15] + 'Z'
-            else:
-                due_raw = ds[:4] + '-' + ds[4:6] + '-' + ds[6:8]
+    except Exception as e:
+        print(f"  Canvas Playwright error: {e}")
 
-        due_d = parse_date(due_raw)
-        if due_d and (due_d < Q4_START or due_d > Q4_END):
-            continue
-
-        # Canvas URL
-        url_match = re.search(r'URL;VALUE=URI:(.+)', ev)
-        canvas_url = url_match.group(1).strip() if url_match else ''
-
-        key = (course.lower(), normalize(summary))
-        if key not in result:
-            result[key] = make_assignment(course, summary, due_raw, canvas_url, 'canvas_ics')
-            print(f"    + [{course}] {summary[:55]}")
-
-    print(f"  Canvas ICS: {len(result)} Q4 assignments")
+    print(f"  Canvas browser: {len(result)} missing assignments")
     return result
 
 # ── Gmail ──────────────────────────────────────────────────────────────────
@@ -460,7 +455,6 @@ def scrape_ps(canvas_map):
 def merge_sources(ps_asgn, canvas_map, canvas_pw_asgn, gmail_asgn, graded_sigs, submitted_sigs, schedule):
     merged = dict(ps_asgn)
 
-    # Enrich from Canvas API map (URLs + due dates)
     for norm_name, info in canvas_map.items():
         cname = info["course_name"]
         key = (cname.lower(), norm_name)
@@ -469,22 +463,18 @@ def merge_sources(ps_asgn, canvas_map, canvas_pw_asgn, gmail_asgn, graded_sigs, 
             if not merged[key].get("due_date"): merged[key]["due_date"] = fmt_date(parse_date(info.get("due_at","")))
             if "canvas" not in merged[key].get("sources",[]): merged[key].setdefault("sources",[]).append("canvas")
 
-    # Merge Canvas Playwright missing assignments
     for key, a in canvas_pw_asgn.items():
         if key not in merged:
-            # New assignment only Canvas knows about
             a["schedule_days"] = schedule.get(a["course"], [])
             merged[key] = a
             print(f"  [canvas_pw new] {a['course']}: {a['assignment_name'][:50]}")
         else:
-            # Already in PS — enrich with Canvas URL if missing
             if not merged[key].get("canvas_url") and a.get("canvas_url"):
                 merged[key]["canvas_url"] = a["canvas_url"]
-            src = a.get("sources", ["canvas_ics"])[0]
+            src = a.get("sources", ["canvas_pw"])[0]
             if src not in merged[key].get("sources",[]):
                 merged[key].setdefault("sources",[]).append(src)
 
-    # Add Gmail assignments not in PS or Canvas
     for key, a in gmail_asgn.items():
         if key not in merged:
             a["schedule_days"] = schedule.get(a["course"], [])
@@ -492,12 +482,10 @@ def merge_sources(ps_asgn, canvas_map, canvas_pw_asgn, gmail_asgn, graded_sigs, 
         else:
             if "gmail" not in merged[key].get("sources",[]): merged[key].setdefault("sources",[]).append("gmail")
 
-    # Apply signals
     for key in merged:
         if key in submitted_sigs: merged[key]["submitted"] = True
         if key in graded_sigs: merged[key]["graded"] = True
 
-    # Fill missing teacher emails and schedule days
     for key, a in merged.items():
         if not a.get("teacher_email"): a["teacher_email"] = TEACHER_EMAILS.get(a["course"],"")
         if not a.get("schedule_days"): a["schedule_days"] = schedule.get(a["course"],[])
@@ -652,7 +640,6 @@ def build_index(open_asgn):
         d = parse_date(a.get("due_date",""))
         return d or date(2099,12,31)
 
-    # Mobile
     mob = ""
     for course in sorted(by_course):
         items = sorted(by_course[course], key=sk)
@@ -676,7 +663,6 @@ def build_index(open_asgn):
 <div class="status-row">{sp}</div></div></div>'''
         mob += '</div>'
 
-    # Desktop
     all_s = sorted(open_asgn.values(), key=sk)
     rows = ""
     for a in all_s:
@@ -781,8 +767,7 @@ def main():
     print("=== Gmail ===")
     gmail_asgn, graded_sigs, submitted_sigs = parse_gmail_assignments()
 
-    # Canvas Playwright + PowerSchool share a single browser session
-    canvas_api_map = {}  # Canvas API is blocked from GH Actions — map is empty but kept for structure
+    canvas_api_map = {}
     ps_asgn, schedule, canvas_pw_asgn = scrape_ps(canvas_api_map)
 
     print("\n=== Merge ===")
