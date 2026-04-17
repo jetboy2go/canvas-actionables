@@ -120,6 +120,9 @@ def match_course_name(raw):
     if "cad" in raw_c or "engr" in raw_c or "muylaert" in raw_c: return "CAD Engineering"
     return clean_course(raw)
 
+def is_advisory(course):
+    return "advisory" in str(course).lower()
+
 def make_assignment(course, name, due_raw, canvas_url="", source=""):
     due_d = parse_date(due_raw)
     return {
@@ -155,9 +158,9 @@ def scrape_canvas_playwright(page):
 
     try:
         print("  Canvas: logging in...")
-        page.goto(f"{CANVAS_BASE}/login/saml", wait_until="networkidle", timeout=30000)
+        page.goto(f"{CANVAS_BASE}/login/canvas", wait_until="networkidle", timeout=30000)
         time.sleep(1)
-        page.fill("input[name='pseudonym_session[unique_id]']", CANVAS_EMAIL, timeout=5000)
+        page.fill("input[name='pseudonym_session[unique_id]']", CANVAS_EMAIL, timeout=10000)
         page.fill("input[name='pseudonym_session[password]']", CANVAS_PASSWORD, timeout=5000)
         page.click("button[type='submit']", timeout=5000)
         try:
@@ -261,7 +264,6 @@ def parse_gmail_assignments():
                     ntype = "comment"; asgn = subj[37:]
                 if not asgn: continue
 
-                # Strip course suffix
                 for sep in [", CIVICS",", EARTH",", MULTCULT",", ALGEBRA",
                             ", FRENCH",", 5th Hour",", ENGRACAD",", Interior",", ALGEBRA 2"]:
                     if sep.upper() in asgn.upper():
@@ -355,6 +357,7 @@ def scrape_ps(canvas_map):
                         and cells[i].inner_text().strip() not in ["-","—",""]]
                 if days:
                     cname = match_course_name(first)
+                    if is_advisory(cname): continue
                     schedule[cname] = days
             print(f"  Schedule: {schedule}")
         except Exception as e:
@@ -404,6 +407,7 @@ def scrape_ps(canvas_map):
                 if "advisory" in course_raw.lower(): continue
 
                 course = match_course_name(course_raw)
+                if is_advisory(course): continue
                 due_d = parse_date(due_raw)
                 if due_d and (due_d < Q4_START or due_d > Q4_END): continue
 
@@ -457,6 +461,7 @@ def merge_sources(ps_asgn, canvas_map, canvas_pw_asgn, gmail_asgn, graded_sigs, 
 
     for norm_name, info in canvas_map.items():
         cname = info["course_name"]
+        if is_advisory(cname): continue
         key = (cname.lower(), norm_name)
         if key in merged:
             if not merged[key].get("canvas_url"): merged[key]["canvas_url"] = info.get("canvas_url","")
@@ -464,6 +469,7 @@ def merge_sources(ps_asgn, canvas_map, canvas_pw_asgn, gmail_asgn, graded_sigs, 
             if "canvas" not in merged[key].get("sources",[]): merged[key].setdefault("sources",[]).append("canvas")
 
     for key, a in canvas_pw_asgn.items():
+        if is_advisory(a.get("course","")): continue
         if key not in merged:
             a["schedule_days"] = schedule.get(a["course"], [])
             merged[key] = a
@@ -476,6 +482,7 @@ def merge_sources(ps_asgn, canvas_map, canvas_pw_asgn, gmail_asgn, graded_sigs, 
                 merged[key].setdefault("sources",[]).append(src)
 
     for key, a in gmail_asgn.items():
+        if is_advisory(a.get("course","")): continue
         if key not in merged:
             a["schedule_days"] = schedule.get(a["course"], [])
             merged[key] = a
@@ -490,7 +497,8 @@ def merge_sources(ps_asgn, canvas_map, canvas_pw_asgn, gmail_asgn, graded_sigs, 
         if not a.get("teacher_email"): a["teacher_email"] = TEACHER_EMAILS.get(a["course"],"")
         if not a.get("schedule_days"): a["schedule_days"] = schedule.get(a["course"],[])
 
-    return merged
+    # Final pass: strip any advisory rows that slipped through
+    return {k: v for k, v in merged.items() if not is_advisory(v.get("course",""))}
 
 # ── Completed ──────────────────────────────────────────────────────────────
 def try_get_grade_canvas(assignment):
