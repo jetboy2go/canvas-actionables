@@ -157,7 +157,8 @@ def scrape_canvas_playwright(page):
     try:
         page.fill('input[name="pseudonym_session[unique_id]"]', CANVAS_EMAIL, timeout=5000)
         page.fill('input[name="pseudonym_session[password]"]', CANVAS_PASSWORD, timeout=5000)
-        page.click('button[type="submit"]', timeout=5000)
+        time.sleep(1)
+        page.click('button[type="submit"]', timeout=10000)
         page.wait_for_load_state("networkidle", timeout=20000)
         print(f"  Canvas logged in: {page.url}")
     except Exception as e:
