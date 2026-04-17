@@ -123,6 +123,24 @@
     "course": "Multicultural Lit",
     "assignment_name": "Hamtramck Video Response",
     "due_date": "04/08/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/calendar?include_con",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/17/2026"
+  },
+  {
+    "course": "Multicultural Lit",
+    "assignment_name": "Hamtramck Video Response",
+    "due_date": "04/08/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29304/assignments/585491",
     "teacher_email": "jsharpe@wbsd.org",
     "late_penalty": true,
@@ -137,5 +155,91 @@
     ],
     "grade": "\u2014",
     "completed_date": "04/16/2026"
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Media Bias One Pager",
+    "due_date": "04/06/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/calendar?include_con",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/17/2026"
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Social Media Influencers",
+    "due_date": "04/17/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/calendar?include_con",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/17/2026"
+  },
+  {
+    "course": "ADVISORY_11_HS_S2 - SEPETYS - 8(A)",
+    "assignment_name": "WBSD Student Survey",
+    "due_date": "04/14/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/calendar?include_con",
+    "teacher_email": "",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/17/2026"
+  },
+  {
+    "course": "CAD Engineering",
+    "assignment_name": "Chess Pieces",
+    "due_date": "04/23/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/calendar?include_con",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/17/2026"
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "Shoe Box Design Project",
+    "due_date": "04/23/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/calendar?include_con",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/17/2026"
   }
 ]
