@@ -185,7 +185,6 @@ def scrape_canvas_playwright(page):
             if not name or not course: continue
             due_raw = item.get("due_at","")
             due_d = parse_date(due_raw)
-            if due_d and (due_d < Q4_START or due_d > Q4_END): continue
             key = (course.lower(), normalize(name))
             if key not in result:
                 result[key] = make_assignment(course, name, due_raw,
