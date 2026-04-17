@@ -46,5 +46,21 @@
     "schedule_days": [
       "Mon"
     ]
+  },
+  {
+    "course": "Multicultural Lit",
+    "assignment_name": "Quill - Evidence Based Ethics in Science",
+    "due_date": "04/14/2026",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
   }
 ]
