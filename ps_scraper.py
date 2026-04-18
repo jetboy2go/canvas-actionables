@@ -17,8 +17,6 @@ PS_PASS      = os.environ.get("PS_PASSWORD", "")
 CANVAS_BASE  = "https://westbloomfieldsd.instructure.com"
 CANVAS_TOKEN = os.environ.get("CANVAS_TOKEN",
     "16592~UHBmMt4U3Qhn7P8kvufhcatxQCnEHEEFWz69AWr9U4PzFLYMKCmFMTva9VzNcycw")
-CANVAS_OBSERVER_TOKEN = os.environ.get("CANVAS_OBSERVER_TOKEN",
-    "16592~uZhHB8HBu6WcMU6KDxfeMmfZvPRaDur7zVxYxCQTPuDJ8AK4mWHVVh6ycz6z93cF")
 CANVAS_EMAIL    = "wbfnicholsm07@student.wbsd.org"
 CANVAS_PASSWORD = os.environ.get("CANVAS_STUDENT_PASSWORD", "")
 GMAIL_TOKEN_FILE = Path(os.environ.get("GMAIL_TOKEN", "gmail_token.json"))
@@ -38,13 +36,6 @@ CANVAS_COURSES = {
     "29422": "CAD Engineering",
     "29366": "French 1",
     "29304": "Multicultural Lit",
-    "29169": "Interior Design",
-    "28877": "Algebra 2",
-    "30362": "Civics",
-    "28928": "Earth Science",
-    "29423": "CAD Engineering",
-    "29367": "French 1",
-    "29305": "Multicultural Lit",
 }
 
 MATTHEW_COURSE_FRNS = [
@@ -127,21 +118,6 @@ def match_course_name(raw):
     if "cad" in raw_c or "engr" in raw_c or "muylaert" in raw_c: return "CAD Engineering"
     return clean_course(raw)
 
-def is_advisory(course):
-    return "advisory" in str(course).lower()
-
-def load_overrides():
-    try:
-        data = load_json("overrides.json", {"submitted": []})
-        result = set()
-        for entry in data.get("submitted", []):
-            course = entry.get("course", "")
-            name = entry.get("assignment", "")
-            result.add((course.lower(), normalize(name)))
-        return result
-    except:
-        return set()
-
 def make_assignment(course, name, due_raw, canvas_url="", source=""):
     due_d = parse_date(due_raw)
     return {
@@ -164,47 +140,79 @@ def is_ungraded_score(score_raw):
     if m: return float(m.group(1)) == 0.0
     return False
 
-# ── Canvas (Playwright browser) ────────────────────────────────────────────
+# ── Canvas (Playwright browser login) ──────────────────────────────────────
 def scrape_canvas_playwright(page):
-    """
-    Fetches Matthew's missing submissions via Canvas observer token.
-    """
     result = {}
+
+    print("  Logging into Canvas...")
+    page.goto(f"{CANVAS_BASE}/login/canvas", wait_until="networkidle")
+    time.sleep(1)
+
     try:
-        headers = {"Authorization": f"Bearer {CANVAS_OBSERVER_TOKEN}"}
-        r = requests.get(f"{CANVAS_BASE}/api/v1/users/self/observees",
-                         headers=headers, timeout=15)
-        observees = r.json() if r.ok else []
-        print(f"  Canvas observees: {observees}")
-        matthew_id = None
-        for u in observees:
-            if "nichols" in u.get("name","").lower() or "matthew" in u.get("name","").lower():
-                matthew_id = u["id"]
-                break
-        if not matthew_id:
-            print("  Canvas: could not find Matthew in observees")
-            return result
-        r2 = requests.get(
-            f"{CANVAS_BASE}/api/v1/users/{matthew_id}/missing_submissions"
-            f"?per_page=50&filter[]=submittable",
-            headers=headers, timeout=15)
-        items = r2.json() if r2.ok else []
-        print(f"  Canvas missing: {len(items)}")
-        for item in items:
-            name = item.get("name","").strip()
-            course_id = str(item.get("course_id",""))
-            course = CANVAS_COURSES.get(course_id)
-            if not name or not course: continue
-            due_raw = item.get("due_at","")
-            due_d = parse_date(due_raw)
-            key = (course.lower(), normalize(name))
-            if key not in result:
-                result[key] = make_assignment(course, name, due_raw,
-                                              item.get("html_url",""), "canvas_pw")
-                print(f"    + [{course}] {name[:55]}")
+        page.fill('#pseudonym_session_unique_id', CANVAS_EMAIL, timeout=5000)
+        page.fill('#pseudonym_session_password', CANVAS_PASSWORD, timeout=5000)
+        time.sleep(1)
+        page.keyboard.press("Enter")
+        page.wait_for_load_state("networkidle", timeout=20000)
+        print(f"  Canvas logged in: {page.url}")
     except Exception as e:
-        print(f"  Canvas observer error: {e}")
-    print(f"  Canvas: {len(result)} missing")
+        print(f"  Canvas login failed: {e}")
+        return result
+
+    if "login" in page.url.lower():
+        print("  Canvas login redirect failed — check CANVAS_STUDENT_PASSWORD secret")
+        return result
+
+    for cid, cname in CANVAS_COURSES.items():
+        try:
+            url = f"{CANVAS_BASE}/courses/{cid}/assignments?bucket=missing"
+            page.goto(url, wait_until="networkidle", timeout=20000)
+            time.sleep(1)
+
+            items = page.query_selector_all("li.assignment")
+            print(f"  {cname}: {len(items)} missing")
+
+            for item in items:
+                try:
+                    title_el = item.query_selector(".ig-title")
+                    due_el   = item.query_selector(".assignment-date-due")
+
+                    title = title_el.inner_text().strip() if title_el else ""
+                    if not title:
+                        continue
+
+                    due_raw = ""
+                    if due_el:
+                        due_text = due_el.inner_text().strip()
+                        due_text = re.sub(r'^Due:\s*', '', due_text, flags=re.IGNORECASE).strip()
+                        due_text = re.sub(r'\s+at\s+\d+:\d+\w+.*$', '', due_text, flags=re.IGNORECASE).strip()
+                        due_raw = due_text
+
+                    due_d = parse_date(due_raw)
+                    if due_d and (due_d < Q4_START or due_d > Q4_END):
+                        continue
+
+                    link_el = item.query_selector(".ig-title a")
+                    canvas_url = ""
+                    if link_el:
+                        href = link_el.get_attribute("href") or ""
+                        canvas_url = href if href.startswith("http") else f"{CANVAS_BASE}{href}"
+
+                    key = (cname.lower(), normalize(title))
+                    if key not in result:
+                        a = make_assignment(cname, title, due_raw, canvas_url, "canvas_pw")
+                        result[key] = a
+                        print(f"    + {title[:60]}")
+
+                except Exception as e:
+                    print(f"    Item error in {cname}: {e}")
+                    continue
+
+        except Exception as e:
+            print(f"  Canvas scrape error {cname}: {e}")
+            continue
+
+    print(f"  Canvas Playwright: {len(result)} missing assignments")
     return result
 
 # ── Gmail ──────────────────────────────────────────────────────────────────
@@ -221,6 +229,7 @@ def parse_gmail_assignments():
         creds = Credentials.from_authorized_user_file(str(GMAIL_TOKEN_FILE))
         svc = build("gmail", "v1", credentials=creds)
 
+        # ── Forwarded emails from Matthew ──────────────────────────────────
         result = svc.users().messages().list(
             userId="me",
             q="from:wbfnicholsm07@student.wbsd.org after:2026/03/29",
@@ -280,6 +289,108 @@ def parse_gmail_assignments():
                     if key not in assignments:
                         assignments[key] = make_assignment(course, asgn, "", source="gmail")
             except: pass
+
+        # ── Weekly digest parser ───────────────────────────────────────────
+        digest_result = svc.users().messages().list(
+            userId="me",
+            q="subject:\"Recent Canvas Notifications\" after:2026/03/29",
+            maxResults=20).execute()
+        digest_msgs = digest_result.get("messages", [])
+        print(f"  Gmail digest: {len(digest_msgs)} weekly digests")
+
+        for ref in digest_msgs:
+            try:
+                msg = svc.users().messages().get(
+                    userId="me", id=ref["id"], format="full").execute()
+                body = ""
+                parts = msg.get("payload", {}).get("parts", [])
+                if parts:
+                    for part in parts:
+                        if part.get("mimeType") == "text/plain":
+                            import base64
+                            data = part.get("body", {}).get("data", "")
+                            body = base64.urlsafe_b64decode(data + "==").decode("utf-8", errors="ignore")
+                            break
+                else:
+                    import base64
+                    data = msg.get("payload", {}).get("body", {}).get("data", "")
+                    if data:
+                        body = base64.urlsafe_b64decode(data + "==").decode("utf-8", errors="ignore")
+
+                if not body:
+                    continue
+
+                blocks = re.split(r'-{10,}', body)
+                for block in blocks:
+                    block = block.strip()
+                    if not block:
+                        continue
+
+                    m = re.match(r'Assignment Created\s*-\s*(.+?),\s*([A-Z].+?)(?:\n|$)', block)
+                    if not m:
+                        continue
+
+                    asgn_name = m.group(1).strip()
+                    course_raw = m.group(2).strip()
+                    course = match_course_name(course_raw)
+
+                    due_raw = ""
+                    due_m = re.search(r'due:\s*(.+?)(?:\n|$)', block, re.IGNORECASE)
+                    if due_m:
+                        due_raw = due_m.group(1).strip()
+                        if "no due" in due_raw.lower():
+                            due_raw = ""
+
+                    url_m = re.search(r'(https://westbloomfieldsd\.instructure\.com/courses/\S+)', block)
+                    canvas_url = url_m.group(1).strip() if url_m else ""
+
+                    due_d = parse_date(due_raw)
+                    if due_d and (due_d < Q4_START or due_d > Q4_END):
+                        continue
+
+                    key = (course.lower(), normalize(asgn_name))
+                    if key not in assignments:
+                        a = make_assignment(course, asgn_name, due_raw, canvas_url, "gmail_digest")
+                        assignments[key] = a
+                        print(f"  [digest] {course}: {asgn_name[:50]}")
+
+            except Exception as e:
+                print(f"  Digest parse error: {e}")
+                continue
+
+        # ── Direct Canvas notifications to jetboy2go@gmail.com ────────────
+        direct_result = svc.users().messages().list(
+            userId="me",
+            q="from:notifications@instructure.com to:jetboy2go@gmail.com subject:\"Assignment Created\" after:2026/03/29",
+            maxResults=100).execute()
+        direct_msgs = direct_result.get("messages", [])
+        print(f"  Gmail direct: {len(direct_msgs)} assignment created emails")
+
+        for ref in direct_msgs:
+            try:
+                msg = svc.users().messages().get(
+                    userId="me", id=ref["id"], format="metadata",
+                    metadataHeaders=["Subject"]).execute()
+                subj = next((h["value"] for h in msg.get("payload", {}).get("headers", [])
+                             if h["name"] == "Subject"), "")
+
+                m = re.match(r'Assignment Created\s*-\s*(.+?),\s*(.+)$', subj)
+                if not m:
+                    continue
+
+                asgn_name = m.group(1).strip()
+                course_raw = m.group(2).strip()
+                course = match_course_name(course_raw)
+
+                key = (course.lower(), normalize(asgn_name))
+                if key not in assignments:
+                    a = make_assignment(course, asgn_name, "", "", "gmail_direct")
+                    assignments[key] = a
+                    print(f"  [direct] {course}: {asgn_name[:50]}")
+
+            except Exception as e:
+                print(f"  Direct parse error: {e}")
+                continue
 
     except Exception as e:
         print(f"  Gmail error: {e}")
@@ -356,7 +467,6 @@ def scrape_ps(canvas_map):
                         and cells[i].inner_text().strip() not in ["-","—",""]]
                 if days:
                     cname = match_course_name(first)
-                    if is_advisory(cname): continue
                     schedule[cname] = days
             print(f"  Schedule: {schedule}")
         except Exception as e:
@@ -406,7 +516,6 @@ def scrape_ps(canvas_map):
                 if "advisory" in course_raw.lower(): continue
 
                 course = match_course_name(course_raw)
-                if is_advisory(course): continue
                 due_d = parse_date(due_raw)
                 if due_d and (due_d < Q4_START or due_d > Q4_END): continue
 
@@ -460,7 +569,6 @@ def merge_sources(ps_asgn, canvas_map, canvas_pw_asgn, gmail_asgn, graded_sigs, 
 
     for norm_name, info in canvas_map.items():
         cname = info["course_name"]
-        if is_advisory(cname): continue
         key = (cname.lower(), norm_name)
         if key in merged:
             if not merged[key].get("canvas_url"): merged[key]["canvas_url"] = info.get("canvas_url","")
@@ -468,7 +576,6 @@ def merge_sources(ps_asgn, canvas_map, canvas_pw_asgn, gmail_asgn, graded_sigs, 
             if "canvas" not in merged[key].get("sources",[]): merged[key].setdefault("sources",[]).append("canvas")
 
     for key, a in canvas_pw_asgn.items():
-        if is_advisory(a.get("course","")): continue
         if key not in merged:
             a["schedule_days"] = schedule.get(a["course"], [])
             merged[key] = a
@@ -476,12 +583,10 @@ def merge_sources(ps_asgn, canvas_map, canvas_pw_asgn, gmail_asgn, graded_sigs, 
         else:
             if not merged[key].get("canvas_url") and a.get("canvas_url"):
                 merged[key]["canvas_url"] = a["canvas_url"]
-            src = a.get("sources", ["canvas_pw"])[0]
-            if src not in merged[key].get("sources",[]):
-                merged[key].setdefault("sources",[]).append(src)
+            if "canvas_pw" not in merged[key].get("sources",[]):
+                merged[key].setdefault("sources",[]).append("canvas_pw")
 
     for key, a in gmail_asgn.items():
-        if is_advisory(a.get("course","")): continue
         if key not in merged:
             a["schedule_days"] = schedule.get(a["course"], [])
             merged[key] = a
@@ -496,8 +601,7 @@ def merge_sources(ps_asgn, canvas_map, canvas_pw_asgn, gmail_asgn, graded_sigs, 
         if not a.get("teacher_email"): a["teacher_email"] = TEACHER_EMAILS.get(a["course"],"")
         if not a.get("schedule_days"): a["schedule_days"] = schedule.get(a["course"],[])
 
-    # Final pass: strip any advisory rows that slipped through
-    return {k: v for k, v in merged.items() if not is_advisory(v.get("course",""))}
+    return merged
 
 # ── Completed ──────────────────────────────────────────────────────────────
 def try_get_grade_canvas(assignment):
@@ -647,6 +751,7 @@ def build_index(open_asgn):
         d = parse_date(a.get("due_date",""))
         return d or date(2099,12,31)
 
+    # Mobile
     mob = ""
     for course in sorted(by_course):
         items = sorted(by_course[course], key=sk)
@@ -670,6 +775,7 @@ def build_index(open_asgn):
 <div class="status-row">{sp}</div></div></div>'''
         mob += '</div>'
 
+    # Desktop
     all_s = sorted(open_asgn.values(), key=sk)
     rows = ""
     for a in all_s:
@@ -775,11 +881,9 @@ def main():
     gmail_asgn, graded_sigs, submitted_sigs = parse_gmail_assignments()
 
     canvas_api_map = {}
-    override_subs = load_overrides()
     ps_asgn, schedule, canvas_pw_asgn = scrape_ps(canvas_api_map)
 
     print("\n=== Merge ===")
-    submitted_sigs.update(override_subs)
     merged = merge_sources(ps_asgn, canvas_api_map, canvas_pw_asgn, gmail_asgn, graded_sigs, submitted_sigs, schedule)
     print(f"  Total open: {len(merged)}")
 
