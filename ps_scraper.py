@@ -130,6 +130,18 @@ def match_course_name(raw):
 def is_advisory(course):
     return "advisory" in str(course).lower()
 
+def load_overrides():
+    try:
+        data = load_json("overrides.json", {"submitted": []})
+        result = set()
+        for entry in data.get("submitted", []):
+            course = entry.get("course", "")
+            name = entry.get("assignment", "")
+            result.add((course.lower(), normalize(name)))
+        return result
+    except:
+        return set()
+
 def make_assignment(course, name, due_raw, canvas_url="", source=""):
     due_d = parse_date(due_raw)
     return {
@@ -763,9 +775,11 @@ def main():
     gmail_asgn, graded_sigs, submitted_sigs = parse_gmail_assignments()
 
     canvas_api_map = {}
+    override_subs = load_overrides()
     ps_asgn, schedule, canvas_pw_asgn = scrape_ps(canvas_api_map)
 
     print("\n=== Merge ===")
+    submitted_sigs.update(override_subs)
     merged = merge_sources(ps_asgn, canvas_api_map, canvas_pw_asgn, gmail_asgn, graded_sigs, submitted_sigs, schedule)
     print(f"  Total open: {len(merged)}")
 
