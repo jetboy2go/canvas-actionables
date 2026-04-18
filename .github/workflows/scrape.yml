@@ -1,5 +1,4 @@
 name: PS + Canvas Scraper
-
 on:
   schedule:
     # 7am, noon, 3pm Eastern (UTC-4 in EDT)
@@ -7,32 +6,26 @@ on:
     - cron: '0 16 * * 1-5'   # 12:00 PM ET
     - cron: '0 19 * * 1-5'   # 3:00 PM ET
   workflow_dispatch:          # manual trigger button in GitHub UI
-
 permissions:
   contents: write
-
 jobs:
   scrape:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
       - name: Install dependencies
         run: |
-          pip install playwright requests
+          pip install playwright requests google-auth google-auth-oauthlib google-api-python-client
           playwright install chromium
           playwright install-deps chromium
-
       - name: Run scraper
         env:
           PS_USERNAME:  ${{ secrets.PS_USERNAME }}
@@ -40,7 +33,6 @@ jobs:
           CANVAS_TOKEN: ${{ secrets.CANVAS_TOKEN }}
           CANVAS_STUDENT_PASSWORD: ${{ secrets.CANVAS_STUDENT_PASSWORD }}
         run: python ps_scraper.py
-
       - name: Commit and push results
         run: |
           git config user.name  "canvas-bot"
@@ -48,3 +40,4 @@ jobs:
           git add index.html completed.html data/
           git diff --staged --quiet || git commit -m "scrape $(date -u '+%Y-%m-%d %H:%M') UTC"
           git push
+ 
