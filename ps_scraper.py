@@ -145,7 +145,7 @@ def scrape_canvas_playwright(page):
     result = {}
 
     print("  Logging into Canvas...")
-    page.goto(f"{CANVAS_BASE}/login/canvas", wait_until="networkidle")
+    page.goto(f"{CANVAS_BASE}/login/ldap", wait_until="networkidle")
     time.sleep(1)
 
     try:
