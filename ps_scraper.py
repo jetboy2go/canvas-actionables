@@ -436,6 +436,20 @@ def scrape_ps(canvas_map):
             except: pass
         try: page.wait_for_url("**/guardian/home.html", timeout=20000)
         except: page.wait_for_load_state("networkidle", timeout=20000)
+
+        
+            page.wait_for_load_state("networkidle", timeout=15000)
+            print(f"  Switched to Matthew: {page.url}")
+        except Exception as e:# Handle PS interstitial message page
+        if "message.powerschool.com" in page.url or "message.html" in page.url:
+            print("  PS message page detected, clicking through...")
+            try:
+                page.click("a, button", timeout=5000)
+                page.wait_for_load_state("networkidle", timeout=15000)
+            except:
+                page.goto(f"{PS_BASE}/guardian/home.html", wait_until="networkidle")
+                time.sleep(1)
+
         print(f"  Logged in: {page.url}")
 
         # Switch to Matthew
@@ -443,9 +457,6 @@ def scrape_ps(canvas_map):
         try:
             page.evaluate("switchStudent(13842)")
             time.sleep(2)
-            page.wait_for_load_state("networkidle", timeout=15000)
-            print(f"  Switched to Matthew: {page.url}")
-        except Exception as e:
             print(f"  Student switch error: {e}")
 
         # Schedule
