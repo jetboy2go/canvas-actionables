@@ -161,7 +161,7 @@ def scrape_canvas_playwright(page):
         print(f"  Canvas login failed: {e}")
         return result
 
-    if "login" in page.url.lower():
+    if "login_success" not in page.url.lower() and "login" in page.url.lower():
         print(f"  Canvas login redirect failed — URL: {page.url}")
         # Try to grab any error message on the page
         try:
