@@ -438,13 +438,9 @@ def scrape_ps(canvas_map):
 
         # Handle PS interstitial message page
         if "message.powerschool.com" in page.url or "message.html" in page.url:
-            print("  PS message page detected, clicking through...")
-            try:
-                page.click("a, button", timeout=5000)
-                page.wait_for_load_state("networkidle", timeout=15000)
-            except Exception:
-                page.goto(f"{PS_BASE}/guardian/home.html", wait_until="networkidle")
-                time.sleep(1)
+            print("  PS message page detected, navigating to guardian home...")
+            page.goto(f"{PS_BASE}/guardian/home.html", wait_until="networkidle")
+            time.sleep(2)
 
         print(f"  Logged in: {page.url}")
 
