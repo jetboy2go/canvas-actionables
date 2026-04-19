@@ -197,7 +197,7 @@ def scrape_canvas_playwright(page):
                         due_raw = due_text
 
                     due_d = parse_date(due_raw)
-                    if due_d and (due_d < Q4_START or due_d > Q4_END):
+                    if not due_d or due_d < Q4_START or due_d > Q4_END:
                         continue
 
                     link_el = item.query_selector(".ig-title a")
