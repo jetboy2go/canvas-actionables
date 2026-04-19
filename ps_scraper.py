@@ -145,22 +145,30 @@ def scrape_canvas_playwright(page):
     result = {}
 
     print("  Logging into Canvas...")
-    page.goto(f"{CANVAS_BASE}/login/ldap", wait_until="networkidle")
+    page.goto(f"{CANVAS_BASE}/login/canvas", wait_until="networkidle")
     time.sleep(1)
 
     try:
-        page.fill('#pseudonym_session_unique_id', CANVAS_EMAIL, timeout=5000)
-        page.fill('#pseudonym_session_password', CANVAS_PASSWORD, timeout=5000)
+        page.wait_for_selector('#pseudonym_session_unique_id', timeout=10000)
+        page.fill('#pseudonym_session_unique_id', CANVAS_EMAIL)
+        page.fill('#pseudonym_session_password', CANVAS_PASSWORD)
         time.sleep(1)
-        page.keyboard.press("Enter")
-        page.wait_for_load_state("networkidle", timeout=20000)
+        page.click('button[type=submit], input[type=submit]')
+        page.wait_for_load_state("networkidle", timeout=30000)
+        time.sleep(2)
         print(f"  Canvas logged in: {page.url}")
     except Exception as e:
         print(f"  Canvas login failed: {e}")
         return result
 
     if "login" in page.url.lower():
-        print("  Canvas login redirect failed — check CANVAS_STUDENT_PASSWORD secret")
+        print(f"  Canvas login redirect failed — URL: {page.url}")
+        # Try to grab any error message on the page
+        try:
+            err = page.inner_text("#flash_message_holder, .ic-flash-error, #login_error")
+            print(f"  Canvas error message: {err[:200]}")
+        except:
+            pass
         return result
 
     for cid, cname in CANVAS_COURSES.items():
