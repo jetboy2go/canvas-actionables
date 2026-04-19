@@ -121,6 +121,24 @@
   },
   {
     "course": "Multicultural Lit",
+    "assignment_name": "Quill - Evidence Based Ethics in Science",
+    "due_date": "04/14/2026",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
+  },
+  {
+    "course": "Multicultural Lit",
     "assignment_name": "Hamtramck Video Response",
     "due_date": "04/08/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/calendar?include_con",
@@ -155,6 +173,24 @@
     ],
     "grade": "\u2014",
     "completed_date": "04/16/2026"
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Podcast Project",
+    "due_date": "04/21/2026",
+    "canvas_url": "",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
   },
   {
     "course": "Civics",
@@ -241,5 +277,59 @@
     ],
     "grade": "\u2014",
     "completed_date": "04/17/2026"
+  },
+  {
+    "course": "Algebra 2",
+    "assignment_name": "ALEKS Practice 6.5 Part 1: Operations with Radical",
+    "due_date": "04/06/2026",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
+  },
+  {
+    "course": "Algebra 2",
+    "assignment_name": "Practice 6.5 Part 2: Adding, Subtracting, Multiply",
+    "due_date": "04/13/2026",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "10.1 CUT UP VOCAB CARDS IN ZIPLOC BAG",
+    "due_date": "04/06/2026",
+    "canvas_url": "",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
   }
 ]
