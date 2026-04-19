@@ -51,7 +51,8 @@ MATTHEW_COURSE_FRNS = [
 PS_NAV_JUNK = {
     "forms", "special education home", "state assessments",
     "applications description", "course due date assignment category teacher",
-    "applications", "description", "course due date"
+    "applications", "description", "course due date",
+    "11:00 am", "11:00", "special education", "state"
 }
 
 TEACHER_EMAILS = {
@@ -463,6 +464,8 @@ def scrape_ps(canvas_map):
                 if not cells: continue
                 first = cells[0].inner_text().strip()
                 if not first or "advisory" in first.lower(): continue
+                if any(j in first.lower() for j in PS_NAV_JUNK): continue
+                if re.match(r'^\d+:\d+', first): continue
                 days = [day_cols[i] for i in day_cols if i < len(cells)
                         and cells[i].inner_text().strip() not in ["-","—",""]]
                 if days:
