@@ -1,1 +1,78 @@
-[]
+[
+  {
+    "course": "Algebra 2",
+    "assignment_name": "ALEKS Practice 6.5 Part 1: Operations with Radical",
+    "due_date": "04/06/2026",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Algebra 2",
+    "assignment_name": "Practice 6.5 Part 2: Adding, Subtracting, Multiply",
+    "due_date": "04/13/2026",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Podcast Project",
+    "due_date": "04/21/2026",
+    "canvas_url": "",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": []
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "10.1 CUT UP VOCAB CARDS IN ZIPLOC BAG",
+    "due_date": "04/06/2026",
+    "canvas_url": "",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Multicultural Lit",
+    "assignment_name": "Quill - Evidence Based Ethics in Science",
+    "due_date": "04/14/2026",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": []
+  }
+]
