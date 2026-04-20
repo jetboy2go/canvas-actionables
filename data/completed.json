@@ -139,40 +139,115 @@
   },
   {
     "course": "Multicultural Lit",
-    "assignment_name": "Hamtramck Video Response",
-    "due_date": "04/08/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/calendar?include_con",
+    "assignment_name": "Vocabulary",
+    "due_date": "",
+    "canvas_url": "",
     "teacher_email": "jsharpe@wbsd.org",
     "late_penalty": true,
     "submitted": false,
     "graded": false,
     "sources": [
-      "canvas_ics"
+      "canvas_pw"
     ],
-    "schedule_days": [
-      "Mon"
-    ],
+    "schedule_days": [],
     "grade": "\u2014",
-    "completed_date": "04/17/2026"
+    "completed_date": "04/19/2026"
+  },
+  {
+    "course": "Multicultural Lit",
+    "assignment_name": "Saints and Misfits Study Guide",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_pw"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
+  },
+  {
+    "course": "Multicultural Lit",
+    "assignment_name": "Saints & Misfits Theme Snapshot",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_pw"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
   },
   {
     "course": "Multicultural Lit",
     "assignment_name": "Hamtramck Video Response",
-    "due_date": "04/08/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29304/assignments/585491",
+    "due_date": "",
+    "canvas_url": "",
     "teacher_email": "jsharpe@wbsd.org",
     "late_penalty": true,
     "submitted": false,
     "graded": false,
     "sources": [
-      "ps_missing",
-      "canvas"
+      "canvas_pw"
     ],
-    "schedule_days": [
-      "Mon"
-    ],
+    "schedule_days": [],
     "grade": "\u2014",
-    "completed_date": "04/16/2026"
+    "completed_date": "04/19/2026"
+  },
+  {
+    "course": "Multicultural Lit",
+    "assignment_name": "Double Standard Article Response",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_pw"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
+  },
+  {
+    "course": "Multicultural Lit",
+    "assignment_name": "Resume Outline",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_pw"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
+  },
+  {
+    "course": "Multicultural Lit",
+    "assignment_name": "You Can't Ask That - Muslims Exit Ticket",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_pw"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
   },
   {
     "course": "Civics",
@@ -194,39 +269,115 @@
   },
   {
     "course": "Civics",
-    "assignment_name": "Media Bias One Pager",
-    "due_date": "04/06/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/calendar?include_con",
+    "assignment_name": "Course Syllabus",
+    "due_date": "",
+    "canvas_url": "",
     "teacher_email": "lwatson@wbsd.org",
     "late_penalty": true,
     "submitted": false,
     "graded": false,
     "sources": [
-      "canvas_ics"
+      "canvas_pw"
     ],
-    "schedule_days": [
-      "Mon"
-    ],
+    "schedule_days": [],
     "grade": "\u2014",
-    "completed_date": "04/17/2026"
+    "completed_date": "04/19/2026"
   },
   {
     "course": "Civics",
-    "assignment_name": "Social Media Influencers",
-    "due_date": "04/17/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/calendar?include_con",
+    "assignment_name": "Your Relationship with Government",
+    "due_date": "",
+    "canvas_url": "",
     "teacher_email": "lwatson@wbsd.org",
     "late_penalty": true,
     "submitted": false,
     "graded": false,
     "sources": [
-      "canvas_ics"
+      "canvas_pw"
     ],
-    "schedule_days": [
-      "Mon"
-    ],
+    "schedule_days": [],
     "grade": "\u2014",
-    "completed_date": "04/17/2026"
+    "completed_date": "04/19/2026"
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Enlightenment Thinker Guided Notes",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_pw"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Power & Authority",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_pw"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Types of Government Guided Notes",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_pw"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Types of Government Questions",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_pw"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Unit 1 Review EC",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_pw"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
   },
   {
     "course": "ADVISORY_11_HS_S2 - SEPETYS - 8(A)",
@@ -307,6 +458,114 @@
     "graded": false,
     "sources": [
       "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
+  },
+  {
+    "course": "Algebra 2",
+    "assignment_name": "\u270f\ufe0f Quiz 1.1- 1.5: Functions",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_pw"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
+  },
+  {
+    "course": "Algebra 2",
+    "assignment_name": "\ud83d\udccb Test Module 1: Functions & Graphing",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_pw"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
+  },
+  {
+    "course": "Algebra 2",
+    "assignment_name": "\u00ae\ufe0f Reveal Practice 2.1.1-4 Solving Linear Equations & Inequa",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_pw"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
+  },
+  {
+    "course": "Algebra 2",
+    "assignment_name": "\ud83c\udd70\ufe0f \ufe0fALEKS Practice 2.1.6-7: Solving Linear Equations & Inequalities (Click the McGraw Hill SSO link and open ALEKS 5th Hour A2 S1 or ALEKS 7th Hour A2 S1)",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_pw"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
+  },
+  {
+    "course": "Algebra 2",
+    "assignment_name": "\u00ae\ufe0f Reveal Practice 2.2: Solving Absolute Value Equations",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_pw"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/19/2026"
+  },
+  {
+    "course": "Algebra 2",
+    "assignment_name": "\u00ae\ufe0f Reveal Practice 1.1: Functions & Continuity",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_pw"
     ],
     "schedule_days": [
       "Mon"
