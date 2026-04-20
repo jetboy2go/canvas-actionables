@@ -32,6 +32,7 @@ jobs:
           PS_PASSWORD:  ${{ secrets.PS_PASSWORD }}
           CANVAS_TOKEN: ${{ secrets.CANVAS_TOKEN }}
           CANVAS_STUDENT_PASSWORD: ${{ secrets.CANVAS_STUDENT_PASSWORD }}
+          GMAIL_TOKEN:  ${{ secrets.GMAIL_TOKEN }}
         run: python ps_scraper.py
       - name: Commit and push results
         run: |
