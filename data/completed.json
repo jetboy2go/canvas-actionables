@@ -331,6 +331,22 @@
   },
   {
     "course": "Civics",
+    "assignment_name": "Media Bias One Pager",
+    "due_date": "04/06/2026",
+    "canvas_url": "",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Civics",
     "assignment_name": "Cabinet Scenarios",
     "due_date": "",
     "canvas_url": "",
@@ -348,22 +364,6 @@
   {
     "course": "Civics",
     "assignment_name": "Pac Notes & Classwork",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": true,
-    "graded": true,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/20/2026"
-  },
-  {
-    "course": "Civics",
-    "assignment_name": "Media Bias One Pager",
     "due_date": "",
     "canvas_url": "",
     "teacher_email": "lwatson@wbsd.org",
