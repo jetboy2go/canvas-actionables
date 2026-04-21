@@ -121,6 +121,54 @@
   },
   {
     "course": "Multicultural Lit",
+    "assignment_name": "Hamtramck Video Response",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Multicultural Lit",
+    "assignment_name": "Song Paragraph",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": true,
+    "graded": false,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Multicultural Lit",
+    "assignment_name": "Saints & Misfits Theme Snapshot",
+    "due_date": "",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29304/assignments/585499",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "gmail_digest"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Multicultural Lit",
     "assignment_name": "Quill - Evidence Based Ethics in Science",
     "due_date": "04/14/2026",
     "canvas_url": "",
@@ -202,54 +250,6 @@
     "completed_date": "04/19/2026"
   },
   {
-    "course": "Multicultural Lit",
-    "assignment_name": "Double Standard Article Response",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "jsharpe@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_pw"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/19/2026"
-  },
-  {
-    "course": "Multicultural Lit",
-    "assignment_name": "Resume Outline",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "jsharpe@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_pw"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/19/2026"
-  },
-  {
-    "course": "Multicultural Lit",
-    "assignment_name": "You Can't Ask That - Muslims Exit Ticket",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "jsharpe@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_pw"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/19/2026"
-  },
-  {
     "course": "Civics",
     "assignment_name": "Cabinet Scenarios",
     "due_date": "",
@@ -292,6 +292,38 @@
     "graded": true,
     "sources": [
       "gmail"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Unit 1 Skill Check",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Social Media Influencers",
+    "due_date": "",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/596339",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "gmail_digest"
     ],
     "schedule_days": [],
     "grade": "\u2014",
@@ -344,40 +376,6 @@
     "schedule_days": [],
     "grade": "\u2014",
     "completed_date": "04/20/2026"
-  },
-  {
-    "course": "Civics",
-    "assignment_name": "Podcast Project",
-    "due_date": "04/21/2026",
-    "canvas_url": "",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ps_missing"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "04/19/2026"
-  },
-  {
-    "course": "Civics",
-    "assignment_name": "Course Syllabus",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_pw"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/19/2026"
   },
   {
     "course": "ADVISORY_11_HS_S2 - SEPETYS - 8(A)",
@@ -445,6 +443,70 @@
   },
   {
     "course": "CAD Engineering",
+    "assignment_name": "Initial Game Design Sketches",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": true,
+    "graded": false,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "CAD Engineering",
+    "assignment_name": "Finalized Game design sketches and Basic Instructions",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": true,
+    "graded": false,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "CAD Engineering",
+    "assignment_name": "Two Chess Pieces",
+    "due_date": "",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/578582",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "gmail_digest"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "CAD Engineering",
+    "assignment_name": "Chess Pieces",
+    "due_date": "",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/578552",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "gmail_digest"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "CAD Engineering",
     "assignment_name": "Coaster Original Student Design",
     "due_date": "",
     "canvas_url": "",
@@ -460,54 +522,6 @@
     "completed_date": "04/20/2026"
   },
   {
-    "course": "CAD Engineering",
-    "assignment_name": "Multi Angle Bracket",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "cmuylaert@wbsd.org",
-    "late_penalty": false,
-    "submitted": true,
-    "graded": true,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/20/2026"
-  },
-  {
-    "course": "CAD Engineering",
-    "assignment_name": "Simple Assembly",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "cmuylaert@wbsd.org",
-    "late_penalty": false,
-    "submitted": true,
-    "graded": true,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/20/2026"
-  },
-  {
-    "course": "CAD Engineering",
-    "assignment_name": "Chess Pieces",
-    "due_date": "04/23/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/calendar?include_con",
-    "teacher_email": "cmuylaert@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_ics"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/17/2026"
-  },
-  {
     "course": "Interior Design",
     "assignment_name": "Backyard Escape Project",
     "due_date": "",
@@ -557,6 +571,70 @@
   },
   {
     "course": "Interior Design",
+    "assignment_name": "3 Story Office Design - FINAL Presentation",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": true,
+    "graded": false,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "Two-Story Lake House Final Plans and Presentation",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": true,
+    "graded": false,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "Office Design - 1st, 2nd and 3rd FLOOR PLAN Design Requirements and Assignment",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": true,
+    "graded": false,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "Shoe Box Design Project: Design Plan",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "gmail_direct"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Interior Design",
     "assignment_name": "Backyard Escape Project",
     "due_date": "",
     "canvas_url": "",
@@ -572,54 +650,40 @@
     "completed_date": "04/20/2026"
   },
   {
-    "course": "Interior Design",
-    "assignment_name": "7 Elements AND Principles of Interior Design Worksheet",
+    "course": "Algebra 2",
+    "assignment_name": "\ud83c\udd70\ufe0f ALEKS Practice 6.3",
     "due_date": "",
     "canvas_url": "",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": true,
-    "graded": true,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/20/2026"
-  },
-  {
-    "course": "Interior Design",
-    "assignment_name": "Design Project #1 Part 3: Sketch Like an Interior Designer: From Ideas to Sketch Elevations",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": true,
-    "graded": true,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/20/2026"
-  },
-  {
-    "course": "Interior Design",
-    "assignment_name": "Shoe Box Design Project",
-    "due_date": "04/23/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/calendar?include_con",
-    "teacher_email": "mmattson@wbsd.org",
+    "teacher_email": "jpruitt@wbsd.org",
     "late_penalty": false,
     "submitted": false,
     "graded": false,
     "sources": [
-      "canvas_ics"
+      "gmail"
     ],
     "schedule_days": [
       "Mon"
     ],
     "grade": "\u2014",
-    "completed_date": "04/17/2026"
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Algebra 2",
+    "assignment_name": "\ud83c\udd70\ufe0f ALEKS Practice 5.5: Roots & Zeros",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
   },
   {
     "course": "Algebra 2",
@@ -730,42 +794,6 @@
     "completed_date": "04/19/2026"
   },
   {
-    "course": "Algebra 2",
-    "assignment_name": "\u00ae\ufe0f Reveal Practice 2.2: Solving Absolute Value Equations",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "jpruitt@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_pw"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "04/19/2026"
-  },
-  {
-    "course": "Algebra 2",
-    "assignment_name": "\u00ae\ufe0f Reveal Practice 1.1: Functions & Continuity",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "jpruitt@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_pw"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "04/19/2026"
-  },
-  {
     "course": "Earth Science",
     "assignment_name": "Section Wrap-Up- 2.1 Earth: A Unique Planet",
     "due_date": "",
@@ -857,13 +885,13 @@
   },
   {
     "course": "Earth Science",
-    "assignment_name": "Section Wrap-Up- 2.1 Earth: A Unique Planet",
+    "assignment_name": "Rotation vs Revolution Introduction",
     "due_date": "",
     "canvas_url": "",
     "teacher_email": "bmcguire@wbsd.org",
     "late_penalty": true,
     "submitted": true,
-    "graded": true,
+    "graded": false,
     "sources": [
       "gmail"
     ],
@@ -871,17 +899,17 @@
       "Mon"
     ],
     "grade": "\u2014",
-    "completed_date": "04/20/2026"
+    "completed_date": "04/21/2026"
   },
   {
     "course": "Earth Science",
-    "assignment_name": "LAB: Modeling a Planet's Orbit",
+    "assignment_name": "Discussion Board: KURZGESAGT VIDEO: Big Bang",
     "due_date": "",
     "canvas_url": "",
     "teacher_email": "bmcguire@wbsd.org",
     "late_penalty": true,
     "submitted": true,
-    "graded": true,
+    "graded": false,
     "sources": [
       "gmail"
     ],
@@ -889,24 +917,88 @@
       "Mon"
     ],
     "grade": "\u2014",
-    "completed_date": "04/20/2026"
+    "completed_date": "04/21/2026"
   },
   {
     "course": "Earth Science",
-    "assignment_name": "OPTIONAL ASSIGNMENT: PART 2: The Core Movie: Meaningful Learning and Misconceptions",
+    "assignment_name": "Examining Tectonic Plates Wrap Up Questions",
     "due_date": "",
-    "canvas_url": "",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573694",
     "teacher_email": "bmcguire@wbsd.org",
     "late_penalty": true,
-    "submitted": true,
-    "graded": true,
+    "submitted": false,
+    "graded": false,
     "sources": [
-      "gmail"
+      "gmail_digest"
     ],
     "schedule_days": [
       "Mon"
     ],
     "grade": "\u2014",
-    "completed_date": "04/20/2026"
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "SCIENCE 8",
+    "assignment_name": "GHG WebQuest",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "gmail_direct"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "DESIGNING AND MODELING - ROTH - 4(A)",
+    "assignment_name": "Animal Crackers",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "gmail_direct"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "DESIGNING AND MODELING - ROTH - 4(A)",
+    "assignment_name": "April 14th!!!!!",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "gmail_direct"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "DESIGNING AND MODELING - ROTH - 4(A)",
+    "assignment_name": "Potato Chip Bag",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "gmail_direct"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
   }
 ]
