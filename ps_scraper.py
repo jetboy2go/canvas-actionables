@@ -19,7 +19,12 @@ CANVAS_TOKEN = os.environ.get("CANVAS_TOKEN",
     "16592~UHBmMt4U3Qhn7P8kvufhcatxQCnEHEEFWz69AWr9U4PzFLYMKCmFMTva9VzNcycw")
 CANVAS_EMAIL    = "wbfnicholsm07@student.wbsd.org"
 CANVAS_PASSWORD = os.environ.get("CANVAS_STUDENT_PASSWORD", "")
-GMAIL_TOKEN_FILE = Path(os.environ.get("GMAIL_TOKEN", "gmail_token.json"))
+_gmail_token_raw = os.environ.get("GMAIL_TOKEN", "")
+if _gmail_token_raw and _gmail_token_raw.strip().startswith("{"):
+    GMAIL_TOKEN_FILE = Path("gmail_token_runtime.json")
+    GMAIL_TOKEN_FILE.write_text(_gmail_token_raw)
+else:
+    GMAIL_TOKEN_FILE = Path(_gmail_token_raw or "gmail_token.json")
 DATA_DIR = Path("data")
 MAX_COMPLETED_PER_COURSE = 8
 Q4_START = date(2026, 3, 30)
