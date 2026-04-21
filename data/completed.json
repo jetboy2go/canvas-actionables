@@ -263,6 +263,54 @@
     ],
     "schedule_days": [],
     "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Pac Notes & Classwork",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": true,
+    "graded": true,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Media Bias One Pager",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": true,
+    "graded": true,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Cabinet Scenarios",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": true,
+    "graded": true,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
     "completed_date": "04/20/2026"
   },
   {
@@ -332,54 +380,6 @@
     "completed_date": "04/19/2026"
   },
   {
-    "course": "Civics",
-    "assignment_name": "Your Relationship with Government",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_pw"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/19/2026"
-  },
-  {
-    "course": "Civics",
-    "assignment_name": "Enlightenment Thinker Guided Notes",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_pw"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/19/2026"
-  },
-  {
-    "course": "Civics",
-    "assignment_name": "Power & Authority",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_pw"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/19/2026"
-  },
-  {
     "course": "ADVISORY_11_HS_S2 - SEPETYS - 8(A)",
     "assignment_name": "WBSD Student Survey",
     "due_date": "04/14/2026",
@@ -394,6 +394,54 @@
     "schedule_days": [],
     "grade": "\u2014",
     "completed_date": "04/17/2026"
+  },
+  {
+    "course": "CAD Engineering",
+    "assignment_name": "Coaster Original Student Design",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": true,
+    "graded": true,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "CAD Engineering",
+    "assignment_name": "Multi Angle Bracket",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": true,
+    "graded": true,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "CAD Engineering",
+    "assignment_name": "Simple Assembly",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": true,
+    "graded": true,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
   },
   {
     "course": "CAD Engineering",
@@ -458,6 +506,54 @@
     "schedule_days": [],
     "grade": "\u2014",
     "completed_date": "04/17/2026"
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "Backyard Escape Project",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": true,
+    "graded": true,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "7 Elements AND Principles of Interior Design Worksheet",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": true,
+    "graded": true,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "Design Project #1 Part 3: Sketch Like an Interior Designer: From Ideas to Sketch Elevations",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": true,
+    "graded": true,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
   },
   {
     "course": "Interior Design",
@@ -685,6 +781,96 @@
       "Mon"
     ],
     "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "LAB: Modeling a Planet's Orbit",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": true,
+    "graded": true,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "OPTIONAL ASSIGNMENT: PART 2: The Core Movie: Meaningful Learning and Misconceptions",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": true,
+    "graded": true,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "Continental Drift 10.1 Review/Wrap Up Questions",
+    "due_date": "",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573704",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": true,
+    "graded": true,
+    "sources": [
+      "gmail_digest"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "Bill Nye the Science Guy- Earth's Crust",
+    "due_date": "",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573672",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": true,
+    "graded": true,
+    "sources": [
+      "gmail_digest"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "Section Wrap-Up- 2.1 Earth: A Unique Planet",
+    "due_date": "",
+    "canvas_url": "",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": true,
+    "graded": true,
+    "sources": [
+      "gmail"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
     "completed_date": "04/20/2026"
   },
   {
@@ -722,59 +908,5 @@
     ],
     "grade": "\u2014",
     "completed_date": "04/20/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "Continental Drift 10.1 Review/Wrap Up Questions",
-    "due_date": "",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573704",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": true,
-    "graded": true,
-    "sources": [
-      "gmail_digest"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "04/20/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "Bill Nye the Science Guy- Earth's Crust",
-    "due_date": "",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573672",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": true,
-    "graded": true,
-    "sources": [
-      "gmail_digest"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "04/20/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "10.1 CUT UP VOCAB CARDS IN ZIPLOC BAG",
-    "due_date": "04/06/2026",
-    "canvas_url": "",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ps_missing"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "04/19/2026"
   }
 ]
