@@ -19,12 +19,7 @@ CANVAS_TOKEN = os.environ.get("CANVAS_TOKEN",
     "16592~UHBmMt4U3Qhn7P8kvufhcatxQCnEHEEFWz69AWr9U4PzFLYMKCmFMTva9VzNcycw")
 CANVAS_EMAIL    = "wbfnicholsm07@student.wbsd.org"
 CANVAS_PASSWORD = os.environ.get("CANVAS_STUDENT_PASSWORD", "")
-_gmail_token_raw = os.environ.get("GMAIL_TOKEN", "")
-if _gmail_token_raw and _gmail_token_raw.strip().startswith("{"):
-    GMAIL_TOKEN_FILE = Path("gmail_token_runtime.json")
-    GMAIL_TOKEN_FILE.write_text(_gmail_token_raw)
-else:
-    GMAIL_TOKEN_FILE = Path(_gmail_token_raw or "gmail_token.json")
+GMAIL_TOKEN_FILE = Path(os.environ.get("GMAIL_TOKEN", "gmail_token.json"))
 DATA_DIR = Path("data")
 MAX_COMPLETED_PER_COURSE = 8
 Q4_START = date(2026, 3, 30)
@@ -166,7 +161,7 @@ def scrape_canvas_playwright(page):
         print(f"  Canvas login failed: {e}")
         return result
 
-    if "login_success" not in page.url.lower() and "login" in page.url.lower():
+    if "login" in page.url.lower():
         print(f"  Canvas login redirect failed — URL: {page.url}")
         # Try to grab any error message on the page
         try:
@@ -202,7 +197,7 @@ def scrape_canvas_playwright(page):
                         due_raw = due_text
 
                     due_d = parse_date(due_raw)
-                    if not due_d or due_d < Q4_START or due_d > Q4_END:
+                    if due_d and (due_d < Q4_START or due_d > Q4_END):
                         continue
 
                     link_el = item.query_selector(".ig-title a")
@@ -411,6 +406,101 @@ def parse_gmail_assignments():
     print(f"  Gmail: {len(assignments)} new asgn, {len(graded_signals)} graded, {len(submitted_signals)} submitted")
     return assignments, graded_signals, submitted_signals
 
+# ── Canvas ICS Feed ───────────────────────────────────────────────────────
+def scrape_canvas_ics():
+    """
+    Fetches Matthew's Canvas ICS calendar feed and returns Q4 assignments
+    as a dict keyed by (course_lower, norm_name).
+    No auth needed — token is baked into the URL.
+    """
+    ICS_URL = "https://westbloomfieldsd.instructure.com/feeds/calendars/user_5XHGBH8VDOu5UOThZf27BHP5Lztiaj2CAhNtJbrs.ics"
+    result = {}
+
+    # Course ID map for building direct assignment URLs
+    COURSE_IDS = {
+        "interior design": "29168",
+        "algebra 2": "28876",
+        "civics": "30361",
+        "earth science": "28927",
+        "earth sci": "28927",
+        "cad engineering": "29422",
+        "french 1": "29366",
+        "multicultural lit": "29304",
+    }
+
+    try:
+        r = requests.get(ICS_URL, timeout=15)
+        if not r.ok:
+            print(f"  ICS fetch failed: {r.status_code}")
+            return result
+
+        content = r.text
+        print(f"  ICS: fetched {len(content)} chars")
+
+        # Split into VEVENT blocks
+        events = re.findall(r'BEGIN:VEVENT(.*?)END:VEVENT', content, re.DOTALL)
+        print(f"  ICS: {len(events)} events")
+
+        for event in events:
+            try:
+                # Extract fields
+                summary_m = re.search(r'SUMMARY:(.+?)(?:\r?\n(?!\s))', event + '\n', re.DOTALL)
+                dtstart_m = re.search(r'DTSTART[^:]*:(\d+)', event)
+                url_m     = re.search(r'URL[^:]*:(https://\S+)', event)
+
+                if not summary_m: continue
+                summary = re.sub(r'\r?\n\s', '', summary_m.group(1)).strip()
+
+                # Parse course from [COURSE - TEACHER - PERIOD] suffix
+                course_m = re.search(r'\[(.+?)\]$', summary)
+                if not course_m: continue
+                course_raw = course_m.group(1).split(' - ')[0].strip()
+                asgn_name = summary[:summary.rfind('[')].strip()
+                course = match_course_name(course_raw)
+
+                # Skip if not one of Matthew's 7 courses
+                if course not in CANVAS_COURSES.values(): continue
+
+                # Parse due date
+                due_raw = ""
+                if dtstart_m:
+                    ds = dtstart_m.group(1)
+                    if len(ds) == 8:  # DATE format YYYYMMDD
+                        due_raw = f"{ds[4:6]}/{ds[6:8]}/{ds[0:4]}"
+                    elif len(ds) >= 15:  # DATETIME format
+                        due_raw = f"{ds[4:6]}/{ds[6:8]}/{ds[0:4]}"
+
+                due_d = parse_date(due_raw)
+                if not due_d or due_d < Q4_START or due_d > Q4_END:
+                    continue
+
+                # Build direct assignment URL from calendar URL
+                canvas_url = ""
+                if url_m:
+                    cal_url = url_m.group(1).strip()
+                    asgn_id_m = re.search(r'#assignment_(\d+)', cal_url)
+                    if asgn_id_m:
+                        asgn_id = asgn_id_m.group(1)
+                        cid = COURSE_IDS.get(course.lower(), "")
+                        if cid:
+                            canvas_url = f"{CANVAS_BASE}/courses/{cid}/assignments/{asgn_id}"
+
+                key = (course.lower(), normalize(asgn_name))
+                if key not in result:
+                    a = make_assignment(course, asgn_name, due_raw, canvas_url, "ics")
+                    result[key] = a
+                    print(f"  [ICS] {course}: {asgn_name[:50]}")
+
+            except Exception as e:
+                continue
+
+        print(f"  ICS total: {len(result)} Q4 assignments")
+
+    except Exception as e:
+        print(f"  ICS error: {e}")
+
+    return result
+
 # ── PowerSchool ────────────────────────────────────────────────────────────
 def scrape_ps(canvas_map):
     ungraded = {}
@@ -586,7 +676,7 @@ def scrape_ps(canvas_map):
     return ungraded, schedule, canvas_pw_asgn
 
 # ── Merge ──────────────────────────────────────────────────────────────────
-def merge_sources(ps_asgn, canvas_map, canvas_pw_asgn, gmail_asgn, graded_sigs, submitted_sigs, schedule):
+def merge_sources(ps_asgn, canvas_map, canvas_pw_asgn, gmail_asgn, graded_sigs, submitted_sigs, schedule, ics_asgn=None):
     merged = dict(ps_asgn)
 
     for norm_name, info in canvas_map.items():
@@ -608,15 +698,28 @@ def merge_sources(ps_asgn, canvas_map, canvas_pw_asgn, gmail_asgn, graded_sigs, 
             if "canvas_pw" not in merged[key].get("sources",[]):
                 merged[key].setdefault("sources",[]).append("canvas_pw")
 
+    # Gmail — enrichment only, never adds new assignments independently
     for key, a in gmail_asgn.items():
         if key in merged:
             if "gmail" not in merged[key].get("sources",[]): merged[key].setdefault("sources",[]).append("gmail")
 
+    # ICS — adds McGuire and other assignments with Canvas URLs
+    for key, a in (ics_asgn or {}).items():
+        if key not in merged:
+            a["schedule_days"] = schedule.get(a["course"], [])
+            merged[key] = a
+        else:
+            if not merged[key].get("canvas_url") and a.get("canvas_url"):
+                merged[key]["canvas_url"] = a["canvas_url"]
+            if "ics" not in merged[key].get("sources",[]):
+                merged[key].setdefault("sources",[]).append("ics")
+
     for key in merged:
         if key in submitted_sigs: merged[key]["submitted"] = True
         if key in graded_sigs: merged[key]["graded"] = True
-        # Remove anything graded — it belongs in completed, not open
-        merged = {k: v for k, v in merged.items() if not v.get("graded")}
+
+    # Remove graded assignments — they belong in completed
+    merged = {k: v for k, v in merged.items() if not v.get("graded")}
 
     for key, a in merged.items():
         if not a.get("teacher_email"): a["teacher_email"] = TEACHER_EMAILS.get(a["course"],"")
@@ -695,6 +798,7 @@ color:var(--muted);padding:8px 0 5px;border-bottom:1px solid var(--border);margi
 .src-canvas{background:rgba(16,185,129,.15);color:#6ee7b7;}
 .src-canvas-pw{background:rgba(16,185,129,.15);color:#6ee7b7;}
 .src-gmail{background:rgba(245,158,11,.15);color:#fcd34d;}
+.src-ics{background:rgba(139,92,246,.15);color:#c4b5fd;}
 .due-block{text-align:right;white-space:nowrap;}
 .due-date{font-size:13px;font-weight:600;}
 .due-date.overdue{color:var(--red);}
@@ -752,6 +856,7 @@ def src_tags(sources):
         if "ps" in s: h += '<span class="src-tag src-ps">PS</span>'
         elif "canvas_pw" in s: h += '<span class="src-tag src-canvas-pw">CV</span>'
         elif "canvas" in s: h += '<span class="src-tag src-canvas">CV</span>'
+        elif "ics" in s: h += '<span class="src-tag src-ics">ICS</span>'
         elif "gmail" in s: h += '<span class="src-tag src-gmail">GM</span>'
     return h + '</div>'
 
@@ -901,11 +1006,14 @@ def main():
     print("=== Gmail ===")
     gmail_asgn, graded_sigs, submitted_sigs = parse_gmail_assignments()
 
+    print("=== Canvas ICS ===")
+    ics_asgn = scrape_canvas_ics()
+
     canvas_api_map = {}
     ps_asgn, schedule, canvas_pw_asgn = scrape_ps(canvas_api_map)
 
     print("\n=== Merge ===")
-    merged = merge_sources(ps_asgn, canvas_api_map, canvas_pw_asgn, gmail_asgn, graded_sigs, submitted_sigs, schedule)
+    merged = merge_sources(ps_asgn, canvas_api_map, canvas_pw_asgn, gmail_asgn, graded_sigs, submitted_sigs, schedule, ics_asgn)
     print(f"  Total open: {len(merged)}")
 
     print("\n=== Completed ===")
