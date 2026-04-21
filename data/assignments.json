@@ -32,21 +32,6 @@
     ]
   },
   {
-    "course": "Civics",
-    "assignment_name": "Podcast Project",
-    "due_date": "04/21/2026",
-    "canvas_url": "",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ps_missing",
-      "gmail"
-    ],
-    "schedule_days": []
-  },
-  {
     "course": "Earth Science",
     "assignment_name": "10.1 CUT UP VOCAB CARDS IN ZIPLOC BAG",
     "due_date": "04/06/2026",
@@ -73,6 +58,198 @@
     "graded": false,
     "sources": [
       "ps_missing"
+    ],
+    "schedule_days": []
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Media Bias One Pager",
+    "due_date": "04/06/2026",
+    "canvas_url": "",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": []
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "Video Bill Nye Greatest Discovery Plate Tectonics",
+    "due_date": "04/06/2026",
+    "canvas_url": "",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Algebra 2",
+    "assignment_name": "\u00ae\ufe0f Reveal Practice 6.4: Graphing Radical Functions (ALGEBRA 2 S2 - PRUITT - 7(A))",
+    "due_date": "04/07/2026",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Multicultural Lit",
+    "assignment_name": "Hamtramck Video Response",
+    "due_date": "04/08/2026",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": []
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "Shoe Box Design Project: Design Plan",
+    "due_date": "04/10/2026",
+    "canvas_url": "",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": []
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "Continental Drift 10.1 Review/Wrap Up Questions",
+    "due_date": "04/13/2026",
+    "canvas_url": "",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Podcast Project",
+    "due_date": "04/14/2026",
+    "canvas_url": "",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": []
+  },
+  {
+    "course": "Multicultural Lit",
+    "assignment_name": "Saints & Misfits Theme Snapshot",
+    "due_date": "04/14/2026",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": []
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "Bill Nye the Science Guy- Earth's Crust",
+    "due_date": "04/15/2026",
+    "canvas_url": "",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "Examining Tectonic Plates Wrap Up Questions",
+    "due_date": "04/16/2026",
+    "canvas_url": "",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Social Media Influencers",
+    "due_date": "04/17/2026",
+    "canvas_url": "",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": []
+  },
+  {
+    "course": "CAD Engineering",
+    "assignment_name": "Chess Pieces",
+    "due_date": "04/23/2026",
+    "canvas_url": "",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": []
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "Shoe Box Design Project",
+    "due_date": "04/23/2026",
+    "canvas_url": "",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
     ],
     "schedule_days": []
   }
