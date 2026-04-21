@@ -62,20 +62,6 @@
     "schedule_days": []
   },
   {
-    "course": "Civics",
-    "assignment_name": "Media Bias One Pager",
-    "due_date": "04/06/2026",
-    "canvas_url": "",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": []
-  },
-  {
     "course": "Earth Science",
     "assignment_name": "Video Bill Nye Greatest Discovery Plate Tectonics",
     "due_date": "04/06/2026",
@@ -136,22 +122,6 @@
     "schedule_days": []
   },
   {
-    "course": "Earth Science",
-    "assignment_name": "Continental Drift 10.1 Review/Wrap Up Questions",
-    "due_date": "04/13/2026",
-    "canvas_url": "",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
     "course": "Civics",
     "assignment_name": "Podcast Project",
     "due_date": "04/14/2026",
@@ -178,22 +148,6 @@
       "ics"
     ],
     "schedule_days": []
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "Bill Nye the Science Guy- Earth's Crust",
-    "due_date": "04/15/2026",
-    "canvas_url": "",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": true,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
   },
   {
     "course": "Earth Science",
