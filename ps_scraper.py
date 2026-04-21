@@ -609,10 +609,7 @@ def merge_sources(ps_asgn, canvas_map, canvas_pw_asgn, gmail_asgn, graded_sigs, 
                 merged[key].setdefault("sources",[]).append("canvas_pw")
 
     for key, a in gmail_asgn.items():
-        if key not in merged:
-            a["schedule_days"] = schedule.get(a["course"], [])
-            merged[key] = a
-        else:
+        if key in merged:
             if "gmail" not in merged[key].get("sources",[]): merged[key].setdefault("sources",[]).append("gmail")
 
     for key in merged:
