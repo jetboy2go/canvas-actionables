@@ -618,6 +618,8 @@ def merge_sources(ps_asgn, canvas_map, canvas_pw_asgn, gmail_asgn, graded_sigs, 
     for key in merged:
         if key in submitted_sigs: merged[key]["submitted"] = True
         if key in graded_sigs: merged[key]["graded"] = True
+        # Remove anything graded — it belongs in completed, not open
+        merged = {k: v for k, v in merged.items() if not v.get("graded")}
 
     for key, a in merged.items():
         if not a.get("teacher_email"): a["teacher_email"] = TEACHER_EMAILS.get(a["course"],"")
