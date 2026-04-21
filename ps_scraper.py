@@ -486,6 +486,12 @@ def scrape_canvas_ics():
 
         # Split into VEVENT blocks
         events = re.findall(r'BEGIN:VEVENT(.*?)END:VEVENT', content, re.DOTALL)
+        for i, event in enumerate(events):
+            summary_m = re.search(r'SUMMARY:(.+?)(?:\r?\n(?!\s))', event + '\n', re.DOTALL)
+            dtstart_m = re.search(r'DTSTART[^:]*:(\S+)', event)
+            summary = re.sub(r'\r?\n\s', '', summary_m.group(1)).strip() if summary_m else "NO SUMMARY"
+            dtstart = dtstart_m.group(1) if dtstart_m else "NO DTSTART"
+            print(f"  Event {i}: {dtstart} | {summary[:60]}")
         print(f"  ICS: {len(events)} events")
 
         for event in events:
