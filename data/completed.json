@@ -169,6 +169,38 @@
   },
   {
     "course": "Multicultural Lit",
+    "assignment_name": "Hamtramck Video Response",
+    "due_date": "04/08/2026",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Multicultural Lit",
+    "assignment_name": "Saints & Misfits Theme Snapshot",
+    "due_date": "04/14/2026",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "04/21/2026"
+  },
+  {
+    "course": "Multicultural Lit",
     "assignment_name": "Quill - Evidence Based Ethics in Science",
     "due_date": "04/14/2026",
     "canvas_url": "",
@@ -204,38 +236,6 @@
   {
     "course": "Multicultural Lit",
     "assignment_name": "Saints and Misfits Study Guide",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "jsharpe@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_pw"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/19/2026"
-  },
-  {
-    "course": "Multicultural Lit",
-    "assignment_name": "Saints & Misfits Theme Snapshot",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "jsharpe@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_pw"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/19/2026"
-  },
-  {
-    "course": "Multicultural Lit",
-    "assignment_name": "Hamtramck Video Response",
     "due_date": "",
     "canvas_url": "",
     "teacher_email": "jsharpe@wbsd.org",
@@ -347,35 +347,35 @@
   },
   {
     "course": "Civics",
-    "assignment_name": "Cabinet Scenarios",
-    "due_date": "",
+    "assignment_name": "Podcast Project",
+    "due_date": "04/14/2026",
     "canvas_url": "",
     "teacher_email": "lwatson@wbsd.org",
     "late_penalty": true,
-    "submitted": true,
-    "graded": true,
+    "submitted": false,
+    "graded": false,
     "sources": [
-      "gmail"
+      "ics"
     ],
     "schedule_days": [],
     "grade": "\u2014",
-    "completed_date": "04/20/2026"
+    "completed_date": "04/21/2026"
   },
   {
     "course": "Civics",
-    "assignment_name": "Pac Notes & Classwork",
-    "due_date": "",
+    "assignment_name": "Social Media Influencers",
+    "due_date": "04/17/2026",
     "canvas_url": "",
     "teacher_email": "lwatson@wbsd.org",
     "late_penalty": true,
-    "submitted": true,
-    "graded": true,
+    "submitted": false,
+    "graded": false,
     "sources": [
-      "gmail"
+      "ics"
     ],
     "schedule_days": [],
     "grade": "\u2014",
-    "completed_date": "04/20/2026"
+    "completed_date": "04/21/2026"
   },
   {
     "course": "ADVISORY_11_HS_S2 - SEPETYS - 8(A)",

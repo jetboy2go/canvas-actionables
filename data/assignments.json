@@ -94,84 +94,12 @@
     ]
   },
   {
-    "course": "Multicultural Lit",
-    "assignment_name": "Hamtramck Video Response",
-    "due_date": "04/08/2026",
-    "canvas_url": "",
-    "teacher_email": "jsharpe@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": []
-  },
-  {
     "course": "Interior Design",
     "assignment_name": "Shoe Box Design Project: Design Plan",
     "due_date": "04/10/2026",
     "canvas_url": "",
     "teacher_email": "mmattson@wbsd.org",
     "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": []
-  },
-  {
-    "course": "Civics",
-    "assignment_name": "Podcast Project",
-    "due_date": "04/14/2026",
-    "canvas_url": "",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": []
-  },
-  {
-    "course": "Multicultural Lit",
-    "assignment_name": "Saints & Misfits Theme Snapshot",
-    "due_date": "04/14/2026",
-    "canvas_url": "",
-    "teacher_email": "jsharpe@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": []
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "Examining Tectonic Plates Wrap Up Questions",
-    "due_date": "04/16/2026",
-    "canvas_url": "",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
-    "course": "Civics",
-    "assignment_name": "Social Media Influencers",
-    "due_date": "04/17/2026",
-    "canvas_url": "",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
     "submitted": false,
     "graded": false,
     "sources": [
