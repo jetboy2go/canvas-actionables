@@ -499,7 +499,7 @@ def scrape_canvas_ics():
                 summary = re.sub(r'\r?\n\s', '', summary_m.group(1)).strip()
 
                 # Parse course from [COURSE - TEACHER - PERIOD] suffix
-                course_m = re.search(r'\[(.+?)\]$', summary)
+                course_m = re.search(r'\[(.+?)\]', summary)
                 if not course_m: continue
                 course_raw = course_m.group(1).split(' - ')[0].strip()
                 asgn_name = summary[:summary.rfind('[')].strip()
