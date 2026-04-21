@@ -167,9 +167,8 @@ def scrape_canvas_playwright(page):
         print(f"  Canvas login failed: {e}")
         return result
 
-    if "login" in page.url.lower():
+    if "login_success" not in page.url.lower() and "login" in page.url.lower():
         print(f"  Canvas login redirect failed — URL: {page.url}")
-        # Try to grab any error message on the page
         try:
             err = page.inner_text("#flash_message_holder, .ic-flash-error, #login_error")
             print(f"  Canvas error message: {err[:200]}")
@@ -177,56 +176,47 @@ def scrape_canvas_playwright(page):
             pass
         return result
 
-    for cid, cname in CANVAS_COURSES.items():
-        try:
-            url = f"{CANVAS_BASE}/courses/{cid}/assignments?bucket=missing"
-            page.goto(url, wait_until="networkidle", timeout=20000)
-            time.sleep(1)
+    # ── Canvas To Do API ───────────────────────────────────────────────────
+    try:
+        print("  Fetching Canvas To Do list...")
+        response = page.evaluate("""
+            async () => {
+                const r = await fetch('/api/v1/users/self/todo?per_page=100');
+                return await r.json();
+            }
+        """)
+        print(f"  Canvas To Do: {len(response)} items")
+        for item in response:
+            try:
+                assignment = item.get('assignment', {})
+                if not assignment:
+                    continue
+                name = assignment.get('name', '').strip()
+                course_id = str(assignment.get('course_id', ''))
+                due_at = assignment.get('due_at', '') or ''
+                html_url = assignment.get('html_url', '')
 
-            items = page.query_selector_all("li.assignment")
-            print(f"  {cname}: {len(items)} missing")
-
-            for item in items:
-                try:
-                    title_el = item.query_selector(".ig-title")
-                    due_el   = item.query_selector(".assignment-date-due")
-
-                    title = title_el.inner_text().strip() if title_el else ""
-                    if not title:
-                        continue
-
-                    due_raw = ""
-                    if due_el:
-                        due_text = due_el.inner_text().strip()
-                        due_text = re.sub(r'^Due:\s*', '', due_text, flags=re.IGNORECASE).strip()
-                        due_text = re.sub(r'\s+at\s+\d+:\d+\w+.*$', '', due_text, flags=re.IGNORECASE).strip()
-                        due_raw = due_text
-
-                    due_d = parse_date(due_raw)
-                    if due_d and (due_d < Q4_START or due_d > Q4_END):
-                        continue
-
-                    link_el = item.query_selector(".ig-title a")
-                    canvas_url = ""
-                    if link_el:
-                        href = link_el.get_attribute("href") or ""
-                        canvas_url = href if href.startswith("http") else f"{CANVAS_BASE}{href}"
-
-                    key = (cname.lower(), normalize(title))
-                    if key not in result:
-                        a = make_assignment(cname, title, due_raw, canvas_url, "canvas_pw")
-                        result[key] = a
-                        print(f"    + {title[:60]}")
-
-                except Exception as e:
-                    print(f"    Item error in {cname}: {e}")
+                cname = CANVAS_COURSES.get(course_id, '')
+                if not cname:
                     continue
 
-        except Exception as e:
-            print(f"  Canvas scrape error {cname}: {e}")
-            continue
+                due_d = parse_date(due_at)
+                # Allow undated items (McGuire To Do items) and Q4 dated items
+                if due_d and (due_d < Q4_START or due_d > Q4_END):
+                    continue
 
-    print(f"  Canvas Playwright: {len(result)} missing assignments")
+                key = (cname.lower(), normalize(name))
+                if key not in result:
+                    a = make_assignment(cname, name, due_at, html_url, "canvas_todo")
+                    result[key] = a
+                    print(f"  [todo] {cname}: {name[:50]}")
+            except:
+                continue
+
+    except Exception as e:
+        print(f"  Canvas To Do error: {e}")
+
+    print(f"  Canvas Playwright: {len(result)} assignments")
     return result
 
 # ── Gmail ──────────────────────────────────────────────────────────────────
@@ -481,17 +471,13 @@ def scrape_canvas_ics():
             print(f"  ICS fetch failed: {r.status_code}")
             return result
 
-        content = re.sub(r'\r?\n[ \t]', '', r.text)
+        content = r.text
+        # ICS files use line folding — unfold continuation lines
+        content = re.sub(r'\r?\n[ \t]', '', content)
         print(f"  ICS: fetched {len(content)} chars")
 
         # Split into VEVENT blocks
         events = re.findall(r'BEGIN:VEVENT(.*?)END:VEVENT', content, re.DOTALL)
-        for i, event in enumerate(events):
-            summary_m = re.search(r'SUMMARY:(.+?)(?:\r?\n(?!\s))', event + '\n', re.DOTALL)
-            dtstart_m = re.search(r'DTSTART[^:]*:(\S+)', event)
-            summary = re.sub(r'\r?\n\s', '', summary_m.group(1)).strip() if summary_m else "NO SUMMARY"
-            dtstart = dtstart_m.group(1) if dtstart_m else "NO DTSTART"
-            print(f"  Event {i}: {dtstart} | {summary[:60]}")
         print(f"  ICS: {len(events)} events")
 
         for event in events:
@@ -505,7 +491,7 @@ def scrape_canvas_ics():
                 summary = re.sub(r'\r?\n\s', '', summary_m.group(1)).strip()
 
                 # Parse course from [COURSE - TEACHER - PERIOD] suffix
-                course_m = re.search(r'\[(.+?)\]', summary)
+                course_m = re.search(r'\[(.+?)\]$', summary)
                 if not course_m: continue
                 course_raw = course_m.group(1).split(' - ')[0].strip()
                 asgn_name = summary[:summary.rfind('[')].strip()
@@ -850,6 +836,7 @@ color:var(--muted);padding:8px 0 5px;border-bottom:1px solid var(--border);margi
 .src-ps{background:rgba(59,130,246,.15);color:#93c5fd;}
 .src-canvas{background:rgba(16,185,129,.15);color:#6ee7b7;}
 .src-canvas-pw{background:rgba(16,185,129,.15);color:#6ee7b7;}
+.src-canvas-todo{background:rgba(251,146,60,.15);color:#fed7aa;}
 .src-gmail{background:rgba(245,158,11,.15);color:#fcd34d;}
 .src-ics{background:rgba(139,92,246,.15);color:#c4b5fd;}
 .due-block{text-align:right;white-space:nowrap;}
@@ -907,6 +894,7 @@ def src_tags(sources):
     h = '<div class="sources">'
     for s in (sources or []):
         if "ps" in s: h += '<span class="src-tag src-ps">PS</span>'
+        elif "canvas_todo" in s: h += '<span class="src-tag src-canvas-todo">TODO</span>'
         elif "canvas_pw" in s: h += '<span class="src-tag src-canvas-pw">CV</span>'
         elif "canvas" in s: h += '<span class="src-tag src-canvas">CV</span>'
         elif "ics" in s: h += '<span class="src-tag src-ics">ICS</span>'
