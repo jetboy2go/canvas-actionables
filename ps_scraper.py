@@ -92,6 +92,7 @@ def save_json(p, data):
     Path(p).write_text(json.dumps(data, indent=2))
 
 def normalize(s):
+    s = s.replace('\u2019', "'").replace('\u2018', "'")  # curly apostrophes
     return re.sub(r'\s+', ' ', s.lower().strip())
 
 def clean_course(name):
