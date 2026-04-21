@@ -62,22 +62,6 @@
     "schedule_days": []
   },
   {
-    "course": "Earth Science",
-    "assignment_name": "Video Bill Nye Greatest Discovery Plate Tectonics",
-    "due_date": "04/06/2026",
-    "canvas_url": "",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": true,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
     "course": "Algebra 2",
     "assignment_name": "\u00ae\ufe0f Reveal Practice 6.4: Graphing Radical Functions (ALGEBRA 2 S2 - PRUITT - 7(A))",
     "due_date": "04/07/2026",
