@@ -97,6 +97,7 @@ def save_json(p, data):
     Path(p).write_text(json.dumps(data, indent=2))
 
 def normalize(s):
+    s = s.replace('\u2019', "'").replace('\u2018', "'")  # curly apostrophes
     return re.sub(r'\s+', ' ', s.lower().strip())
 
 def clean_course(name):
@@ -301,6 +302,47 @@ def parse_gmail_assignments():
                 if ntype in ("new","due_changed","comment"):
                     if key not in assignments:
                         assignments[key] = make_assignment(course, asgn, "", source="gmail")
+            except: pass
+
+        # ── Direct graded notifications (Canvas → Matthew's email) ────────
+        graded_direct = svc.users().messages().list(
+            userId="me",
+            q="from:notifications@instructure.com subject:\"Assignment Graded\" after:2026/03/29",
+            maxResults=200).execute()
+        graded_msgs = graded_direct.get("messages", [])
+        print(f"  Gmail graded direct: {len(graded_msgs)} graded notifications")
+
+        for ref in graded_msgs:
+            try:
+                msg = svc.users().messages().get(
+                    userId="me", id=ref["id"], format="metadata",
+                    metadataHeaders=["Subject"]).execute()
+                subj = next((h["value"] for h in msg.get("payload",{}).get("headers",[])
+                             if h["name"] == "Subject"), "")
+                subj = subj.replace("Fwd: ", "").strip()
+                if not subj.startswith("Assignment Graded: "): continue
+                asgn = subj[19:]
+                course = None
+                for marker, cname in [
+                    ("CIVICS","Civics"),("WATSON","Civics"),
+                    ("EARTH SCI","Earth Science"),("MCGUIRE","Earth Science"),
+                    ("MULTCULT","Multicultural Lit"),("SHARPE","Multicultural Lit"),
+                    ("ALGEBRA","Algebra 2"),("PRUITT","Algebra 2"),
+                    ("FRENCH","French 1"),("BISHOP","French 1"),
+                    ("INTERIOR DESIGN","Interior Design"),("5TH HOUR","Interior Design"),
+                    ("MATTSON","Interior Design"),
+                    ("ENGRACAD","CAD Engineering"),("MUYLAERT","CAD Engineering"),
+                ]:
+                    if marker in subj.upper(): course = cname; break
+                if not course: continue
+                for sep in [", CIVICS",", EARTH",", MULTCULT",", ALGEBRA",
+                            ", FRENCH",", 5th Hour",", ENGRACAD",", Interior",", ALGEBRA 2"]:
+                    if sep.upper() in asgn.upper():
+                        asgn = asgn[:asgn.upper().index(sep.upper())]
+                asgn = asgn.strip()
+                key = (course.lower(), normalize(asgn))
+                graded_signals.add(key)
+                submitted_signals.add(key)
             except: pass
 
         # ── Weekly digest parser ───────────────────────────────────────────
