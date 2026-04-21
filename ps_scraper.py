@@ -481,7 +481,7 @@ def scrape_canvas_ics():
             print(f"  ICS fetch failed: {r.status_code}")
             return result
 
-        content = r.text
+        content = re.sub(r'\r?\n[ \t]', '', r.text)
         print(f"  ICS: fetched {len(content)} chars")
 
         # Split into VEVENT blocks
