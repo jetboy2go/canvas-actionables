@@ -93,6 +93,21 @@
     "schedule_days": []
   },
   {
+    "course": "Civics",
+    "assignment_name": "American President Questions",
+    "due_date": "04/25/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597671",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": []
+  },
+  {
     "course": "Algebra 2",
     "assignment_name": "\u00ae\ufe0f Reveal Practice 6.4: Graphing Radical Functions (ALGEBRA 2 S2 - PRUITT - 7(A))",
     "due_date": "04/07/2026",
