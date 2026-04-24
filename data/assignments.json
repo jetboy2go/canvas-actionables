@@ -94,6 +94,21 @@
   },
   {
     "course": "Civics",
+    "assignment_name": "Citizenship Guided Notes",
+    "due_date": "04/24/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597764",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": []
+  },
+  {
+    "course": "Civics",
     "assignment_name": "American President Questions",
     "due_date": "04/25/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597671",
