@@ -48,7 +48,7 @@ MATTHEW_COURSE_FRNS = [
     ("Multicultural Lit", "0042291490"),
     ("Algebra 2",         "0042291559"),
     ("Civics",            "0042291530"),
-    ("French 1",          "0042291537"),
+    ("French 1",          "0042276245"),
     ("Interior Design",   "0042287823"),
     ("CAD Engineering",   "0042291544"),
 ]
@@ -143,7 +143,11 @@ def is_ungraded_score(score_raw):
     s = (score_raw or "").strip()
     if not s or s in ["-", "—", "--", "N/A"]: return True
     m = re.match(r'^([\d.]+)\s*/\s*([\d.]+)$', s)
-    if m: return float(m.group(1)) == 0.0
+    if m:
+        earned = float(m.group(1))
+        possible = float(m.group(2))
+        if possible == 0: return True
+        return (earned / possible) < 0.5  # flag anything below 50%
     return False
 
 # ── Canvas (Playwright browser login) ──────────────────────────────────────
@@ -151,7 +155,7 @@ def scrape_canvas_playwright(page):
     result = {}
 
     print("  Logging into Canvas...")
-    page.goto(f"{CANVAS_BASE}/login/canvas", wait_until="networkidle")
+    page.goto(f"{CANVAS_BASE}/login/ldap", wait_until="networkidle")
     time.sleep(1)
 
     try:
