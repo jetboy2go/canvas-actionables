@@ -99,23 +99,6 @@
     ]
   },
   {
-    "course": "Interior Design",
-    "assignment_name": "Celebrity Design Project",
-    "due_date": "04/29/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/597894",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_todo",
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
     "course": "Civics",
     "assignment_name": "American President Questions",
     "due_date": "04/30/2026",
@@ -127,6 +110,23 @@
     "sources": [
       "canvas_todo",
       "gmail",
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "Celebrity Design Project",
+    "due_date": "04/30/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/597894",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
       "ics"
     ],
     "schedule_days": [
