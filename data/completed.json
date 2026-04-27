@@ -251,6 +251,24 @@
   },
   {
     "course": "Civics",
+    "assignment_name": "Citizenship Guided Notes",
+    "due_date": "04/24/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597764",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "04/27/2026"
+  },
+  {
+    "course": "Civics",
     "assignment_name": "Cabinet Scenarios",
     "due_date": "",
     "canvas_url": "",
@@ -349,22 +367,6 @@
     "course": "Civics",
     "assignment_name": "Podcast Project",
     "due_date": "04/14/2026",
-    "canvas_url": "",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "Civics",
-    "assignment_name": "Social Media Influencers",
-    "due_date": "04/17/2026",
     "canvas_url": "",
     "teacher_email": "lwatson@wbsd.org",
     "late_penalty": true,
