@@ -32,6 +32,22 @@
     ]
   },
   {
+    "course": "Algebra 2",
+    "assignment_name": "Reveal Practice 6.6: Solving Radical Equations",
+    "due_date": "04/20/2026",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
     "course": "Multicultural Lit",
     "assignment_name": "Quill - Evidence Based Ethics in Science",
     "due_date": "04/14/2026",
@@ -88,6 +104,23 @@
     "due_date": "05/01/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597765",
     "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Multicultural Lit",
+    "assignment_name": "Hate Crime Presentation Information",
+    "due_date": "05/01/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29304/assignments/598136",
+    "teacher_email": "jsharpe@wbsd.org",
     "late_penalty": true,
     "submitted": false,
     "graded": false,
