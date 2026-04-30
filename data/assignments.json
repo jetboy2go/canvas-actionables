@@ -83,40 +83,6 @@
     ]
   },
   {
-    "course": "Earth Science",
-    "assignment_name": "10.2 NoteCheck/Directed Reading Guide",
-    "due_date": "04/30/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573735",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_todo",
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
-    "course": "Interior Design",
-    "assignment_name": "Celebrity Design Project: Gathering Client Information",
-    "due_date": "05/01/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/597894",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_todo",
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
     "course": "Civics",
     "assignment_name": "History of Voting",
     "due_date": "05/01/2026",
@@ -167,6 +133,22 @@
     ]
   },
   {
+    "course": "Earth Science",
+    "assignment_name": "10.2 NoteCheck/Directed Reading Guide",
+    "due_date": "04/29/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573735",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
     "course": "Civics",
     "assignment_name": "American President Questions",
     "due_date": "04/29/2026",
@@ -195,5 +177,21 @@
       "ics"
     ],
     "schedule_days": []
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "Celebrity Design Project: Gathering Client Information",
+    "due_date": "04/30/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/597894",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
   }
 ]
