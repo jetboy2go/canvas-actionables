@@ -41,7 +41,8 @@
     "submitted": false,
     "graded": false,
     "sources": [
-      "ps_missing"
+      "ps_missing",
+      "gmail"
     ],
     "schedule_days": [
       "Mon"
@@ -51,6 +52,22 @@
     "course": "Multicultural Lit",
     "assignment_name": "Quill - Evidence Based Ethics in Science",
     "due_date": "04/14/2026",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Multicultural Lit",
+    "assignment_name": "The 57 Bus Vocabulary Slides",
+    "due_date": "05/01/2026",
     "canvas_url": "",
     "teacher_email": "jsharpe@wbsd.org",
     "late_penalty": true,
@@ -99,11 +116,44 @@
     ]
   },
   {
+    "course": "CAD Engineering",
+    "assignment_name": "Figure 4P-37",
+    "due_date": "05/05/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/578555",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": []
+  },
+  {
     "course": "Algebra 2",
     "assignment_name": "\ud83c\udd70\ufe0f ALEKS Practice 7.1",
     "due_date": "05/05/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28876/assignments/597982",
     "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "gmail",
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "Celebrity Design Project: Floor Plan and Interior Design Presentation",
+    "due_date": "05/09/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/598064",
+    "teacher_email": "mmattson@wbsd.org",
     "late_penalty": false,
     "submitted": false,
     "graded": false,
@@ -164,20 +214,6 @@
     ]
   },
   {
-    "course": "CAD Engineering",
-    "assignment_name": "Chess Pieces",
-    "due_date": "04/29/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/578552",
-    "teacher_email": "cmuylaert@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": []
-  },
-  {
     "course": "Interior Design",
     "assignment_name": "Celebrity Design Project: Gathering Client Information",
     "due_date": "04/30/2026",
@@ -194,43 +230,11 @@
     ]
   },
   {
-    "course": "Civics",
-    "assignment_name": "History of Voting",
-    "due_date": "05/01/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597765",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
     "course": "Multicultural Lit",
     "assignment_name": "Hate Crime Presentation Information",
     "due_date": "05/01/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29304/assignments/598136",
     "teacher_email": "jsharpe@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "VIDEO:  Nova - Making North America: Origins",
-    "due_date": "05/04/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573687",
-    "teacher_email": "bmcguire@wbsd.org",
     "late_penalty": true,
     "submitted": false,
     "graded": false,
