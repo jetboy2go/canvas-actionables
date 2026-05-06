@@ -802,6 +802,24 @@
   },
   {
     "course": "Earth Science",
+    "assignment_name": "FILLED IN NOTES 10.3 - THE CHANGING CONTINENTS",
+    "due_date": "05/05/2026",
+    "canvas_url": "",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/06/2026"
+  },
+  {
+    "course": "Earth Science",
     "assignment_name": "VIDEO:  Nova - Making North America: Origins",
     "due_date": "05/04/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573687",
@@ -919,24 +937,6 @@
     "graded": true,
     "sources": [
       "gmail_digest"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "Rotation vs Revolution Introduction",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": true,
-    "graded": false,
-    "sources": [
-      "gmail"
     ],
     "schedule_days": [
       "Mon"
