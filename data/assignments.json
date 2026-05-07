@@ -65,22 +65,6 @@
     ]
   },
   {
-    "course": "Multicultural Lit",
-    "assignment_name": "The 57 Bus Vocabulary Slides",
-    "due_date": "05/01/2026",
-    "canvas_url": "",
-    "teacher_email": "jsharpe@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ps_missing"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
     "course": "Interior Design",
     "assignment_name": "Shoe Box Design Project: Design Plan",
     "due_date": "04/11/2026",
@@ -92,23 +76,6 @@
     "sources": [
       "canvas_todo",
       "gmail",
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
-    "course": "Interior Design",
-    "assignment_name": "Shoe Box Design Project",
-    "due_date": "04/24/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/575649",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_todo",
       "ics"
     ],
     "schedule_days": [
@@ -146,6 +113,40 @@
     "schedule_days": []
   },
   {
+    "course": "Earth Science",
+    "assignment_name": "10.3 NoteCheck/Directed Reading Guide",
+    "due_date": "05/08/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573736",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "COSMOS VIDEO: Lost Worlds of Planet Earth",
+    "due_date": "05/08/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573749",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
     "course": "Civics",
     "assignment_name": "Supreme Court Poster",
     "due_date": "05/08/2026",
@@ -180,11 +181,42 @@
     ]
   },
   {
+    "course": "CAD Engineering",
+    "assignment_name": "Practice Part A1",
+    "due_date": "05/11/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/578570",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": []
+  },
+  {
     "course": "Algebra 2",
     "assignment_name": "\u00ae\ufe0f Reveal Practice 6.4: Graphing Radical Functions (ALGEBRA 2 S2 - PRUITT - 7(A))",
     "due_date": "04/07/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28876/assignments/594792",
     "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "Shoe Box Design Project",
+    "due_date": "04/23/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/575649",
+    "teacher_email": "mmattson@wbsd.org",
     "late_penalty": false,
     "submitted": false,
     "graded": false,
