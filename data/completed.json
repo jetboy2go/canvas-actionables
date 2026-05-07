@@ -139,6 +139,24 @@
   },
   {
     "course": "Multicultural Lit",
+    "assignment_name": "Hate Crime Presentation Information",
+    "due_date": "05/01/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29304/assignments/598136",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/07/2026"
+  },
+  {
+    "course": "Multicultural Lit",
     "assignment_name": "Hamtramck Video Response",
     "due_date": "",
     "canvas_url": "",
@@ -234,20 +252,59 @@
     "completed_date": "04/21/2026"
   },
   {
-    "course": "Multicultural Lit",
-    "assignment_name": "Saints & Misfits Theme Snapshot",
-    "due_date": "04/14/2026",
-    "canvas_url": "",
-    "teacher_email": "jsharpe@wbsd.org",
+    "course": "Civics",
+    "assignment_name": "Supreme Court Poster",
+    "due_date": "05/08/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597766",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/07/2026"
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "American President Questions",
+    "due_date": "04/29/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597671",
+    "teacher_email": "lwatson@wbsd.org",
     "late_penalty": true,
     "submitted": false,
     "graded": false,
     "sources": [
       "ics"
     ],
-    "schedule_days": [],
+    "schedule_days": [
+      "Mon"
+    ],
     "grade": "\u2014",
-    "completed_date": "04/21/2026"
+    "completed_date": "05/07/2026"
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Responsibilities of U.S. Citizens",
+    "due_date": "05/06/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/598540",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/07/2026"
   },
   {
     "course": "Civics",
@@ -334,54 +391,6 @@
     "completed_date": "04/21/2026"
   },
   {
-    "course": "Civics",
-    "assignment_name": "Unit 1 Skill Check",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "Civics",
-    "assignment_name": "Social Media Influencers",
-    "due_date": "",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/596339",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "gmail_digest"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "Civics",
-    "assignment_name": "Media Bias One Pager",
-    "due_date": "04/06/2026",
-    "canvas_url": "",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
     "course": "ADVISORY_11_HS_S2 - SEPETYS - 8(A)",
     "assignment_name": "WBSD Student Survey",
     "due_date": "04/14/2026",
@@ -396,6 +405,57 @@
     "schedule_days": [],
     "grade": "\u2014",
     "completed_date": "04/17/2026"
+  },
+  {
+    "course": "CAD Engineering",
+    "assignment_name": "Figure 4P-37",
+    "due_date": "05/05/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/578555",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "05/07/2026"
+  },
+  {
+    "course": "CAD Engineering",
+    "assignment_name": "Mechanical Part 2",
+    "due_date": "05/07/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/578566",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "05/07/2026"
+  },
+  {
+    "course": "CAD Engineering",
+    "assignment_name": "Practice Part A1",
+    "due_date": "05/11/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/578570",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "05/07/2026"
   },
   {
     "course": "CAD Engineering",
@@ -478,52 +538,79 @@
     "completed_date": "04/21/2026"
   },
   {
-    "course": "CAD Engineering",
-    "assignment_name": "Finalized Game design sketches and Basic Instructions",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "cmuylaert@wbsd.org",
-    "late_penalty": false,
-    "submitted": true,
-    "graded": false,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "CAD Engineering",
-    "assignment_name": "Two Chess Pieces",
-    "due_date": "",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/578582",
-    "teacher_email": "cmuylaert@wbsd.org",
+    "course": "Interior Design",
+    "assignment_name": "Shoe Box Design Project: Design Plan",
+    "due_date": "04/11/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/595454",
+    "teacher_email": "mmattson@wbsd.org",
     "late_penalty": false,
     "submitted": false,
     "graded": false,
     "sources": [
-      "gmail_digest"
+      "canvas_todo",
+      "gmail",
+      "ics"
     ],
-    "schedule_days": [],
+    "schedule_days": [
+      "Mon"
+    ],
     "grade": "\u2014",
-    "completed_date": "04/21/2026"
+    "completed_date": "05/07/2026"
   },
   {
-    "course": "CAD Engineering",
-    "assignment_name": "Chess Pieces",
-    "due_date": "",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/578552",
-    "teacher_email": "cmuylaert@wbsd.org",
+    "course": "Interior Design",
+    "assignment_name": "Celebrity Design Project: Floor Plan and Interior Design Presentation",
+    "due_date": "05/09/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/598064",
+    "teacher_email": "mmattson@wbsd.org",
     "late_penalty": false,
     "submitted": false,
     "graded": false,
     "sources": [
-      "gmail_digest"
+      "canvas_todo",
+      "ics"
     ],
-    "schedule_days": [],
+    "schedule_days": [
+      "Mon"
+    ],
     "grade": "\u2014",
-    "completed_date": "04/21/2026"
+    "completed_date": "05/07/2026"
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "Shoe Box Design Project",
+    "due_date": "04/23/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/575649",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/07/2026"
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "Celebrity Design Project: Gathering Client Information",
+    "due_date": "04/30/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/597894",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/07/2026"
   },
   {
     "course": "Interior Design",
@@ -593,68 +680,40 @@
     "completed_date": "04/21/2026"
   },
   {
-    "course": "Interior Design",
-    "assignment_name": "3 Story Office Design - FINAL Presentation",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": true,
-    "graded": false,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "Interior Design",
-    "assignment_name": "Two-Story Lake House Final Plans and Presentation",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": true,
-    "graded": false,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "Interior Design",
-    "assignment_name": "Office Design - 1st, 2nd and 3rd FLOOR PLAN Design Requirements and Assignment",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": true,
-    "graded": false,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "Interior Design",
-    "assignment_name": "Shoe Box Design Project: Design Plan",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "mmattson@wbsd.org",
+    "course": "Algebra 2",
+    "assignment_name": "\u00ae\ufe0f Reveal Practice 6.4: Graphing Radical Functions (ALGEBRA 2 S2 - PRUITT - 7(A))",
+    "due_date": "04/07/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28876/assignments/594792",
+    "teacher_email": "jpruitt@wbsd.org",
     "late_penalty": false,
     "submitted": false,
     "graded": false,
     "sources": [
-      "gmail_direct"
+      "ics"
     ],
-    "schedule_days": [],
+    "schedule_days": [
+      "Mon"
+    ],
     "grade": "\u2014",
-    "completed_date": "04/21/2026"
+    "completed_date": "05/07/2026"
+  },
+  {
+    "course": "Algebra 2",
+    "assignment_name": "\ud83c\udd70\ufe0f ALEKS Practice 7.1",
+    "due_date": "05/04/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28876/assignments/597982",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/07/2026"
   },
   {
     "course": "Algebra 2",
@@ -765,40 +824,78 @@
     "completed_date": "04/19/2026"
   },
   {
-    "course": "Algebra 2",
-    "assignment_name": "\u00ae\ufe0f Reveal Practice 2.1.1-4 Solving Linear Equations & Inequa",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "jpruitt@wbsd.org",
-    "late_penalty": false,
+    "course": "Earth Science",
+    "assignment_name": "10.3 NoteCheck/Directed Reading Guide",
+    "due_date": "05/08/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573736",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
     "submitted": false,
     "graded": false,
     "sources": [
-      "canvas_pw"
+      "canvas_todo",
+      "ics"
     ],
     "schedule_days": [
       "Mon"
     ],
     "grade": "\u2014",
-    "completed_date": "04/19/2026"
+    "completed_date": "05/07/2026"
   },
   {
-    "course": "Algebra 2",
-    "assignment_name": "\ud83c\udd70\ufe0f \ufe0fALEKS Practice 2.1.6-7: Solving Linear Equations & Inequalities (Click the McGraw Hill SSO link and open ALEKS 5th Hour A2 S1 or ALEKS 7th Hour A2 S1)",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "jpruitt@wbsd.org",
-    "late_penalty": false,
+    "course": "Earth Science",
+    "assignment_name": "COSMOS VIDEO: Lost Worlds of Planet Earth",
+    "due_date": "05/08/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573749",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
     "submitted": false,
     "graded": false,
     "sources": [
-      "canvas_pw"
+      "canvas_todo",
+      "ics"
     ],
     "schedule_days": [
       "Mon"
     ],
     "grade": "\u2014",
-    "completed_date": "04/19/2026"
+    "completed_date": "05/07/2026"
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "10.2 NoteCheck/Directed Reading Guide",
+    "due_date": "04/29/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573735",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/07/2026"
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "Will Pangea form again? The next supercontinent on Earth",
+    "due_date": "05/06/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573732",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/07/2026"
   },
   {
     "course": "Earth Science",
@@ -865,78 +962,6 @@
     "graded": true,
     "sources": [
       "gmail"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "LAB: Modeling a Planet's Orbit",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": true,
-    "graded": true,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "OPTIONAL ASSIGNMENT: PART 2: The Core Movie: Meaningful Learning and Misconceptions",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": true,
-    "graded": true,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "Continental Drift 10.1 Review/Wrap Up Questions",
-    "due_date": "",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573704",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": true,
-    "graded": true,
-    "sources": [
-      "gmail_digest"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "Bill Nye the Science Guy- Earth's Crust",
-    "due_date": "",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573672",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": true,
-    "graded": true,
-    "sources": [
-      "gmail_digest"
     ],
     "schedule_days": [
       "Mon"
