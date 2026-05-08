@@ -99,23 +99,6 @@
     "schedule_days": []
   },
   {
-    "course": "Civics",
-    "assignment_name": "Supreme Court Poster",
-    "due_date": "05/08/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597766",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_todo",
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
     "course": "Interior Design",
     "assignment_name": "Celebrity Design Project: Floor Plan and Interior Design Presentation (SENIORS: THIS IS YOUR FINAL PROJECT!)",
     "due_date": "05/09/2026",
@@ -244,22 +227,6 @@
     ]
   },
   {
-    "course": "Civics",
-    "assignment_name": "Responsibilities of U.S. Citizens",
-    "due_date": "05/06/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/598540",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
     "course": "Earth Science",
     "assignment_name": "Will Pangea form again? The next supercontinent on Earth",
     "due_date": "05/06/2026",
@@ -297,6 +264,22 @@
     "due_date": "05/07/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573749",
     "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Supreme Court Poster",
+    "due_date": "05/08/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597766",
+    "teacher_email": "lwatson@wbsd.org",
     "late_penalty": true,
     "submitted": false,
     "graded": false,

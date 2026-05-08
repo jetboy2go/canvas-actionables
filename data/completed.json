@@ -253,6 +253,24 @@
   },
   {
     "course": "Civics",
+    "assignment_name": "Responsibilities of U.S. Citizens",
+    "due_date": "05/06/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/598540",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/08/2026"
+  },
+  {
+    "course": "Civics",
     "assignment_name": "Supreme Court Poster",
     "due_date": "05/08/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597766",
@@ -361,22 +379,6 @@
   {
     "course": "Civics",
     "assignment_name": "Pac Notes & Classwork",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": true,
-    "graded": true,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "Civics",
-    "assignment_name": "Media Bias One Pager",
     "due_date": "",
     "canvas_url": "",
     "teacher_email": "lwatson@wbsd.org",
