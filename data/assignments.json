@@ -49,19 +49,35 @@
     ]
   },
   {
+    "course": "Civics",
+    "assignment_name": "Supreme Court Poster",
+    "due_date": "05/08/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597766",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing",
+      "gmail",
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
     "course": "Interior Design",
     "assignment_name": "Shoe Box Design Project: Design PLAN",
     "due_date": "04/10/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/595454",
+    "canvas_url": "",
     "teacher_email": "mmattson@wbsd.org",
     "late_penalty": false,
     "submitted": false,
     "graded": false,
     "sources": [
       "ps_missing",
-      "canvas_pw",
-      "gmail",
-      "ics"
+      "gmail"
     ],
     "schedule_days": [
       "Mon"
@@ -94,6 +110,7 @@
     "graded": false,
     "sources": [
       "canvas_todo",
+      "gmail",
       "ics"
     ],
     "schedule_days": []
@@ -129,6 +146,23 @@
       "ics"
     ],
     "schedule_days": []
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "NoteCheck - Natural Hazards",
+    "due_date": "05/12/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573676",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Interior Design",
@@ -275,11 +309,11 @@
     ]
   },
   {
-    "course": "Civics",
-    "assignment_name": "Supreme Court Poster",
-    "due_date": "05/08/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597766",
-    "teacher_email": "lwatson@wbsd.org",
+    "course": "Earth Science",
+    "assignment_name": "Worst Natural Hazard\\, EVER!",
+    "due_date": "05/11/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573725",
+    "teacher_email": "bmcguire@wbsd.org",
     "late_penalty": true,
     "submitted": false,
     "graded": false,
