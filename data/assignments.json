@@ -148,23 +148,6 @@
     "schedule_days": []
   },
   {
-    "course": "Earth Science",
-    "assignment_name": "NoteCheck - Natural Hazards",
-    "due_date": "05/12/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573676",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_todo",
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
     "course": "Interior Design",
     "assignment_name": "Shoe Box Design Project",
     "due_date": "04/23/2026",
@@ -313,6 +296,38 @@
     "assignment_name": "Worst Natural Hazard\\, EVER!",
     "due_date": "05/11/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573725",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "NoteCheck - Natural Hazards",
+    "due_date": "05/13/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573676",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "Video Bozeman: Natural Hazard",
+    "due_date": "05/13/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573665",
     "teacher_email": "bmcguire@wbsd.org",
     "late_penalty": true,
     "submitted": false,
