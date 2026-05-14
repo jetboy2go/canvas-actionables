@@ -410,6 +410,22 @@
   },
   {
     "course": "CAD Engineering",
+    "assignment_name": "Mechanical Part 2",
+    "due_date": "05/07/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/578566",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "05/14/2026"
+  },
+  {
+    "course": "CAD Engineering",
     "assignment_name": "Figure 4P-37",
     "due_date": "05/05/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/578555",
@@ -516,22 +532,6 @@
     "late_penalty": false,
     "submitted": true,
     "graded": true,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "CAD Engineering",
-    "assignment_name": "Initial Game Design Sketches",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "cmuylaert@wbsd.org",
-    "late_penalty": false,
-    "submitted": true,
-    "graded": false,
     "sources": [
       "gmail"
     ],

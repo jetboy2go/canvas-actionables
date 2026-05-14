@@ -100,6 +100,22 @@
     ]
   },
   {
+    "course": "Multicultural Lit",
+    "assignment_name": "Hate Crime Presentation",
+    "due_date": "05/12/2026",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
     "course": "Interior Design",
     "assignment_name": "Celebrity Design Project: Floor Plan and Interior Design Presentation (SENIORS: THIS IS YOUR FINAL PROJECT!)",
     "due_date": "05/09/2026",
@@ -257,20 +273,6 @@
     "schedule_days": [
       "Mon"
     ]
-  },
-  {
-    "course": "CAD Engineering",
-    "assignment_name": "Mechanical Part 2",
-    "due_date": "05/07/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/578566",
-    "teacher_email": "cmuylaert@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": []
   },
   {
     "course": "Earth Science",
