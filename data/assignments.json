@@ -50,24 +50,6 @@
   },
   {
     "course": "Civics",
-    "assignment_name": "Supreme Court Poster",
-    "due_date": "05/08/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597766",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ps_missing",
-      "gmail",
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
-    "course": "Civics",
     "assignment_name": "Supreme Court Gallery Walk",
     "due_date": "05/13/2026",
     "canvas_url": "",
@@ -308,11 +290,43 @@
     ]
   },
   {
+    "course": "Civics",
+    "assignment_name": "Supreme Court Poster",
+    "due_date": "05/08/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597766",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
     "course": "Earth Science",
     "assignment_name": "Worst Natural Hazard\\, EVER!",
     "due_date": "05/11/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573725",
     "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Board Game",
+    "due_date": "06/05/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/576504",
+    "teacher_email": "lwatson@wbsd.org",
     "late_penalty": true,
     "submitted": false,
     "graded": false,
