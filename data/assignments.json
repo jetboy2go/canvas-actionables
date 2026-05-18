@@ -180,6 +180,21 @@
     ]
   },
   {
+    "course": "Earth Science",
+    "assignment_name": "Video:  Crash Course Climate and Energy #1",
+    "due_date": "05/19/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573686",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": []
+  },
+  {
     "course": "CAD Engineering",
     "assignment_name": "Practice Part C1",
     "due_date": "05/21/2026",
@@ -337,34 +352,6 @@
     "assignment_name": "Worst Natural Hazard\\, EVER!",
     "due_date": "05/11/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573725",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": []
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "ABC News Live: Maldives Turns to Climate Solutions to Survive",
-    "due_date": "05/18/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573655",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": []
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "Video:  Crash Course Climate and Energy #1",
-    "due_date": "05/18/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573686",
     "teacher_email": "bmcguire@wbsd.org",
     "late_penalty": true,
     "submitted": false,
