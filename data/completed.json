@@ -542,6 +542,24 @@
   },
   {
     "course": "Interior Design",
+    "assignment_name": "Celebrity Design Project: Gathering Client Information",
+    "due_date": "04/30/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/597894",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/18/2026"
+  },
+  {
+    "course": "Interior Design",
     "assignment_name": "Shoe Box Design Project: Design Plan",
     "due_date": "04/11/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/595454",
@@ -653,22 +671,6 @@
   {
     "course": "Interior Design",
     "assignment_name": "7 Elements AND Principles of Interior Design Worksheet",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": true,
-    "graded": true,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "Interior Design",
-    "assignment_name": "Design Project #1 Part 3: Sketch Like an Interior Designer: From Ideas to Sketch Elevations",
     "due_date": "",
     "canvas_url": "",
     "teacher_email": "mmattson@wbsd.org",

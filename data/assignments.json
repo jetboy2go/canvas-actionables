@@ -49,6 +49,22 @@
     ]
   },
   {
+    "course": "Algebra 2",
+    "assignment_name": "Logarithms & Logarithmic Functions Practice",
+    "due_date": "05/11/2026",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
     "course": "Civics",
     "assignment_name": "Supreme Court Gallery Walk",
     "due_date": "05/13/2026",
@@ -76,6 +92,22 @@
     "sources": [
       "ps_missing",
       "gmail"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "Celebrity Design Proj: Floor Plan + Presentation",
+    "due_date": "05/15/2026",
+    "canvas_url": "",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
     ],
     "schedule_days": [
       "Mon"
@@ -126,7 +158,9 @@
       "canvas_todo",
       "ics"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Interior Design",
@@ -134,6 +168,23 @@
     "due_date": "05/16/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/598064",
     "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "CAD Engineering",
+    "assignment_name": "Practice Part C1",
+    "due_date": "05/21/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/599404",
+    "teacher_email": "cmuylaert@wbsd.org",
     "late_penalty": false,
     "submitted": false,
     "graded": false,
@@ -173,9 +224,7 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Civics",
@@ -184,22 +233,6 @@
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597671",
     "teacher_email": "lwatson@wbsd.org",
     "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
-    "course": "Interior Design",
-    "assignment_name": "Celebrity Design Project: Gathering Client Information",
-    "due_date": "04/30/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/597894",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
     "submitted": false,
     "graded": false,
     "sources": [
@@ -253,9 +286,7 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Earth Science",
@@ -269,9 +300,7 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Earth Science",
@@ -285,9 +314,7 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Civics",
@@ -317,9 +344,35 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "ABC News Live: Maldives Turns to Climate Solutions to Survive",
+    "due_date": "05/18/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573655",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": []
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "Video:  Crash Course Climate and Energy #1",
+    "due_date": "05/18/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573686",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": []
   },
   {
     "course": "Civics",
