@@ -542,6 +542,24 @@
   },
   {
     "course": "Interior Design",
+    "assignment_name": "Shoe Box Design Project",
+    "due_date": "04/23/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/575649",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/19/2026"
+  },
+  {
+    "course": "Interior Design",
     "assignment_name": "Celebrity Design Project: Gathering Client Information",
     "due_date": "04/30/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/597894",
@@ -655,22 +673,6 @@
   {
     "course": "Interior Design",
     "assignment_name": "Backyard Escape Project",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": true,
-    "graded": true,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "Interior Design",
-    "assignment_name": "7 Elements AND Principles of Interior Design Worksheet",
     "due_date": "",
     "canvas_url": "",
     "teacher_email": "mmattson@wbsd.org",
@@ -830,6 +832,22 @@
   },
   {
     "course": "Earth Science",
+    "assignment_name": "Will Pangea form again? The next supercontinent on Earth",
+    "due_date": "05/06/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573732",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "05/19/2026"
+  },
+  {
+    "course": "Earth Science",
     "assignment_name": "ABC News Live: Maldives Turns to Climate Solutions to Survive",
     "due_date": "05/18/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573655",
@@ -953,24 +971,6 @@
     ],
     "grade": "\u2014",
     "completed_date": "05/07/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "FILLED IN NOTES 10.3 - THE CHANGING CONTINENTS",
-    "due_date": "05/05/2026",
-    "canvas_url": "",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ps_missing"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "05/06/2026"
   },
   {
     "course": "SCIENCE 8",

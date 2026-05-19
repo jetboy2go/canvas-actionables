@@ -81,6 +81,20 @@
     ]
   },
   {
+    "course": "Earth Science",
+    "assignment_name": "CRASH COURSE: CLIMATE & ENERGY",
+    "due_date": "05/18/2026",
+    "canvas_url": "",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": []
+  },
+  {
     "course": "Interior Design",
     "assignment_name": "Shoe Box Design Project: Design PLAN",
     "due_date": "04/10/2026",
@@ -212,22 +226,6 @@
     ]
   },
   {
-    "course": "Interior Design",
-    "assignment_name": "Shoe Box Design Project",
-    "due_date": "04/23/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/575649",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
     "course": "Earth Science",
     "assignment_name": "10.2 NoteCheck/Directed Reading Guide",
     "due_date": "04/29/2026",
@@ -288,20 +286,6 @@
     "schedule_days": [
       "Mon"
     ]
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "Will Pangea form again? The next supercontinent on Earth",
-    "due_date": "05/06/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573732",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": []
   },
   {
     "course": "Earth Science",
@@ -376,5 +360,61 @@
     "schedule_days": [
       "Mon"
     ]
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "VIDEO:  Earth's Geography Will Change with Climate",
+    "due_date": "06/05/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573673",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": []
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "VIDEO:  Nova - Can We Cool The Planet?",
+    "due_date": "06/05/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573671",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": []
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "VIDEO: Crash Course - Raising Earth's Temp by 2*C",
+    "due_date": "06/05/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573701",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": []
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "VIDEO:  Crash Course #8: How will Climate Change Affect Us?",
+    "due_date": "06/05/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573680",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": []
   }
 ]
