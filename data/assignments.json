@@ -209,6 +209,23 @@
     "schedule_days": []
   },
   {
+    "course": "Multicultural Lit",
+    "assignment_name": "Common App Essay Brainstorm",
+    "due_date": "05/21/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29304/assignments/585486",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
     "course": "CAD Engineering",
     "assignment_name": "Practice Part C1",
     "due_date": "05/21/2026",
