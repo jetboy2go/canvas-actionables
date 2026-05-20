@@ -177,36 +177,6 @@
     ]
   },
   {
-    "course": "Earth Science",
-    "assignment_name": "Video:  Crash Course Climate and Energy #1",
-    "due_date": "05/19/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573686",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_todo",
-      "ics"
-    ],
-    "schedule_days": []
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "Climate and Human Migration Data",
-    "due_date": "05/21/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573674",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_todo",
-      "ics"
-    ],
-    "schedule_days": []
-  },
-  {
     "course": "Multicultural Lit",
     "assignment_name": "Common App Essay Brainstorm",
     "due_date": "05/21/2026",

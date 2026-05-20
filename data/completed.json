@@ -835,6 +835,40 @@
   },
   {
     "course": "Earth Science",
+    "assignment_name": "Video:  Crash Course Climate and Energy #1",
+    "due_date": "05/19/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573686",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "05/20/2026"
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "Climate and Human Migration Data",
+    "due_date": "05/21/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573674",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "05/20/2026"
+  },
+  {
+    "course": "Earth Science",
     "assignment_name": "Will Pangea form again? The next supercontinent on Earth",
     "due_date": "05/06/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573732",
@@ -931,42 +965,6 @@
     "graded": false,
     "sources": [
       "canvas_todo",
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "05/07/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "10.2 NoteCheck/Directed Reading Guide",
-    "due_date": "04/29/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573735",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "05/07/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "Will Pangea form again? The next supercontinent on Earth",
-    "due_date": "05/06/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573732",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
       "ics"
     ],
     "schedule_days": [
