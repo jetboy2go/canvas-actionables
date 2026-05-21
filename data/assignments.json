@@ -81,20 +81,6 @@
     ]
   },
   {
-    "course": "Earth Science",
-    "assignment_name": "CRASH COURSE: CLIMATE & ENERGY",
-    "due_date": "05/18/2026",
-    "canvas_url": "",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ps_missing"
-    ],
-    "schedule_days": []
-  },
-  {
     "course": "Interior Design",
     "assignment_name": "Shoe Box Design Project: Design PLAN",
     "due_date": "04/10/2026",
@@ -160,16 +146,16 @@
     ]
   },
   {
-    "course": "Interior Design",
-    "assignment_name": "Celebrity Design Project: Floor Plan and Interior Design Presentation (SENIORS: THIS IS YOUR FINAL PROJECT!)",
-    "due_date": "05/16/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/598064",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
+    "course": "Multicultural Lit",
+    "assignment_name": "Common App Essay Brainstorm",
+    "due_date": "05/19/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29304/assignments/585486",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
     "submitted": false,
     "graded": false,
     "sources": [
-      "canvas_todo",
+      "ps_missing",
       "ics"
     ],
     "schedule_days": [
@@ -178,11 +164,27 @@
   },
   {
     "course": "Multicultural Lit",
-    "assignment_name": "Common App Essay Brainstorm",
-    "due_date": "05/21/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29304/assignments/585486",
+    "assignment_name": "The 57 Bus Reading Check #3",
+    "due_date": "05/20/2026",
+    "canvas_url": "",
     "teacher_email": "jsharpe@wbsd.org",
     "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "Celebrity Design Project: Floor Plan and Interior Design Presentation (SENIORS: THIS IS YOUR FINAL PROJECT!)",
+    "due_date": "05/16/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/598064",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
     "submitted": false,
     "graded": false,
     "sources": [
@@ -209,6 +211,36 @@
     "schedule_days": [
       "Mon"
     ]
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "Video: Eyes of Nye Global Climate Change",
+    "due_date": "05/21/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573706",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": []
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "22.3 NoteCheck/Directed Reading Guide",
+    "due_date": "05/22/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573739",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": []
   },
   {
     "course": "French 1",
@@ -336,6 +368,20 @@
     "assignment_name": "Worst Natural Hazard\\, EVER!",
     "due_date": "05/11/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573725",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": []
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "Climate Change 101 with Bill Nye",
+    "due_date": "05/21/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573724",
     "teacher_email": "bmcguire@wbsd.org",
     "late_penalty": true,
     "submitted": false,
