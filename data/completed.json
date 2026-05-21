@@ -691,6 +691,61 @@
   },
   {
     "course": "Algebra 2",
+    "assignment_name": "Practice 6.5 Part 2: Adding, Subtracting, Multiply",
+    "due_date": "04/13/2026",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/21/2026"
+  },
+  {
+    "course": "Algebra 2",
+    "assignment_name": "Reveal Practice 6.6: Solving Radical Equations",
+    "due_date": "04/20/2026",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing",
+      "gmail"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/21/2026"
+  },
+  {
+    "course": "Algebra 2",
+    "assignment_name": "Logarithms & Logarithmic Functions Practice",
+    "due_date": "05/11/2026",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/21/2026"
+  },
+  {
+    "course": "Algebra 2",
     "assignment_name": "\u00ae\ufe0f Reveal Practice 6.4: Graphing Radical Functions (ALGEBRA 2 S2 - PRUITT - 7(A))",
     "due_date": "04/07/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28876/assignments/594792",
@@ -772,60 +827,6 @@
     "graded": false,
     "sources": [
       "ps_missing"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "04/19/2026"
-  },
-  {
-    "course": "Algebra 2",
-    "assignment_name": "Practice 6.5 Part 2: Adding, Subtracting, Multiply",
-    "due_date": "04/13/2026",
-    "canvas_url": "",
-    "teacher_email": "jpruitt@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ps_missing"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "04/19/2026"
-  },
-  {
-    "course": "Algebra 2",
-    "assignment_name": "\u270f\ufe0f Quiz 1.1- 1.5: Functions",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "jpruitt@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_pw"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "04/19/2026"
-  },
-  {
-    "course": "Algebra 2",
-    "assignment_name": "\ud83d\udccb Test Module 1: Functions & Graphing",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "jpruitt@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_pw"
     ],
     "schedule_days": [
       "Mon"
