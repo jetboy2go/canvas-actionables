@@ -359,6 +359,22 @@
     "schedule_days": []
   },
   {
+    "course": "Interior Design",
+    "assignment_name": "POD Transformation to Coffee/Snack Counter FINAL PROJECT",
+    "due_date": "06/01/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/599796",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
     "course": "Civics",
     "assignment_name": "Board Game",
     "due_date": "06/05/2026",
