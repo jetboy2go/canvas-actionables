@@ -32,6 +32,22 @@
     ]
   },
   {
+    "course": "Algebra 2",
+    "assignment_name": "\ud83d\udcaf 8.3 Mini Quiz: Common Logarithms",
+    "due_date": "05/18/2026",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
     "course": "Civics",
     "assignment_name": "Supreme Court Gallery Walk",
     "due_date": "05/13/2026",
@@ -180,21 +196,6 @@
     ]
   },
   {
-    "course": "Earth Science",
-    "assignment_name": "22.3 NoteCheck/Directed Reading Guide",
-    "due_date": "05/22/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573739",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_todo",
-      "ics"
-    ],
-    "schedule_days": []
-  },
-  {
     "course": "French 1",
     "assignment_name": "Ch. 3- revision finale",
     "due_date": "05/23/2026",
@@ -331,9 +332,9 @@
   },
   {
     "course": "Earth Science",
-    "assignment_name": "Climate Change 101 with Bill Nye",
+    "assignment_name": "22.3 NoteCheck/Directed Reading Guide",
     "due_date": "05/21/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573724",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573739",
     "teacher_email": "bmcguire@wbsd.org",
     "late_penalty": true,
     "submitted": false,

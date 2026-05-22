@@ -836,6 +836,22 @@
   },
   {
     "course": "Earth Science",
+    "assignment_name": "Climate Change 101 with Bill Nye",
+    "due_date": "05/21/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573724",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "05/22/2026"
+  },
+  {
+    "course": "Earth Science",
     "assignment_name": "CRASH COURSE: CLIMATE & ENERGY",
     "due_date": "05/18/2026",
     "canvas_url": "",
@@ -951,25 +967,6 @@
     ],
     "grade": "\u2014",
     "completed_date": "05/13/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "10.3 NoteCheck/Directed Reading Guide",
-    "due_date": "05/08/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573736",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_todo",
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "05/07/2026"
   },
   {
     "course": "SCIENCE 8",
