@@ -11,9 +11,7 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Algebra 2",
@@ -27,9 +25,7 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Algebra 2",
@@ -43,9 +39,7 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Civics",
@@ -139,6 +133,7 @@
     "graded": false,
     "sources": [
       "ps_missing",
+      "gmail",
       "ics"
     ],
     "schedule_days": [
@@ -189,11 +184,10 @@
     "graded": false,
     "sources": [
       "canvas_todo",
+      "gmail",
       "ics"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "French 1",
@@ -206,6 +200,7 @@
     "graded": false,
     "sources": [
       "canvas_todo",
+      "gmail",
       "ics"
     ],
     "schedule_days": []
@@ -268,9 +263,7 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Earth Science",
