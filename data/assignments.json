@@ -11,7 +11,9 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Algebra 2",
@@ -25,7 +27,9 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Algebra 2",
@@ -39,7 +43,9 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Civics",
@@ -206,6 +212,38 @@
     "schedule_days": []
   },
   {
+    "course": "CAD Engineering",
+    "assignment_name": "Practice Part D1",
+    "due_date": "05/28/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/599898",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": []
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "POD Transformation to Coffee/Snack Counter FINAL PROJECT",
+    "due_date": "06/02/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/599796",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
     "course": "Earth Science",
     "assignment_name": "10.2 NoteCheck/Directed Reading Guide",
     "due_date": "04/29/2026",
@@ -217,7 +255,9 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Civics",
@@ -263,7 +303,9 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Earth Science",
@@ -277,7 +319,9 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Earth Science",
@@ -291,7 +335,9 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Civics",
@@ -321,7 +367,9 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Earth Science",
@@ -335,7 +383,9 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Earth Science",
@@ -349,7 +399,9 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Earth Science",
@@ -358,20 +410,6 @@
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573706",
     "teacher_email": "bmcguire@wbsd.org",
     "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": []
-  },
-  {
-    "course": "Interior Design",
-    "assignment_name": "POD Transformation to Coffee/Snack Counter FINAL PROJECT",
-    "due_date": "06/01/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/599796",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
     "submitted": false,
     "graded": false,
     "sources": [
@@ -409,7 +447,9 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Earth Science",
@@ -423,7 +463,9 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Earth Science",
@@ -437,7 +479,9 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Earth Science",
@@ -451,6 +495,8 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   }
 ]
