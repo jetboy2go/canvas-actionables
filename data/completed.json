@@ -836,6 +836,24 @@
   },
   {
     "course": "Earth Science",
+    "assignment_name": "Video: Eyes of Nye Global Climate Change",
+    "due_date": "05/26/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573706",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/26/2026"
+  },
+  {
+    "course": "Earth Science",
     "assignment_name": "Climate Change 101 with Bill Nye",
     "due_date": "05/21/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573724",
@@ -937,24 +955,6 @@
     "assignment_name": "NoteCheck - Natural Hazards",
     "due_date": "05/13/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573676",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "05/13/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "Video Bozeman: Natural Hazard",
-    "due_date": "05/13/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573665",
     "teacher_email": "bmcguire@wbsd.org",
     "late_penalty": true,
     "submitted": false,

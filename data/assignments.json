@@ -404,22 +404,6 @@
     ]
   },
   {
-    "course": "Earth Science",
-    "assignment_name": "Video: Eyes of Nye Global Climate Change",
-    "due_date": "05/26/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573706",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
     "course": "Civics",
     "assignment_name": "Board Game",
     "due_date": "06/05/2026",
