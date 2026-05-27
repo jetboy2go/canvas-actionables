@@ -180,22 +180,6 @@
     ]
   },
   {
-    "course": "CAD Engineering",
-    "assignment_name": "Practice Part C1",
-    "due_date": "05/21/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/599404",
-    "teacher_email": "cmuylaert@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_todo",
-      "gmail",
-      "ics"
-    ],
-    "schedule_days": []
-  },
-  {
     "course": "French 1",
     "assignment_name": "Ch. 3- revision finale",
     "due_date": "05/23/2026",
@@ -386,6 +370,20 @@
     "schedule_days": [
       "Mon"
     ]
+  },
+  {
+    "course": "CAD Engineering",
+    "assignment_name": "Practice Part C1",
+    "due_date": "05/21/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/599404",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": []
   },
   {
     "course": "Earth Science",
