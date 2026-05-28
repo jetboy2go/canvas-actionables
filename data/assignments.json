@@ -81,23 +81,6 @@
   },
   {
     "course": "Interior Design",
-    "assignment_name": "Shoe Box Design Project: Design PLAN",
-    "due_date": "04/10/2026",
-    "canvas_url": "",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ps_missing",
-      "gmail"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
-    "course": "Interior Design",
     "assignment_name": "Celebrity Design Proj: Floor Plan + Presentation",
     "due_date": "05/15/2026",
     "canvas_url": "",

@@ -545,6 +545,25 @@
   },
   {
     "course": "Interior Design",
+    "assignment_name": "Shoe Box Design Project: Design PLAN",
+    "due_date": "04/10/2026",
+    "canvas_url": "",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing",
+      "gmail"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/28/2026"
+  },
+  {
+    "course": "Interior Design",
     "assignment_name": "Shoe Box Design Project",
     "due_date": "04/23/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/575649",
@@ -672,22 +691,6 @@
     ],
     "grade": "\u2014",
     "completed_date": "04/29/2026"
-  },
-  {
-    "course": "Interior Design",
-    "assignment_name": "Backyard Escape Project",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": true,
-    "graded": true,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
   },
   {
     "course": "Algebra 2",
