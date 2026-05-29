@@ -121,6 +121,26 @@
   },
   {
     "course": "Multicultural Lit",
+    "assignment_name": "Common App Essay Brainstorm",
+    "due_date": "05/19/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29304/assignments/585486",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing",
+      "gmail",
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/29/2026"
+  },
+  {
+    "course": "Multicultural Lit",
     "assignment_name": "The 57 Bus Vocabulary Slides",
     "due_date": "05/01/2026",
     "canvas_url": "",
@@ -223,22 +243,6 @@
     "course": "Multicultural Lit",
     "assignment_name": "Saints & Misfits Theme Snapshot",
     "due_date": "04/14/2026",
-    "canvas_url": "",
-    "teacher_email": "jsharpe@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "Multicultural Lit",
-    "assignment_name": "Hamtramck Video Response",
-    "due_date": "04/08/2026",
     "canvas_url": "",
     "teacher_email": "jsharpe@wbsd.org",
     "late_penalty": true,
@@ -545,6 +549,42 @@
   },
   {
     "course": "Interior Design",
+    "assignment_name": "Celebrity Design Proj: Floor Plan + Presentation",
+    "due_date": "05/15/2026",
+    "canvas_url": "",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/29/2026"
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "Celebrity Design Project: Floor Plan and Interior Design Presentation (SENIORS: THIS IS YOUR FINAL PROJECT!)",
+    "due_date": "05/15/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/598064",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "05/29/2026"
+  },
+  {
+    "course": "Interior Design",
     "assignment_name": "Shoe Box Design Project: Design PLAN",
     "due_date": "04/10/2026",
     "canvas_url": "",
@@ -654,43 +694,6 @@
     ],
     "grade": "\u2014",
     "completed_date": "05/07/2026"
-  },
-  {
-    "course": "Interior Design",
-    "assignment_name": "Celebrity Design Project: Gathering Client Information",
-    "due_date": "04/30/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/597894",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "05/07/2026"
-  },
-  {
-    "course": "Interior Design",
-    "assignment_name": "Celebrity Design Project",
-    "due_date": "04/30/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/597894",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_todo",
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "04/29/2026"
   },
   {
     "course": "Algebra 2",

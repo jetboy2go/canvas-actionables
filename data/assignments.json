@@ -80,22 +80,6 @@
     ]
   },
   {
-    "course": "Interior Design",
-    "assignment_name": "Celebrity Design Proj: Floor Plan + Presentation",
-    "due_date": "05/15/2026",
-    "canvas_url": "",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ps_missing"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
     "course": "Multicultural Lit",
     "assignment_name": "Quill - Evidence Based Ethics in Science",
     "due_date": "04/14/2026",
@@ -129,17 +113,15 @@
   },
   {
     "course": "Multicultural Lit",
-    "assignment_name": "Common App Essay Brainstorm",
-    "due_date": "05/19/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29304/assignments/585486",
+    "assignment_name": "The 57 Bus Reading Check #3",
+    "due_date": "05/20/2026",
+    "canvas_url": "",
     "teacher_email": "jsharpe@wbsd.org",
     "late_penalty": true,
     "submitted": false,
     "graded": false,
     "sources": [
-      "ps_missing",
-      "gmail",
-      "ics"
+      "ps_missing"
     ],
     "schedule_days": [
       "Mon"
@@ -147,8 +129,8 @@
   },
   {
     "course": "Multicultural Lit",
-    "assignment_name": "The 57 Bus Reading Check #3",
-    "due_date": "05/20/2026",
+    "assignment_name": "Debate Notes",
+    "due_date": "05/27/2026",
     "canvas_url": "",
     "teacher_email": "jsharpe@wbsd.org",
     "late_penalty": true,
@@ -221,6 +203,58 @@
     "sources": [
       "canvas_todo",
       "gmail",
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "VIDEO:  Nova - Can We Cool The Planet?",
+    "due_date": "06/05/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573671",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "gmail",
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "VIDEO:  Earth's Geography Will Change with Climate",
+    "due_date": "06/05/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573673",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "VIDEO: Crash Course - Raising Earth's Temp by 2*C",
+    "due_date": "06/05/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573701",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
       "ics"
     ],
     "schedule_days": [
@@ -356,22 +390,6 @@
     ]
   },
   {
-    "course": "Interior Design",
-    "assignment_name": "Celebrity Design Project: Floor Plan and Interior Design Presentation (SENIORS: THIS IS YOUR FINAL PROJECT!)",
-    "due_date": "05/15/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/598064",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
     "course": "Earth Science",
     "assignment_name": "Analyzing Climate and Human Migration Data",
     "due_date": "05/20/2026",
@@ -406,54 +424,6 @@
     "assignment_name": "22.3 NoteCheck/Directed Reading Guide",
     "due_date": "05/21/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573739",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "VIDEO:  Earth's Geography Will Change with Climate",
-    "due_date": "06/05/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573673",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "VIDEO:  Nova - Can We Cool The Planet?",
-    "due_date": "06/05/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573671",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "VIDEO: Crash Course - Raising Earth's Temp by 2*C",
-    "due_date": "06/05/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573701",
     "teacher_email": "bmcguire@wbsd.org",
     "late_penalty": true,
     "submitted": false,
