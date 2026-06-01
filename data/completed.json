@@ -121,6 +121,24 @@
   },
   {
     "course": "Multicultural Lit",
+    "assignment_name": "Hate Crime Presentation Information",
+    "due_date": "05/01/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29304/assignments/598136",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "06/01/2026"
+  },
+  {
+    "course": "Multicultural Lit",
     "assignment_name": "Common App Essay Brainstorm",
     "due_date": "05/19/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29304/assignments/585486",
@@ -240,20 +258,22 @@
     "completed_date": "04/21/2026"
   },
   {
-    "course": "Multicultural Lit",
-    "assignment_name": "Saints & Misfits Theme Snapshot",
-    "due_date": "04/14/2026",
-    "canvas_url": "",
-    "teacher_email": "jsharpe@wbsd.org",
+    "course": "Civics",
+    "assignment_name": "American President Questions",
+    "due_date": "04/29/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597671",
+    "teacher_email": "lwatson@wbsd.org",
     "late_penalty": true,
     "submitted": false,
     "graded": false,
     "sources": [
       "ics"
     ],
-    "schedule_days": [],
+    "schedule_days": [
+      "Mon"
+    ],
     "grade": "\u2014",
-    "completed_date": "04/21/2026"
+    "completed_date": "06/01/2026"
   },
   {
     "course": "Civics",
@@ -381,22 +401,6 @@
     "completed_date": "04/21/2026"
   },
   {
-    "course": "Civics",
-    "assignment_name": "Pac Notes & Classwork",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": true,
-    "graded": true,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
     "course": "ADVISORY_11_HS_S2 - SEPETYS - 8(A)",
     "assignment_name": "WBSD Student Survey",
     "due_date": "04/14/2026",
@@ -411,6 +415,39 @@
     "schedule_days": [],
     "grade": "\u2014",
     "completed_date": "04/17/2026"
+  },
+  {
+    "course": "CAD Engineering",
+    "assignment_name": "Practice Part D1",
+    "due_date": "05/28/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/599898",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "06/01/2026"
+  },
+  {
+    "course": "CAD Engineering",
+    "assignment_name": "Practice Part C1",
+    "due_date": "05/21/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/599404",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "06/01/2026"
   },
   {
     "course": "CAD Engineering",
@@ -514,38 +551,6 @@
     "schedule_days": [],
     "grade": "\u2014",
     "completed_date": "05/07/2026"
-  },
-  {
-    "course": "CAD Engineering",
-    "assignment_name": "Chess Pieces",
-    "due_date": "04/29/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/578552",
-    "teacher_email": "cmuylaert@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "05/04/2026"
-  },
-  {
-    "course": "CAD Engineering",
-    "assignment_name": "Coaster Original Student Design",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "cmuylaert@wbsd.org",
-    "late_penalty": false,
-    "submitted": true,
-    "graded": true,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
   },
   {
     "course": "Interior Design",
@@ -842,6 +847,24 @@
   },
   {
     "course": "Earth Science",
+    "assignment_name": "10.2 NoteCheck/Directed Reading Guide",
+    "due_date": "04/29/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573735",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
+    "completed_date": "06/01/2026"
+  },
+  {
+    "course": "Earth Science",
     "assignment_name": "Video: Eyes of Nye Global Climate Change",
     "due_date": "05/26/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573706",
@@ -955,24 +978,6 @@
     "schedule_days": [],
     "grade": "\u2014",
     "completed_date": "05/18/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "NoteCheck - Natural Hazards",
-    "due_date": "05/13/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573676",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "05/13/2026"
   },
   {
     "course": "SCIENCE 8",

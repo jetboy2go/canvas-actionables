@@ -75,9 +75,7 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Multicultural Lit",
@@ -91,9 +89,7 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Multicultural Lit",
@@ -107,9 +103,7 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Multicultural Lit",
@@ -123,9 +117,7 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Multicultural Lit",
@@ -139,9 +131,7 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "French 1",
@@ -160,21 +150,6 @@
     "schedule_days": []
   },
   {
-    "course": "CAD Engineering",
-    "assignment_name": "Practice Part D1",
-    "due_date": "05/28/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/599898",
-    "teacher_email": "cmuylaert@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_todo",
-      "ics"
-    ],
-    "schedule_days": []
-  },
-  {
     "course": "Interior Design",
     "assignment_name": "POD Transformation to Coffee/Snack Counter FINAL PROJECT",
     "due_date": "06/02/2026",
@@ -187,9 +162,7 @@
       "canvas_todo",
       "ics"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Civics",
@@ -205,9 +178,7 @@
       "gmail",
       "ics"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Earth Science",
@@ -224,7 +195,10 @@
       "ics"
     ],
     "schedule_days": [
-      "Mon"
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
     ]
   },
   {
@@ -241,7 +215,10 @@
       "ics"
     ],
     "schedule_days": [
-      "Mon"
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
     ]
   },
   {
@@ -258,55 +235,10 @@
       "ics"
     ],
     "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "10.2 NoteCheck/Directed Reading Guide",
-    "due_date": "04/29/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573735",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
-    "course": "Civics",
-    "assignment_name": "American President Questions",
-    "due_date": "04/29/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597671",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ]
-  },
-  {
-    "course": "Multicultural Lit",
-    "assignment_name": "Hate Crime Presentation Information",
-    "due_date": "05/01/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29304/assignments/598136",
-    "teacher_email": "jsharpe@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
     ]
   },
   {
@@ -338,7 +270,10 @@
       "ics"
     ],
     "schedule_days": [
-      "Mon"
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
     ]
   },
   {
@@ -354,7 +289,10 @@
       "ics"
     ],
     "schedule_days": [
-      "Mon"
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
     ]
   },
   {
@@ -369,9 +307,7 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Earth Science",
@@ -386,7 +322,10 @@
       "ics"
     ],
     "schedule_days": [
-      "Mon"
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
     ]
   },
   {
@@ -402,22 +341,11 @@
       "ics"
     ],
     "schedule_days": [
-      "Mon"
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
     ]
-  },
-  {
-    "course": "CAD Engineering",
-    "assignment_name": "Practice Part C1",
-    "due_date": "05/21/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/599404",
-    "teacher_email": "cmuylaert@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": []
   },
   {
     "course": "Earth Science",
@@ -432,7 +360,10 @@
       "ics"
     ],
     "schedule_days": [
-      "Mon"
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
     ]
   },
   {
@@ -448,7 +379,10 @@
       "ics"
     ],
     "schedule_days": [
-      "Mon"
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
     ]
   }
 ]
