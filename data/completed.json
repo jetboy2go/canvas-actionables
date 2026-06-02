@@ -259,6 +259,40 @@
   },
   {
     "course": "Civics",
+    "assignment_name": "Board Game",
+    "due_date": "06/05/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/576504",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "gmail",
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "06/02/2026"
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Supreme Court Poster",
+    "due_date": "05/08/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597766",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "06/02/2026"
+  },
+  {
+    "course": "Civics",
     "assignment_name": "American President Questions",
     "due_date": "04/29/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597671",
@@ -365,40 +399,6 @@
     ],
     "grade": "\u2014",
     "completed_date": "05/04/2026"
-  },
-  {
-    "course": "Civics",
-    "assignment_name": "Citizenship Guided Notes",
-    "due_date": "04/24/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597764",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "04/27/2026"
-  },
-  {
-    "course": "Civics",
-    "assignment_name": "Cabinet Scenarios",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": true,
-    "graded": true,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
   },
   {
     "course": "ADVISORY_11_HS_S2 - SEPETYS - 8(A)",
@@ -554,6 +554,38 @@
   },
   {
     "course": "Interior Design",
+    "assignment_name": "POD Transformation to Coffee/Snack Shop FINAL",
+    "due_date": "06/01/2026",
+    "canvas_url": "",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "06/02/2026"
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "POD Transformation to Coffee/Snack Counter FINAL PROJECT",
+    "due_date": "06/01/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/599796",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "06/02/2026"
+  },
+  {
+    "course": "Interior Design",
     "assignment_name": "Celebrity Design Proj: Floor Plan + Presentation",
     "due_date": "05/15/2026",
     "canvas_url": "",
@@ -664,30 +696,11 @@
     "completed_date": "05/07/2026"
   },
   {
-    "course": "Interior Design",
-    "assignment_name": "Celebrity Design Project: Floor Plan and Interior Design Presentation",
-    "due_date": "05/09/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/598064",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_todo",
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "05/07/2026"
-  },
-  {
-    "course": "Interior Design",
-    "assignment_name": "Shoe Box Design Project",
-    "due_date": "04/23/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/575649",
-    "teacher_email": "mmattson@wbsd.org",
+    "course": "Algebra 2",
+    "assignment_name": "\ud83c\udd70\ufe0f ALEKS Practice 7.1",
+    "due_date": "05/04/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28876/assignments/597982",
+    "teacher_email": "jpruitt@wbsd.org",
     "late_penalty": false,
     "submitted": false,
     "graded": false,
@@ -698,7 +711,7 @@
       "Mon"
     ],
     "grade": "\u2014",
-    "completed_date": "05/07/2026"
+    "completed_date": "06/02/2026"
   },
   {
     "course": "Algebra 2",
@@ -828,96 +841,33 @@
     "completed_date": "04/21/2026"
   },
   {
-    "course": "Algebra 2",
-    "assignment_name": "ALEKS Practice 6.5 Part 1: Operations with Radical",
-    "due_date": "04/06/2026",
-    "canvas_url": "",
-    "teacher_email": "jpruitt@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ps_missing"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "04/19/2026"
-  },
-  {
     "course": "Earth Science",
-    "assignment_name": "10.2 NoteCheck/Directed Reading Guide",
-    "due_date": "04/29/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573735",
+    "assignment_name": "VIDEO:  Nova - Can We Cool The Planet?",
+    "due_date": "06/05/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573671",
     "teacher_email": "bmcguire@wbsd.org",
     "late_penalty": true,
     "submitted": false,
     "graded": false,
     "sources": [
+      "canvas_todo",
+      "gmail",
       "ics"
     ],
     "schedule_days": [
-      "Mon"
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
     ],
     "grade": "\u2014",
-    "completed_date": "06/01/2026"
+    "completed_date": "06/02/2026"
   },
   {
     "course": "Earth Science",
-    "assignment_name": "Video: Eyes of Nye Global Climate Change",
-    "due_date": "05/26/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573706",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "05/26/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "Climate Change 101 with Bill Nye",
-    "due_date": "05/21/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573724",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "05/22/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "CRASH COURSE: CLIMATE & ENERGY",
-    "due_date": "05/18/2026",
-    "canvas_url": "",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ps_missing"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "05/21/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "Video:  Crash Course Climate and Energy #1",
-    "due_date": "05/19/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573686",
+    "assignment_name": "VIDEO:  Earth's Geography Will Change with Climate",
+    "due_date": "06/05/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573673",
     "teacher_email": "bmcguire@wbsd.org",
     "late_penalty": true,
     "submitted": false,
@@ -926,32 +876,126 @@
       "canvas_todo",
       "ics"
     ],
-    "schedule_days": [],
+    "schedule_days": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
+    ],
     "grade": "\u2014",
-    "completed_date": "05/20/2026"
+    "completed_date": "06/02/2026"
   },
   {
     "course": "Earth Science",
-    "assignment_name": "Climate and Human Migration Data",
-    "due_date": "05/21/2026",
+    "assignment_name": "VIDEO: Crash Course - Raising Earth's Temp by 2*C",
+    "due_date": "06/05/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573701",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
+    ],
+    "grade": "\u2014",
+    "completed_date": "06/02/2026"
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "10.3 NoteCheck/Directed Reading Guide",
+    "due_date": "05/07/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573736",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
+    ],
+    "grade": "\u2014",
+    "completed_date": "06/02/2026"
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "COSMOS VIDEO: Lost Worlds of Planet Earth",
+    "due_date": "05/07/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573749",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
+    ],
+    "grade": "\u2014",
+    "completed_date": "06/02/2026"
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "Worst Natural Hazard\\, EVER!",
+    "due_date": "05/11/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573725",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
+    ],
+    "grade": "\u2014",
+    "completed_date": "06/02/2026"
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "Analyzing Climate and Human Migration Data",
+    "due_date": "05/20/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573674",
     "teacher_email": "bmcguire@wbsd.org",
     "late_penalty": true,
     "submitted": false,
     "graded": false,
     "sources": [
-      "canvas_todo",
       "ics"
     ],
-    "schedule_days": [],
+    "schedule_days": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
+    ],
     "grade": "\u2014",
-    "completed_date": "05/20/2026"
+    "completed_date": "06/02/2026"
   },
   {
     "course": "Earth Science",
-    "assignment_name": "Will Pangea form again? The next supercontinent on Earth",
-    "due_date": "05/06/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573732",
+    "assignment_name": "22.3 NoteCheck/Directed Reading Guide",
+    "due_date": "05/21/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573739",
     "teacher_email": "bmcguire@wbsd.org",
     "late_penalty": true,
     "submitted": false,
@@ -959,25 +1003,14 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "05/19/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "ABC News Live: Maldives Turns to Climate Solutions to Survive",
-    "due_date": "05/18/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573655",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
+    "schedule_days": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
     ],
-    "schedule_days": [],
     "grade": "\u2014",
-    "completed_date": "05/18/2026"
+    "completed_date": "06/02/2026"
   },
   {
     "course": "SCIENCE 8",
@@ -1042,5 +1075,23 @@
     "schedule_days": [],
     "grade": "\u2014",
     "completed_date": "04/21/2026"
+  },
+  {
+    "course": "French 1",
+    "assignment_name": "Ch. 3- revision finale",
+    "due_date": "05/23/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29366/assignments/599518",
+    "teacher_email": "mbishop@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "canvas_todo",
+      "gmail",
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "06/02/2026"
   }
 ]
