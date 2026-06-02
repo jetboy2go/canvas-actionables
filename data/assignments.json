@@ -78,6 +78,20 @@
     "schedule_days": []
   },
   {
+    "course": "Interior Design",
+    "assignment_name": "POD Transformation to Coffee/Snack Shop FINAL",
+    "due_date": "06/01/2026",
+    "canvas_url": "",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": []
+  },
+  {
     "course": "Multicultural Lit",
     "assignment_name": "Quill - Evidence Based Ethics in Science",
     "due_date": "04/14/2026",
@@ -145,21 +159,6 @@
     "sources": [
       "canvas_todo",
       "gmail",
-      "ics"
-    ],
-    "schedule_days": []
-  },
-  {
-    "course": "Interior Design",
-    "assignment_name": "POD Transformation to Coffee/Snack Counter FINAL PROJECT",
-    "due_date": "06/02/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/599796",
-    "teacher_email": "mmattson@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_todo",
       "ics"
     ],
     "schedule_days": []
@@ -365,6 +364,20 @@
       "Wed",
       "Thu"
     ]
+  },
+  {
+    "course": "Interior Design",
+    "assignment_name": "POD Transformation to Coffee/Snack Counter FINAL PROJECT",
+    "due_date": "06/01/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29168/assignments/599796",
+    "teacher_email": "mmattson@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": []
   },
   {
     "course": "Earth Science",
