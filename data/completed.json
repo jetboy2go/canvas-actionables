@@ -418,6 +418,22 @@
   },
   {
     "course": "CAD Engineering",
+    "assignment_name": "Final Assembly or Part",
+    "due_date": "06/03/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/578556",
+    "teacher_email": "cmuylaert@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "06/03/2026"
+  },
+  {
+    "course": "CAD Engineering",
     "assignment_name": "Practice Part D1",
     "due_date": "05/28/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/599898",
@@ -523,23 +539,6 @@
     "assignment_name": "Mechanical Part 2",
     "due_date": "05/07/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/578566",
-    "teacher_email": "cmuylaert@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_todo",
-      "ics"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "05/07/2026"
-  },
-  {
-    "course": "CAD Engineering",
-    "assignment_name": "Practice Part A1",
-    "due_date": "05/11/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29422/assignments/578570",
     "teacher_email": "cmuylaert@wbsd.org",
     "late_penalty": false,
     "submitted": false,
