@@ -125,20 +125,6 @@
     "schedule_days": []
   },
   {
-    "course": "Multicultural Lit",
-    "assignment_name": "Debate Notes",
-    "due_date": "05/27/2026",
-    "canvas_url": "",
-    "teacher_email": "jsharpe@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ps_missing"
-    ],
-    "schedule_days": []
-  },
-  {
     "course": "French 1",
     "assignment_name": "Ch. 3- revision finale",
     "due_date": "05/23/2026",

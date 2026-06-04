@@ -137,6 +137,22 @@
   },
   {
     "course": "Multicultural Lit",
+    "assignment_name": "Debate Notes",
+    "due_date": "05/27/2026",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "06/04/2026"
+  },
+  {
+    "course": "Multicultural Lit",
     "assignment_name": "Hate Crime Presentation Information",
     "due_date": "05/01/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29304/assignments/598136",
@@ -236,22 +252,6 @@
     "graded": false,
     "sources": [
       "gmail"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "Multicultural Lit",
-    "assignment_name": "Saints & Misfits Theme Snapshot",
-    "due_date": "",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29304/assignments/585499",
-    "teacher_email": "jsharpe@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "gmail_digest"
     ],
     "schedule_days": [],
     "grade": "\u2014",
