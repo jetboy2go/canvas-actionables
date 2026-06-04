@@ -121,6 +121,22 @@
   },
   {
     "course": "Multicultural Lit",
+    "assignment_name": "Quill - Evidence Based Ethics in Science",
+    "due_date": "04/14/2026",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "06/04/2026"
+  },
+  {
+    "course": "Multicultural Lit",
     "assignment_name": "Hate Crime Presentation Information",
     "due_date": "05/01/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/29304/assignments/598136",
@@ -236,22 +252,6 @@
     "graded": false,
     "sources": [
       "gmail_digest"
-    ],
-    "schedule_days": [],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "Multicultural Lit",
-    "assignment_name": "Hamtramck Video Response",
-    "due_date": "04/08/2026",
-    "canvas_url": "",
-    "teacher_email": "jsharpe@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
     ],
     "schedule_days": [],
     "grade": "\u2014",
@@ -710,6 +710,24 @@
       "Mon"
     ],
     "grade": "\u2014",
+    "completed_date": "06/04/2026"
+  },
+  {
+    "course": "Algebra 2",
+    "assignment_name": "\ud83c\udd70\ufe0f ALEKS Practice 7.1",
+    "due_date": "05/04/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28876/assignments/597982",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon"
+    ],
+    "grade": "\u2014",
     "completed_date": "06/02/2026"
   },
   {
@@ -806,24 +824,6 @@
   {
     "course": "Algebra 2",
     "assignment_name": "\ud83c\udd70\ufe0f ALEKS Practice 6.3",
-    "due_date": "",
-    "canvas_url": "",
-    "teacher_email": "jpruitt@wbsd.org",
-    "late_penalty": false,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "gmail"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "04/21/2026"
-  },
-  {
-    "course": "Algebra 2",
-    "assignment_name": "\ud83c\udd70\ufe0f ALEKS Practice 5.5: Roots & Zeros",
     "due_date": "",
     "canvas_url": "",
     "teacher_email": "jpruitt@wbsd.org",
