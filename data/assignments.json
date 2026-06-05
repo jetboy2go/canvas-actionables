@@ -142,26 +142,6 @@
   },
   {
     "course": "Earth Science",
-    "assignment_name": "COSMOS VIDEO: The World Set Free",
-    "due_date": "06/05/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/600361",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_todo",
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu"
-    ]
-  },
-  {
-    "course": "Earth Science",
     "assignment_name": "VIDEO:  Nova - Can We Cool The Planet?",
     "due_date": "06/05/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573671",
@@ -343,6 +323,25 @@
       "ics"
     ],
     "schedule_days": []
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "COSMOS VIDEO: The World Set Free",
+    "due_date": "06/05/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/600361",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
+    ]
   },
   {
     "course": "Earth Science",
