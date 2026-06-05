@@ -141,22 +141,6 @@
     "schedule_days": []
   },
   {
-    "course": "Civics",
-    "assignment_name": "Board Game",
-    "due_date": "06/05/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/576504",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "canvas_todo",
-      "gmail",
-      "ics"
-    ],
-    "schedule_days": []
-  },
-  {
     "course": "Earth Science",
     "assignment_name": "COSMOS VIDEO: The World Set Free",
     "due_date": "06/05/2026",
@@ -345,6 +329,20 @@
       "Wed",
       "Thu"
     ]
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Board Game",
+    "due_date": "06/05/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/576504",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": []
   },
   {
     "course": "Earth Science",
