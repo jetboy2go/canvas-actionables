@@ -11,9 +11,7 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Algebra 2",
@@ -27,9 +25,7 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Algebra 2",
@@ -43,9 +39,7 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Algebra 2",
@@ -59,9 +53,7 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": [
-      "Mon"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Civics",
@@ -89,12 +81,7 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": [
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Multicultural Lit",
@@ -154,12 +141,7 @@
       "gmail",
       "ics"
     ],
-    "schedule_days": [
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Earth Science",
@@ -174,12 +156,7 @@
       "canvas_todo",
       "ics"
     ],
-    "schedule_days": [
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Earth Science",
@@ -192,63 +169,6 @@
     "graded": false,
     "sources": [
       "canvas_todo",
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu"
-    ]
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "10.3 NoteCheck/Directed Reading Guide",
-    "due_date": "05/07/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573736",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu"
-    ]
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "COSMOS VIDEO: Lost Worlds of Planet Earth",
-    "due_date": "05/07/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573749",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu"
-    ]
-  },
-  {
-    "course": "Civics",
-    "assignment_name": "Supreme Court Poster",
-    "due_date": "05/08/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597766",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
       "ics"
     ],
     "schedule_days": []
@@ -265,12 +185,7 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": [
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Earth Science",
@@ -284,12 +199,7 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": [
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Earth Science",
@@ -303,12 +213,7 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": [
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Civics",
@@ -336,12 +241,7 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": [
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu"
-    ]
+    "schedule_days": []
   },
   {
     "course": "Earth Science",
@@ -355,11 +255,6 @@
     "sources": [
       "ics"
     ],
-    "schedule_days": [
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu"
-    ]
+    "schedule_days": []
   }
 ]

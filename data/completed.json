@@ -259,6 +259,22 @@
   },
   {
     "course": "Civics",
+    "assignment_name": "Supreme Court Poster",
+    "due_date": "05/08/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597766",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "06/08/2026"
+  },
+  {
+    "course": "Civics",
     "assignment_name": "Board Game",
     "due_date": "06/05/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/576504",
@@ -381,24 +397,6 @@
     ],
     "grade": "\u2014",
     "completed_date": "05/07/2026"
-  },
-  {
-    "course": "Civics",
-    "assignment_name": "History of Voting",
-    "due_date": "05/01/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/30361/assignments/597765",
-    "teacher_email": "lwatson@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon"
-    ],
-    "grade": "\u2014",
-    "completed_date": "05/04/2026"
   },
   {
     "course": "ADVISORY_11_HS_S2 - SEPETYS - 8(A)",
@@ -841,6 +839,48 @@
   },
   {
     "course": "Earth Science",
+    "assignment_name": "10.3 NoteCheck/Directed Reading Guide",
+    "due_date": "05/07/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573736",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
+    ],
+    "grade": "\u2014",
+    "completed_date": "06/08/2026"
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "COSMOS VIDEO: Lost Worlds of Planet Earth",
+    "due_date": "05/07/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573749",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
+    ],
+    "grade": "\u2014",
+    "completed_date": "06/08/2026"
+  },
+  {
+    "course": "Earth Science",
     "assignment_name": "VIDEO:  Nova - Can We Cool The Planet?",
     "due_date": "06/05/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573671",
@@ -953,48 +993,6 @@
     "assignment_name": "Worst Natural Hazard\\, EVER!",
     "due_date": "05/11/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573725",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu"
-    ],
-    "grade": "\u2014",
-    "completed_date": "06/02/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "Analyzing Climate and Human Migration Data",
-    "due_date": "05/20/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573674",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu"
-    ],
-    "grade": "\u2014",
-    "completed_date": "06/02/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "22.3 NoteCheck/Directed Reading Guide",
-    "due_date": "05/21/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573739",
     "teacher_email": "bmcguire@wbsd.org",
     "late_penalty": true,
     "submitted": false,
