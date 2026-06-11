@@ -175,20 +175,6 @@
   },
   {
     "course": "Earth Science",
-    "assignment_name": "Worst Natural Hazard\\, EVER!",
-    "due_date": "05/11/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573725",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": []
-  },
-  {
-    "course": "Earth Science",
     "assignment_name": "Analyzing Climate and Human Migration Data",
     "due_date": "05/20/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573674",

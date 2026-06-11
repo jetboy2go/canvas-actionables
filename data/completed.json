@@ -839,6 +839,22 @@
   },
   {
     "course": "Earth Science",
+    "assignment_name": "Worst Natural Hazard\\, EVER!",
+    "due_date": "05/11/2026",
+    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573725",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ics"
+    ],
+    "schedule_days": [],
+    "grade": "\u2014",
+    "completed_date": "06/11/2026"
+  },
+  {
+    "course": "Earth Science",
     "assignment_name": "10.3 NoteCheck/Directed Reading Guide",
     "due_date": "05/07/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573736",
@@ -972,27 +988,6 @@
     "assignment_name": "COSMOS VIDEO: Lost Worlds of Planet Earth",
     "due_date": "05/07/2026",
     "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573749",
-    "teacher_email": "bmcguire@wbsd.org",
-    "late_penalty": true,
-    "submitted": false,
-    "graded": false,
-    "sources": [
-      "ics"
-    ],
-    "schedule_days": [
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu"
-    ],
-    "grade": "\u2014",
-    "completed_date": "06/02/2026"
-  },
-  {
-    "course": "Earth Science",
-    "assignment_name": "Worst Natural Hazard\\, EVER!",
-    "due_date": "05/11/2026",
-    "canvas_url": "https://westbloomfieldsd.instructure.com/courses/28927/assignments/573725",
     "teacher_email": "bmcguire@wbsd.org",
     "late_penalty": true,
     "submitted": false,
