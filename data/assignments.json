@@ -11,7 +11,9 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Algebra 2",
@@ -25,7 +27,9 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Algebra 2",
@@ -39,7 +43,9 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Algebra 2",
@@ -53,7 +59,9 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Civics",
@@ -81,7 +89,9 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Multicultural Lit",
@@ -95,7 +105,9 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   },
   {
     "course": "Multicultural Lit",
@@ -109,6 +121,8 @@
     "sources": [
       "ps_missing"
     ],
-    "schedule_days": []
+    "schedule_days": [
+      "Mon"
+    ]
   }
 ]
