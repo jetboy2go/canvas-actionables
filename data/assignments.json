@@ -1,1 +1,128 @@
-[]
+[
+  {
+    "course": "Algebra 2",
+    "assignment_name": "ALEKS Practice 6.5 Part 1: Operations with Radical",
+    "due_date": "04/06/2026",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Algebra 2",
+    "assignment_name": "ALEKS Practice 8.2",
+    "due_date": "05/18/2026",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Algebra 2",
+    "assignment_name": "\ud83d\udcaf 8.3 Mini Quiz: Common Logarithms",
+    "due_date": "05/18/2026",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Algebra 2",
+    "assignment_name": "Practice 8.4",
+    "due_date": "05/26/2026",
+    "canvas_url": "",
+    "teacher_email": "jpruitt@wbsd.org",
+    "late_penalty": false,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Civics",
+    "assignment_name": "Supreme Court Gallery Walk",
+    "due_date": "05/13/2026",
+    "canvas_url": "",
+    "teacher_email": "lwatson@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": []
+  },
+  {
+    "course": "Earth Science",
+    "assignment_name": "PRACTICE PUZZLES: GLOBAL WARM, HAZARDS, PLATE TEC",
+    "due_date": "06/01/2026",
+    "canvas_url": "",
+    "teacher_email": "bmcguire@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Multicultural Lit",
+    "assignment_name": "Hate Crime Presentation",
+    "due_date": "05/12/2026",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  },
+  {
+    "course": "Multicultural Lit",
+    "assignment_name": "The 57 Bus Reading Check #3",
+    "due_date": "05/20/2026",
+    "canvas_url": "",
+    "teacher_email": "jsharpe@wbsd.org",
+    "late_penalty": true,
+    "submitted": false,
+    "graded": false,
+    "sources": [
+      "ps_missing"
+    ],
+    "schedule_days": [
+      "Mon"
+    ]
+  }
+]
